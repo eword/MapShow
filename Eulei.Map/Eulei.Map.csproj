@@ -1,0 +1,646 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6BF4CA24-965C-4DB6-9D4D-40BB0A3A2D3F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Eulei.Map</RootNamespace>
+    <AssemblyName>Eulei.Map</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>F:\aaaaa\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9F567D9D0EDA4C36EADADB81CBEC6B5F90438441</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Eulei.Map_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BSE.Windows.Forms">
+      <HintPath>Libs\BSE.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="IrisSkin4, Version=2006.3.22.45, Culture=neutral, PublicKeyToken=127be25a6db25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\IrisSkin4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="office, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="SampleAccessProviders, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\SampleAccessProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WHC.Pager.Entity, Version=1.0.4345.18959, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\WHC.Pager.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="WHC.Pager.WinControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\WHC.Pager.WinControl.DLL</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreaList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AreaList.Designer.cs">
+      <DependentUpon>AreaList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AreaManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AreaManage.Designer.cs">
+      <DependentUpon>AreaManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\AuthortyControl.cs" />
+    <Compile Include="Code\CopyFileHelper.cs" />
+    <Compile Include="Code\DES.cs" />
+    <Compile Include="Code\EuleiEventHandler.cs" />
+    <Compile Include="Code\FormStatus.cs" />
+    <Compile Include="Code\TaskMemberShip.cs" />
+    <Compile Include="Code\UserHistory.cs" />
+    <Compile Include="GetPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetPoint.Designer.cs">
+      <DependentUpon>GetPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageInfoManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageInfoManage.Designer.cs">
+      <DependentUpon>ImageInfoManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrganisationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrganisationList.Designer.cs">
+      <DependentUpon>OrganisationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrganisationManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrganisationManage.Designer.cs">
+      <DependentUpon>OrganisationManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StationInfoBrowse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StationInfoBrowse.Designer.cs">
+      <DependentUpon>StationInfoBrowse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StationInfoManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StationInfoManage.Designer.cs">
+      <DependentUpon>StationInfoManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StationList.Designer.cs">
+      <DependentUpon>StationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StationManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StationManage.Designer.cs">
+      <DependentUpon>StationManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Task.cs" />
+    <EmbeddedResource Include="AreaList.resx">
+      <DependentUpon>AreaList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AreaManage.resx">
+      <DependentUpon>AreaManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetPoint.resx">
+      <DependentUpon>GetPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageInfoManage.resx">
+      <DependentUpon>ImageInfoManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrganisationList.resx">
+      <DependentUpon>OrganisationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrganisationManage.resx">
+      <DependentUpon>OrganisationManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="StationInfoBrowse.resx">
+      <DependentUpon>StationInfoBrowse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StationInfoManage.resx">
+      <DependentUpon>StationInfoManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StationList.resx">
+      <DependentUpon>StationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StationManage.resx">
+      <DependentUpon>StationManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eulei.Map_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\TaskInterface.AreaInfo.datasource" />
+    <None Include="Properties\DataSources\TaskInterface.Organisation.datasource" />
+    <None Include="Properties\DataSources\TaskInterface.Station.datasource" />
+    <None Include="Properties\DataSources\TaskInterface.StationImageInfo.datasource" />
+    <None Include="Properties\DataSources\TaskInterface.StationInfo.datasource" />
+    <None Include="Properties\DataSources\TaskInterface.VW_Statuion.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxMapXLib">
+      <Guid>{E760686B-BC9E-4802-9ECF-175FDF4062CE}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MapXLib">
+      <Guid>{E760686B-BC9E-4802-9ECF-175FDF4062CE}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResetPassWord.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\NoSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomIn.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pan.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="map\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eulei.IControl\Eulei.IControl.csproj">
+      <Project>{d0d2eed4-f873-4790-994d-a1a2d74a5ab2}</Project>
+      <Name>Eulei.IControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eulei.IMemperShip\Eulei.IMemberShip.csproj">
+      <Project>{9fd7a127-85c7-4fff-b38b-16212b77426f}</Project>
+      <Name>Eulei.IMemberShip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eulei.Linq\Eulei.Linq.csproj">
+      <Project>{1db3a55a-16fd-43d2-a861-f98755ed19f5}</Project>
+      <Name>Eulei.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eulei.Log\Eulei.Log.csproj">
+      <Project>{f6c8a5e4-5f23-4b78-8879-f191fefbbca9}</Project>
+      <Name>Eulei.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eulei.Security.DES\Eulei.Security.DES.csproj">
+      <Project>{850bb5bf-33bb-4293-9a97-81b3ac9b91b8}</Project>
+      <Name>Eulei.Security.DES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eulei.Xml\Eulei.Serialization.csproj">
+      <Project>{0d9e3c9b-e698-4871-b734-062341b421fa}</Project>
+      <Name>Eulei.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaskInterface\TaskInterface.csproj">
+      <Project>{c2dcb36e-78e3-46f5-9b7a-868bd3f09a2a}</Project>
+      <Name>TaskInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DBTask.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="DB\Station.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Libs\Eulei.Control.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Libs\Eulei.ControlLimit.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Libs\BSE.Windows.Forms.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Resources\ICO.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Lose.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\zoomIn.png" />
+    <None Include="Resources\pan.png" />
+    <EmbeddedResource Include="Libs\Eulei.MemberShip.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Libs\IrisSkin4.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Libs\SampleAccessProviders.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Libs\WHC.Pager.Entity.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Libs\WHC.Pager.WinControl.DLL">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Libs\WHC.Pager.WinControl.xml" />
+    <EmbeddedResource Include="ResetPassWord.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Skins\Calmness.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\CalmnessColor1.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\CalmnessColor2.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DeepCyan.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DeepGreen.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DeepOrange.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DiamondBlue.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DiamondGreen.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DiamondOlive.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DiamondPurple.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\DiamondRed.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Eighteen.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\EighteenColor1.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\EighteenColor2.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Emerald.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\EmeraldColor1.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\EmeraldColor2.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\EmeraldColor3.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\GlassBrown.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\GlassGreen.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\GlassOrange.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Longhorn.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\MacOS.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Midsummer.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\MidsummerColor1.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\MidsummerColor2.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\MidsummerColor3.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10green.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10maroon.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10mulberry.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10pink.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\mp10purple.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\MSN.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\office2007.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\OneBlue.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\OneCyan.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\OneGreen.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\OneOrange.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Page.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\PageColor1.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\PageColor2.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\RealOne.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Silver.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SilverColor1.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SilverColor2.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SportsBlack.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SportsBlue.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SportsCyan.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SportsGreen.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SportsOrange.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SteelBlack.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\SteelBlue.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\vista1.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\vista1_green.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color1.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color2.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color3.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color4.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color5.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color6.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Vista2_color7.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Warm.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\WarmColor1.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\WarmColor2.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\WarmColor3.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\Wave.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\WaveColor1.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\WaveColor2.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\XPBlue.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\XPGreen.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\XPOrange.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Skins\XPSilver.ssk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="UserHistory\User1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

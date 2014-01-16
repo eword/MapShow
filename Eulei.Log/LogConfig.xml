@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <ERROR_FILE_NAME>ErrorLog.log</ERROR_FILE_NAME>
+    <OPERATE_FILE_NAME>SendLog.log</OPERATE_FILE_NAME>
+    <LOG_FIRST_PATH>log</LOG_FIRST_PATH>
+    <ERROR_SECOND_PATH>Error</ERROR_SECOND_PATH>
+    <OPERATE_SECOND_PATH>Send</OPERATE_SECOND_PATH>
+    <DEFAULT_FILE_SIZE>1024000</DEFAULT_FILE_SIZE>
+  </appSettings>
+</configuration>
