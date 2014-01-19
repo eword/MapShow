@@ -6,6 +6,10 @@
 }
 
 namespace DBTask.DB.StationDataSetTableAdapters {
+    partial class baseStationTableAdapter
+    {
+    }
+
     partial class stationInfoTableAdapter
     {
     }

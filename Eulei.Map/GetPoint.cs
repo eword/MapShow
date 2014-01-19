@@ -17,6 +17,7 @@ namespace Eulei.Map
     public partial class GetPoint : Form
     {
         #region 变量  
+        string mapDefaultDirectory = AppDomain.CurrentDomain.BaseDirectory + "map\\";
         Task _task = Task.Init();
         Config _config;
         string _title;
@@ -40,6 +41,10 @@ namespace Eulei.Map
             if (File.Exists(_config.GstPath))
             {
                 axMap1.GeoSet = _config.GstPath;
+            }
+            else if (File.Exists(this.mapDefaultDirectory + _config.GstPath))
+            {
+                axMap1.GeoSet = this.mapDefaultDirectory + _config.GstPath;
             }
             else
             {

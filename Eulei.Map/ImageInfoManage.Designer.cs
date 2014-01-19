@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageInfoManage));
             this.label1 = new System.Windows.Forms.Label();
             this.tb_title = new System.Windows.Forms.TextBox();
             this.bs_main = new System.Windows.Forms.BindingSource(this.components);
@@ -133,6 +134,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb_title);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ImageInfoManage";
             this.Text = "图片信息";
             ((System.ComponentModel.ISupportInitialize)(this.bs_main)).EndInit();

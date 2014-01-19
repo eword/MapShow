@@ -31,6 +31,11 @@ namespace TaskInterface
         /// <returns>详细网点信息列表记录总数</returns>
         int GetVW_StatuionList(string sql, object[] _params);
         /// <summary>
+        /// 获取详细网点信息列表所有记录
+        /// </summary>
+        /// <returns>详细网点信息列表所有记录</returns>
+        List<VW_Statuion> GetVW_StatuionList();
+        /// <summary>
         /// 获取站点信息列表
         /// </summary>
         /// <returns>站点信息列表</returns>

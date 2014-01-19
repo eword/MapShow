@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StationManage));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,6 +58,8 @@
             this.bt_OK = new System.Windows.Forms.Button();
             this.bt_cancel = new System.Windows.Forms.Button();
             this.bt_getPoint = new System.Windows.Forms.Button();
+            this.lb_imageName = new System.Windows.Forms.Label();
+            this.cbb_ImageName = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bs_bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_areabindingSource)).BeginInit();
@@ -358,6 +361,25 @@
             this.bt_getPoint.UseVisualStyleBackColor = true;
             this.bt_getPoint.Click += new System.EventHandler(this.bt_getPoint_Click);
             // 
+            // lb_imageName
+            // 
+            this.lb_imageName.AutoSize = true;
+            this.lb_imageName.Location = new System.Drawing.Point(12, 310);
+            this.lb_imageName.Name = "lb_imageName";
+            this.lb_imageName.Size = new System.Drawing.Size(71, 12);
+            this.lb_imageName.TabIndex = 5;
+            this.lb_imageName.Text = "图     标：";
+            // 
+            // cbb_ImageName
+            // 
+            this.cbb_ImageName.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bs_bindingSource, "ImageName", true));
+            this.cbb_ImageName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_ImageName.FormattingEnabled = true;
+            this.cbb_ImageName.Location = new System.Drawing.Point(86, 306);
+            this.cbb_ImageName.Name = "cbb_ImageName";
+            this.cbb_ImageName.Size = new System.Drawing.Size(121, 20);
+            this.cbb_ImageName.TabIndex = 6;
+            // 
             // StationManage
             // 
             this.AcceptButton = this.bt_OK;
@@ -365,12 +387,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_cancel;
             this.ClientSize = new System.Drawing.Size(659, 392);
+            this.Controls.Add(this.cbb_ImageName);
+            this.Controls.Add(this.lb_imageName);
             this.Controls.Add(this.bt_getPoint);
             this.Controls.Add(this.bt_cancel);
             this.Controls.Add(this.bt_OK);
             this.Controls.Add(this.tb_sataionInfo);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StationManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "网点管理";
@@ -380,6 +405,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bs_areabindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_OrganisationbindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -413,5 +439,7 @@
         private System.Windows.Forms.TextBox tb_address;
         private System.Windows.Forms.Label lb_lat;
         private System.Windows.Forms.BindingSource bs_bindingSource;
+        private System.Windows.Forms.Label lb_imageName;
+        private System.Windows.Forms.ComboBox cbb_ImageName;
     }
 }

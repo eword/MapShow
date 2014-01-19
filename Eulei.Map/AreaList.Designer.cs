@@ -34,7 +34,18 @@
             this.tsb_add = new System.Windows.Forms.ToolStripButton();
             this.tsb_edit = new System.Windows.Forms.ToolStripButton();
             this.tsb_del = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tstb_searchText = new System.Windows.Forms.ToolStripTextBox();
+            this.tsb_search = new System.Windows.Forms.ToolStripButton();
             this.dgv_main = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.areaName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.latDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.postalCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.easyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -56,17 +67,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.帮助LToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.areaName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.latDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postalCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.easyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.tstb_searchText = new System.Windows.Forms.ToolStripTextBox();
-            this.tsb_search = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -118,6 +118,36 @@
             this.tsb_del.Text = "删除";
             this.tsb_del.Click += new System.EventHandler(this.tsb_del_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(68, 22);
+            this.toolStripLabel1.Text = "区域名称：";
+            // 
+            // tstb_searchText
+            // 
+            this.tstb_searchText.Name = "tstb_searchText";
+            this.tstb_searchText.Size = new System.Drawing.Size(100, 25);
+            // 
+            // tsb_search
+            // 
+            this.tsb_search.Image = ((System.Drawing.Image)(resources.GetObject("tsb_search.Image")));
+            this.tsb_search.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_search.Name = "tsb_search";
+            this.tsb_search.Size = new System.Drawing.Size(52, 22);
+            this.tsb_search.Text = "搜索";
+            this.tsb_search.Click += new System.EventHandler(this.tsb_search_Click);
+            // 
             // dgv_main
             // 
             this.dgv_main.AllowUserToAddRows = false;
@@ -141,6 +171,49 @@
             this.dgv_main.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_main.Size = new System.Drawing.Size(889, 386);
             this.dgv_main.TabIndex = 2;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // areaName
+            // 
+            this.areaName.DataPropertyName = "Name";
+            this.areaName.HeaderText = "区域名称";
+            this.areaName.Name = "areaName";
+            this.areaName.ReadOnly = true;
+            // 
+            // lonDataGridViewTextBoxColumn
+            // 
+            this.lonDataGridViewTextBoxColumn.DataPropertyName = "lon";
+            this.lonDataGridViewTextBoxColumn.HeaderText = "经度";
+            this.lonDataGridViewTextBoxColumn.Name = "lonDataGridViewTextBoxColumn";
+            this.lonDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // latDataGridViewTextBoxColumn
+            // 
+            this.latDataGridViewTextBoxColumn.DataPropertyName = "lat";
+            this.latDataGridViewTextBoxColumn.HeaderText = "纬度";
+            this.latDataGridViewTextBoxColumn.Name = "latDataGridViewTextBoxColumn";
+            this.latDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // postalCodeDataGridViewTextBoxColumn
+            // 
+            this.postalCodeDataGridViewTextBoxColumn.DataPropertyName = "PostalCode";
+            this.postalCodeDataGridViewTextBoxColumn.HeaderText = "邮编";
+            this.postalCodeDataGridViewTextBoxColumn.Name = "postalCodeDataGridViewTextBoxColumn";
+            this.postalCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // easyCodeDataGridViewTextBoxColumn
+            // 
+            this.easyCodeDataGridViewTextBoxColumn.DataPropertyName = "EasyCode";
+            this.easyCodeDataGridViewTextBoxColumn.HeaderText = "简码";
+            this.easyCodeDataGridViewTextBoxColumn.Name = "easyCodeDataGridViewTextBoxColumn";
+            this.easyCodeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bindingSource1
             // 
@@ -333,79 +406,6 @@
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // areaName
-            // 
-            this.areaName.DataPropertyName = "Name";
-            this.areaName.HeaderText = "区域名称";
-            this.areaName.Name = "areaName";
-            this.areaName.ReadOnly = true;
-            // 
-            // lonDataGridViewTextBoxColumn
-            // 
-            this.lonDataGridViewTextBoxColumn.DataPropertyName = "lon";
-            this.lonDataGridViewTextBoxColumn.HeaderText = "经度";
-            this.lonDataGridViewTextBoxColumn.Name = "lonDataGridViewTextBoxColumn";
-            this.lonDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // latDataGridViewTextBoxColumn
-            // 
-            this.latDataGridViewTextBoxColumn.DataPropertyName = "lat";
-            this.latDataGridViewTextBoxColumn.HeaderText = "纬度";
-            this.latDataGridViewTextBoxColumn.Name = "latDataGridViewTextBoxColumn";
-            this.latDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // postalCodeDataGridViewTextBoxColumn
-            // 
-            this.postalCodeDataGridViewTextBoxColumn.DataPropertyName = "PostalCode";
-            this.postalCodeDataGridViewTextBoxColumn.HeaderText = "邮编";
-            this.postalCodeDataGridViewTextBoxColumn.Name = "postalCodeDataGridViewTextBoxColumn";
-            this.postalCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // easyCodeDataGridViewTextBoxColumn
-            // 
-            this.easyCodeDataGridViewTextBoxColumn.DataPropertyName = "EasyCode";
-            this.easyCodeDataGridViewTextBoxColumn.HeaderText = "简码";
-            this.easyCodeDataGridViewTextBoxColumn.Name = "easyCodeDataGridViewTextBoxColumn";
-            this.easyCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(68, 22);
-            this.toolStripLabel1.Text = "区域名称：";
-            // 
-            // tstb_searchText
-            // 
-            this.tstb_searchText.Name = "tstb_searchText";
-            this.tstb_searchText.Size = new System.Drawing.Size(100, 25);
-            // 
-            // tsb_search
-            // 
-            this.tsb_search.Image = ((System.Drawing.Image)(resources.GetObject("tsb_search.Image")));
-            this.tsb_search.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_search.Name = "tsb_search";
-            this.tsb_search.Size = new System.Drawing.Size(52, 22);
-            this.tsb_search.Text = "搜索";
-            this.tsb_search.Click += new System.EventHandler(this.tsb_search_Click);
-            // 
             // AreaList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -415,6 +415,7 @@
             this.Controls.Add(this.dgv_main);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AreaList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "区域列表";

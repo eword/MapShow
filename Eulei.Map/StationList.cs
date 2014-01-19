@@ -8,10 +8,6 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Windows.Forms;
 using TaskInterface;
-using WHC.Pager.Entity;
-using WHC.Pager.WinControl;
-using WHC;
-using WHC.Pager;
 using Eulei.Map.Code;
 using Eulei.Linq;
 using System.Web;
@@ -59,14 +55,11 @@ namespace Eulei.Map
             this.cb_organisation.ValueMember = "ID";
             this.cb_area.SelectedValue = _areaInfoID;
             this.cb_organisation.SelectedValue = _organisationID;
+            this.pager1.PageInfoEventArgs.PageInfo.PageSize = 20;
+            this.pager1.PageInfoEventArgs.PageInfo.CurrentPageIndex = 1;
+            this.pager1.PageInfoEventArgs.PageInfo.RecordCount =0;
             BindData();
-            ////this.winGridViewPager1.ProgressBar = this.toolStripProgressBar1.ProgressBar;
-            this.winGridViewPager1.OnPageChanged += new EventHandler(winGridViewPager1_OnPageChanged);
-            this.winGridViewPager1.OnStartExport += new EventHandler(winGridViewPager1_OnStartExport);
-            this.winGridViewPager1.OnEditSelected += new EventHandler(winGridViewPager1_OnEditSelected);
-            this.winGridViewPager1.OnAddNew += new EventHandler(winGridViewPager1_OnAddNew);
-            this.winGridViewPager1.OnDeleteSelected += new EventHandler(winGridViewPager1_OnDeleteSelected);
-            this.winGridViewPager1.OnRefresh += new EventHandler(winGridViewPager1_OnRefresh);
+            this.pager1.Refresh();
             ////this.winGridViewPager1.AppendedMenu = this.contextMenuStrip1;
         }
         #region method
@@ -77,28 +70,31 @@ namespace Eulei.Map
             return _stationList;
         }
         public void BindData()
-        {            
-            #region 添加别名解析
-            this.winGridViewPager1.AddColumnAlias("ID", "编号");
-            this.winGridViewPager1.AddColumnAlias("Num", "网点编号");
-            this.winGridViewPager1.AddColumnAlias("Name", "网点名称");
-            this.winGridViewPager1.AddColumnAlias("TEL", "联系电话");
-            this.winGridViewPager1.AddColumnAlias("Fax", "传真");
-            this.winGridViewPager1.AddColumnAlias("Address", "地址");
-            this.winGridViewPager1.AddColumnAlias("AreaInfoName", "区域");
-            this.winGridViewPager1.AddColumnAlias("OrganisationName", "机构");
-            #endregion
+        {
+            this.pager1.PageInfoEventArgs.PageInfo.RecordCount = _task.TaskStation.GetVW_StatuionList(this._sql, this._params);
+            this._vw_stations = _task.TaskStation.GetVW_StatuionList(this._sql, this._params, this.pager1.PageInfoEventArgs.PageInfo.PageSize * (this.pager1.PageInfoEventArgs.PageInfo.CurrentPageIndex - 1), this.pager1.PageInfoEventArgs.PageInfo.PageSize);
+            this.bs_main.DataSource = this._vw_stations;
+            //#region 添加别名解析
+            //this.winGridViewPager1.AddColumnAlias("ID", "编号");
+            //this.winGridViewPager1.AddColumnAlias("Num", "网点编号");
+            //this.winGridViewPager1.AddColumnAlias("Name", "网点名称");
+            //this.winGridViewPager1.AddColumnAlias("TEL", "联系电话");
+            //this.winGridViewPager1.AddColumnAlias("Fax", "传真");
+            //this.winGridViewPager1.AddColumnAlias("Address", "地址");
+            //this.winGridViewPager1.AddColumnAlias("AreaInfoName", "区域");
+            //this.winGridViewPager1.AddColumnAlias("OrganisationName", "机构");
+            //#endregion
 
-            //每页记录数
-            this.winGridViewPager1.PagerInfo.PageSize = 10;
-            //查询
-            _vw_stations = _task.TaskStation.GetVW_StatuionList(this._sql,this._params, this.winGridViewPager1.PagerInfo.PageSize * (this.winGridViewPager1.PagerInfo.CurrenetPageIndex - 1), this.winGridViewPager1.PagerInfo.PageSize);
-            //总记录数
-            this.winGridViewPager1.PagerInfo.RecordCount = _task.TaskStation.GetVW_StatuionList(this._sql,this._params);           
-            //显示哪些列
-            this.winGridViewPager1.DisplayColumns = @"Num,Name,TEL,Fax,Address,AreaInfoName,OrganisationName";
-            this.winGridViewPager1.DataSource = new WHC.Pager.WinControl.SortableBindingList<VW_Statuion>(_vw_stations.ToList<VW_Statuion>());
-            this.winGridViewPager1.dataGridView1.Refresh();
+            ////每页记录数
+            //this.winGridViewPager1.PagerInfo.PageSize = 10;
+            ////查询
+            //_vw_stations = _task.TaskStation.GetVW_StatuionList(this._sql,this._params, this.winGridViewPager1.PagerInfo.PageSize * (this.winGridViewPager1.PagerInfo.CurrenetPageIndex - 1), this.winGridViewPager1.PagerInfo.PageSize);
+            ////总记录数
+            //this.winGridViewPager1.PagerInfo.RecordCount = _task.TaskStation.GetVW_StatuionList(this._sql,this._params);           
+            ////显示哪些列
+            //this.winGridViewPager1.DisplayColumns = @"Num,Name,TEL,Fax,Address,AreaInfoName,OrganisationName";
+            //this.winGridViewPager1.DataSource = new WHC.Pager.WinControl.SortableBindingList<VW_Statuion>(_vw_stations.ToList<VW_Statuion>());
+            //this.winGridViewPager1.dataGridView1.Refresh();
         }
         #endregion
         #region event
@@ -109,7 +105,7 @@ namespace Eulei.Map
 
         private void winGridViewPager1_OnDeleteSelected(object sender, EventArgs e)
         {
-            DataGridView grid = this.winGridViewPager1.dataGridView1 as DataGridView;
+            DataGridView grid = this.dgv_main;
             if (grid != null)
             {
                 foreach (DataGridViewRow row in grid.SelectedRows)
@@ -128,7 +124,7 @@ namespace Eulei.Map
 
         private void winGridViewPager1_OnEditSelected(object sender, EventArgs e)
         {
-            DataGridView grid = this.winGridViewPager1.dataGridView1 as DataGridView;
+             DataGridView grid = this.dgv_main;
             if (grid != null)
             {
                 foreach (DataGridViewRow row in grid.SelectedRows)
@@ -151,47 +147,9 @@ namespace Eulei.Map
                 BindData();
             }
         }
+ 
 
-        private void winGridViewPager1_OnStartExport(object sender, EventArgs e)
-        {
-            PagerInfo pagerInfo = new PagerInfo();
-            pagerInfo.CurrenetPageIndex = 1;
-            pagerInfo.PageSize = int.MaxValue;
-            DataTable _table = new DataTable("fillDataTable");
-            _table.Columns.Add("ID", typeof(Guid));
-            _table.Columns[0].AutoIncrement = true;
-            _table.Columns.Add("Num", typeof(string));
-            _table.Columns.Add("Name", typeof(string));
-            _table.Columns.Add("Address", typeof(string));
-            _table.Columns.Add("TEL", typeof(string));
-            _table.Columns.Add("Fax", typeof(string));
-            _table.Columns.Add("Description", typeof(string));
-            _table.Columns.Add("Lon", typeof(double));
-            _table.Columns.Add("Lat", typeof(double));
-            _table.Columns.Add("AreaInfoName", typeof(string));
-            _table.Columns.Add("OrganisationName", typeof(string));
-            foreach (var item in this._vw_stations)
-            {
-                _table.Rows.Add(new object[]{ item.ID
-                    , item.Num
-                    , item.Name
-                    , item.Address
-                    , item.TEL
-                    , item.Fax
-                    , item.Description
-                    , item.lon
-                    , item.lat
-                ,item.AreaInfoName
-                ,item.OrganisationName});
-            }
 
-            this.winGridViewPager1.AllToExport = _table;
-        }
-
-        private void winGridViewPager1_OnPageChanged(object sender, EventArgs e)
-        {
-            BindData();
-        }
         private void bt_reset_Click(object sender, EventArgs e)
         {
             this._sql = " 1=1 ";
@@ -315,6 +273,11 @@ namespace Eulei.Map
             this.BindData();
         }
         #endregion
+
+        private void pager1_CurrentPageIndexChanged(object sender, MyControl.CurrentPageIndexChangedEventArgs e)
+        {
+            this.BindData();
+        }
 
 
     }

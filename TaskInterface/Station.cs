@@ -10,7 +10,7 @@ namespace TaskInterface
     /// </summary>
     public class Station
     {
-        private Guid _id=Guid.NewGuid();
+        private Guid _id = Guid.NewGuid();
         /// <summary>
         /// ID：GUID
         /// </summary>
@@ -29,14 +29,14 @@ namespace TaskInterface
             }
         }
 
-        private string _num=string.Empty;
+        private string _num = string.Empty;
         /// <summary>
         /// 编号
         /// </summary>
         public string Num
         {
             get
-            {                
+            {
                 return this._num;
             }
             set
@@ -138,8 +138,8 @@ namespace TaskInterface
             }
             set
             {
-               // if (value!=null)
-                    this._lon = value;
+                // if (value!=null)
+                this._lon = value;
             }
         }
         private double _lat = 0.0;
@@ -155,10 +155,10 @@ namespace TaskInterface
             set
             {
                 //if (value != null)
-                    this._lat = value;
+                this._lat = value;
             }
         }
-        private Guid _areaID=Guid.NewGuid();
+        private Guid _areaID = Guid.NewGuid();
         /// <summary>
         /// AreaID区域ID：GUID
         /// </summary>
@@ -176,7 +176,7 @@ namespace TaskInterface
                     this._areaID = value;
             }
         }
-        private Guid _organisationID=Guid.NewGuid();
+        private Guid _organisationID = Guid.NewGuid();
         /// <summary>
         /// OrganizationID机构ID：GUID
         /// </summary>
@@ -192,6 +192,23 @@ namespace TaskInterface
             {
                 if (value != null)
                     this._organisationID = value;
+            }
+        }
+
+        private string _imageName = string.Empty;
+        /// <summary>
+        /// 图标信息
+        /// </summary>
+        public string ImageName
+        {
+            get
+            {
+                return this._imageName;
+            }
+            set
+            {
+                if (value != null)
+                    this._imageName = value;
             }
         }
     }

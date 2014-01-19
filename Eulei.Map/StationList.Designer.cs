@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StationList));
+            Eulei.Map.MyControl.CurrentPageIndexChangedEventArgs currentPageIndexChangedEventArgs1 = new Eulei.Map.MyControl.CurrentPageIndexChangedEventArgs();
+            Eulei.Map.Code.PageInfo pageInfo1 = new Eulei.Map.Code.PageInfo();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,6 +45,7 @@
             this.cb_area = new System.Windows.Forms.ComboBox();
             this.cb_organisation = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_reset = new System.Windows.Forms.Button();
             this.bt_search = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -50,9 +53,22 @@
             this.tsb_edit = new System.Windows.Forms.ToolStripButton();
             this.tsb_del = new System.Windows.Forms.ToolStripButton();
             this.tsb_refresh = new System.Windows.Forms.ToolStripButton();
-            this.winGridViewPager1 = new WHC.Pager.WinControl.WinGridViewPager();
+            this.dgv_main = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.areaInfoNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.organisationNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.faxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stationInfoPrincipalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stationInfoPrincipalTELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stationInfoSetLevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stationInfoPostalCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stationInfoBusinessModelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bs_main = new System.Windows.Forms.BindingSource(this.components);
-            this.bt_reset = new System.Windows.Forms.Button();
+            this.pager1 = new Eulei.Map.MyControl.Pager();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,6 +77,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_main)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +95,8 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.winGridViewPager1);
+            this.splitContainer1.Panel2.Controls.Add(this.pager1);
+            this.splitContainer1.Panel2.Controls.Add(this.dgv_main);
             this.splitContainer1.Size = new System.Drawing.Size(755, 608);
             this.splitContainer1.SplitterDistance = 156;
             this.splitContainer1.SplitterWidth = 1;
@@ -209,6 +227,16 @@
             this.panel1.Size = new System.Drawing.Size(239, 44);
             this.panel1.TabIndex = 10;
             // 
+            // bt_reset
+            // 
+            this.bt_reset.Location = new System.Drawing.Point(113, 3);
+            this.bt_reset.Name = "bt_reset";
+            this.bt_reset.Size = new System.Drawing.Size(75, 23);
+            this.bt_reset.TabIndex = 1;
+            this.bt_reset.Text = "重置";
+            this.bt_reset.UseVisualStyleBackColor = true;
+            this.bt_reset.Click += new System.EventHandler(this.bt_reset_Click);
+            // 
             // bt_search
             // 
             this.bt_search.Location = new System.Drawing.Point(31, 3);
@@ -277,32 +305,133 @@
             this.tsb_refresh.Text = "刷新";
             this.tsb_refresh.Click += new System.EventHandler(this.winGridViewPager1_OnRefresh);
             // 
-            // winGridViewPager1
+            // dgv_main
             // 
-            this.winGridViewPager1.AppendedMenu = null;
-            this.winGridViewPager1.DataSource = null;
-            this.winGridViewPager1.DisplayColumns = "";
-            this.winGridViewPager1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.winGridViewPager1.Location = new System.Drawing.Point(0, 0);
-            this.winGridViewPager1.MinimumSize = new System.Drawing.Size(540, 0);
-            this.winGridViewPager1.Name = "winGridViewPager1";
-            this.winGridViewPager1.PrintTitle = "";
-            this.winGridViewPager1.Size = new System.Drawing.Size(755, 451);
-            this.winGridViewPager1.TabIndex = 0;
+            this.dgv_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_main.AutoGenerateColumns = false;
+            this.dgv_main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_main.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.numDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.areaInfoNameDataGridViewTextBoxColumn,
+            this.organisationNameDataGridViewTextBoxColumn,
+            this.tELDataGridViewTextBoxColumn,
+            this.faxDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.stationInfoPrincipalDataGridViewTextBoxColumn,
+            this.stationInfoPrincipalTELDataGridViewTextBoxColumn,
+            this.stationInfoSetLevelDataGridViewTextBoxColumn,
+            this.stationInfoPostalCodeDataGridViewTextBoxColumn,
+            this.stationInfoBusinessModelDataGridViewTextBoxColumn});
+            this.dgv_main.DataSource = this.bs_main;
+            this.dgv_main.Location = new System.Drawing.Point(3, 3);
+            this.dgv_main.MultiSelect = false;
+            this.dgv_main.Name = "dgv_main";
+            this.dgv_main.RowTemplate.Height = 23;
+            this.dgv_main.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_main.Size = new System.Drawing.Size(747, 429);
+            this.dgv_main.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
+            // numDataGridViewTextBoxColumn
+            // 
+            this.numDataGridViewTextBoxColumn.DataPropertyName = "Num";
+            this.numDataGridViewTextBoxColumn.HeaderText = "网点编号";
+            this.numDataGridViewTextBoxColumn.Name = "numDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "网点名称";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // areaInfoNameDataGridViewTextBoxColumn
+            // 
+            this.areaInfoNameDataGridViewTextBoxColumn.DataPropertyName = "AreaInfoName";
+            this.areaInfoNameDataGridViewTextBoxColumn.HeaderText = "区域";
+            this.areaInfoNameDataGridViewTextBoxColumn.Name = "areaInfoNameDataGridViewTextBoxColumn";
+            // 
+            // organisationNameDataGridViewTextBoxColumn
+            // 
+            this.organisationNameDataGridViewTextBoxColumn.DataPropertyName = "OrganisationName";
+            this.organisationNameDataGridViewTextBoxColumn.HeaderText = "机构";
+            this.organisationNameDataGridViewTextBoxColumn.Name = "organisationNameDataGridViewTextBoxColumn";
+            // 
+            // tELDataGridViewTextBoxColumn
+            // 
+            this.tELDataGridViewTextBoxColumn.DataPropertyName = "TEL";
+            this.tELDataGridViewTextBoxColumn.HeaderText = "电话";
+            this.tELDataGridViewTextBoxColumn.Name = "tELDataGridViewTextBoxColumn";
+            // 
+            // faxDataGridViewTextBoxColumn
+            // 
+            this.faxDataGridViewTextBoxColumn.DataPropertyName = "Fax";
+            this.faxDataGridViewTextBoxColumn.HeaderText = "传真";
+            this.faxDataGridViewTextBoxColumn.Name = "faxDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "地址";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // stationInfoPrincipalDataGridViewTextBoxColumn
+            // 
+            this.stationInfoPrincipalDataGridViewTextBoxColumn.DataPropertyName = "StationInfoPrincipal";
+            this.stationInfoPrincipalDataGridViewTextBoxColumn.HeaderText = "负责人";
+            this.stationInfoPrincipalDataGridViewTextBoxColumn.Name = "stationInfoPrincipalDataGridViewTextBoxColumn";
+            // 
+            // stationInfoPrincipalTELDataGridViewTextBoxColumn
+            // 
+            this.stationInfoPrincipalTELDataGridViewTextBoxColumn.DataPropertyName = "StationInfoPrincipalTEL";
+            this.stationInfoPrincipalTELDataGridViewTextBoxColumn.HeaderText = "负责人电话";
+            this.stationInfoPrincipalTELDataGridViewTextBoxColumn.Name = "stationInfoPrincipalTELDataGridViewTextBoxColumn";
+            // 
+            // stationInfoSetLevelDataGridViewTextBoxColumn
+            // 
+            this.stationInfoSetLevelDataGridViewTextBoxColumn.DataPropertyName = "StationInfoSetLevel";
+            this.stationInfoSetLevelDataGridViewTextBoxColumn.HeaderText = "设置等级";
+            this.stationInfoSetLevelDataGridViewTextBoxColumn.Name = "stationInfoSetLevelDataGridViewTextBoxColumn";
+            // 
+            // stationInfoPostalCodeDataGridViewTextBoxColumn
+            // 
+            this.stationInfoPostalCodeDataGridViewTextBoxColumn.DataPropertyName = "StationInfoPostalCode";
+            this.stationInfoPostalCodeDataGridViewTextBoxColumn.HeaderText = "邮政编码";
+            this.stationInfoPostalCodeDataGridViewTextBoxColumn.Name = "stationInfoPostalCodeDataGridViewTextBoxColumn";
+            // 
+            // stationInfoBusinessModelDataGridViewTextBoxColumn
+            // 
+            this.stationInfoBusinessModelDataGridViewTextBoxColumn.DataPropertyName = "StationInfoBusinessModel";
+            this.stationInfoBusinessModelDataGridViewTextBoxColumn.HeaderText = "营业模式";
+            this.stationInfoBusinessModelDataGridViewTextBoxColumn.Name = "stationInfoBusinessModelDataGridViewTextBoxColumn";
             // 
             // bs_main
             // 
             this.bs_main.DataSource = typeof(TaskInterface.VW_Statuion);
             // 
-            // bt_reset
+            // pager1
             // 
-            this.bt_reset.Location = new System.Drawing.Point(113, 3);
-            this.bt_reset.Name = "bt_reset";
-            this.bt_reset.Size = new System.Drawing.Size(75, 23);
-            this.bt_reset.TabIndex = 1;
-            this.bt_reset.Text = "重置";
-            this.bt_reset.UseVisualStyleBackColor = true;
-            this.bt_reset.Click += new System.EventHandler(this.bt_reset_Click);
+            this.pager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pager1.Location = new System.Drawing.Point(3, 432);
+            this.pager1.Name = "pager1";
+            pageInfo1.CurrentPageIndex = 1;
+            pageInfo1.PageSize = 0;
+            pageInfo1.RecordCount = 0;
+            currentPageIndexChangedEventArgs1.PageInfo = pageInfo1;
+            this.pager1.PageInfoEventArgs = currentPageIndexChangedEventArgs1;
+            this.pager1.Size = new System.Drawing.Size(747, 25);
+            this.pager1.TabIndex = 1;
+            this.pager1.CurrentPageIndexChanged += new Eulei.Map.MyControl.CurrentPageIndexChangedEventHandler(this.pager1_CurrentPageIndexChanged);
             // 
             // StationList
             // 
@@ -311,6 +440,7 @@
             this.ClientSize = new System.Drawing.Size(755, 608);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "StationList";
@@ -327,6 +457,7 @@
             this.panel1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_main)).EndInit();
             this.ResumeLayout(false);
 
@@ -354,9 +485,23 @@
         private System.Windows.Forms.ToolStripButton tsb_del;
         private System.Windows.Forms.ToolStripButton tsb_refresh;
         private System.Windows.Forms.BindingSource bs_main;
-        private WHC.Pager.WinControl.WinGridViewPager winGridViewPager1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bt_reset;
+        private System.Windows.Forms.DataGridView dgv_main;
+        private MyControl.Pager pager1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn areaInfoNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn organisationNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tELDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn faxDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stationInfoPrincipalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stationInfoPrincipalTELDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stationInfoSetLevelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stationInfoPostalCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stationInfoBusinessModelDataGridViewTextBoxColumn;
 
 
     }

@@ -47,6 +47,8 @@ namespace DBTask
                 _listItem.AreaID = item.StationAreaID;
                 //if (!item.IsStationOrganisationIDNull())
                 _listItem.OrganisationID = item.StationOrganisationID;
+                if (!item.IsStationImageNameNull())
+                    _listItem.ImageName = item.StationImageName;
                 if (!item.IsStationInfoIDNull())
                     _listItem.StationInfoID = item.StationInfoID;
                 if (!item.IsStationInfoIDNull())
@@ -92,6 +94,91 @@ namespace DBTask
 
             }
             return _listItem;
+        }
+        /// <summary>
+        /// 获取详细网点信息列表所有记录
+        /// </summary>
+        /// <returns>详细网点信息列表所有记录</returns>
+        public List<VW_Statuion> GetVW_StatuionList()
+        {
+            List<VW_Statuion> _lists = new List<VW_Statuion>();
+            using (VW_baseStationTableAdapter _myTA = new VW_baseStationTableAdapter())
+            {
+                foreach (var item in _myTA.GetData())
+                {
+                    VW_Statuion _listItem = new VW_Statuion();
+                    _listItem.ID = item.StationID;
+                    if (!item.IsStationNumNull())
+                        _listItem.Num = item.StationNum;
+                    if (!item.IsStationNameNull())
+                        _listItem.Name = item.StationName;
+                    if (!item.IsStationAddressNull())
+                        _listItem.Address = item.StationAddress;
+                    if (!item.IsStationTELNull())
+                        _listItem.TEL = item.StationTEL;
+                    if (!item.IsStationFaxNull())
+                        _listItem.Fax = item.StationFax;
+                    if (!item.IsStationDescriptionNull())
+                        _listItem.Description = item.StationDescription;
+                    if (!item.IsStationYNull())
+                        _listItem.lat = double.Parse(item.StationY);
+                    if (!item.IsStationXNull())
+                        _listItem.lon = double.Parse(item.StationX);
+                    //if (!item.IsStationAreaIDNull())
+                    _listItem.AreaID = item.StationAreaID;
+                    //if (!item.IsStationOrganisationIDNull())
+                    _listItem.OrganisationID = item.StationOrganisationID;
+                    if (!item.IsStationImageNameNull())
+                        _listItem.ImageName = item.StationImageName;
+                    if (!item.IsStationInfoIDNull())
+                        _listItem.StationInfoID = item.StationInfoID;
+                    if (!item.IsStationInfoIDNull())
+                        _listItem.StationInfoFID = item.StationInfoID;
+                    if (!item.IsStationInfoPrincipalNull())
+                        _listItem.StationInfoPrincipal = item.StationInfoPrincipal;
+                    if (!item.IsStationInfoPrincipalTELNull())
+                        _listItem.StationInfoPrincipalTEL = item.StationInfoPrincipalTEL;
+                    if (!item.IsStationInfoSetLevelNull())
+                        _listItem.StationInfoSetLevel = item.StationInfoSetLevel;
+                    if (!item.IsStationInfoPostalCodeNull())
+                        _listItem.StationInfoPostalCode = item.StationInfoPostalCode;
+                    if (!item.IsStationInfoBusinessModelNull())
+                        _listItem.StationInfoBusinessModel = item.StationInfoBusinessModel;
+                    if (!item.IsStationInfoBusinessScopeNull())
+                        _listItem.StationInfoBusinessScope = item.StationInfoBusinessScope;
+                    if (!item.IsStationInfoOpeningHoursBeginNull())
+                        _listItem.StationInfoOpeningHoursBegin = item.StationInfoOpeningHoursBegin;
+                    if (!item.IsStationInfoOpeningHoursEndNull())
+                        _listItem.StationInfoOpeningHoursEnd = item.StationInfoOpeningHoursEnd;
+                    if (!item.IsOrganisationIDNull())
+                        _listItem.OrganisationID = item.OrganisationID;
+                    if (!item.IsOrganisationFIDNull())
+                        _listItem.OrganisationFID = item.OrganisationFID;
+                    if (!item.IsOrganisationNameNull())
+                        _listItem.OrganisationName = item.OrganisationName;
+                    if (!item.IsOrganisationCenterNameNull())
+                        _listItem.OrganisationCenterName = item.OrganisationCenterName;
+                    if (!item.IsOrganisationCenterXNull())
+                        _listItem.Organisationlon = double.Parse(item.OrganisationCenterX);
+                    if (!item.IsOrganisationCenterYNull())
+                        _listItem.Organisationlat = double.Parse(item.OrganisationCenterY);
+                    if (!item.IsAreaNameNull())
+                        _listItem.AreaInfoName = item.AreaName;
+                    if (!item.IsAreaCenterXNull())
+                        _listItem.AreaInfolon = double.Parse(item.AreaCenterX);
+                    if (!item.IsAreaCenterYNull())
+                        _listItem.AreaInfolat = double.Parse(item.AreaCenterY);
+                    if (!item.IsAreaEasyCodeNull())
+                        _listItem.AreaInfoEasyCode = item.AreaEasyCode;
+                    if (!item.IsAreaPostalCodeNull())
+                        _listItem.AreaInfoPostalCode = item.AreaPostalCode;
+
+
+
+                    _lists.Add(_listItem);
+                }
+            }
+            return _lists;
         }
         /// <summary>
         /// 获取详细网点信息列表记录总数
@@ -146,6 +233,8 @@ namespace DBTask
                     _listItem.AreaID = item.StationAreaID;
                     //if (!item.IsStationOrganisationIDNull())
                     _listItem.OrganisationID = item.StationOrganisationID;
+                    if (!item.IsStationImageNameNull())
+                        _listItem.ImageName = item.StationImageName;
                     if (!item.IsStationInfoIDNull())
                         _listItem.StationInfoID = item.StationInfoID;
                     if (!item.IsStationInfoIDNull())
@@ -205,7 +294,7 @@ namespace DBTask
             List<Station> _lists = new List<Station>();
             using (baseStationTableAdapter _myTA = new baseStationTableAdapter())
             {
-                foreach (var item in _myTA.GetData().OrderBy(m=>m.StationName))
+                foreach (var item in _myTA.GetData().OrderBy(m => m.StationName))
                 {
                     Station _listItem = new Station();
                     _listItem.ID = item.StationID;
@@ -229,6 +318,8 @@ namespace DBTask
                         _listItem.AreaID = item.StationAreaID;
                     if (!item.IsStationOrganisationIDNull())
                         _listItem.OrganisationID = item.StationOrganisationID;
+                    if (!item.IsStationImageNameNull())
+                        _listItem.ImageName = item.StationImageName;
                     _lists.Add(_listItem);
                 }
             }
@@ -283,6 +374,8 @@ namespace DBTask
                         _listItem.AreaID = item.StationAreaID;
                     if (!item.IsStationOrganisationIDNull())
                         _listItem.OrganisationID = item.StationOrganisationID;
+                    if (!item.IsStationImageNameNull())
+                        _listItem.ImageName = item.StationImageName;
 
                 }
             }
@@ -326,6 +419,8 @@ namespace DBTask
                         _listItem.AreaID = item.StationAreaID;
                     if (!item.IsStationOrganisationIDNull())
                         _listItem.OrganisationID = item.StationOrganisationID;
+                    if (!item.IsStationImageNameNull())
+                        _listItem.ImageName = item.StationImageName;
                 }
             }
             catch (Exception ex)
@@ -357,6 +452,7 @@ namespace DBTask
                         , station.lat.ToString()
                         , station.AreaID
                         , station.OrganisationID
+                        , station.ImageName
                         );
                 }
             }
@@ -390,6 +486,7 @@ namespace DBTask
                     _item.StationY = station.lat.ToString();
                     _item.StationAreaID = station.AreaID;
                     _item.StationOrganisationID = station.OrganisationID;
+                    _item.StationImageName = station.ImageName;
                     _myTA.Update(_item);
                 }
             }
@@ -603,7 +700,7 @@ namespace DBTask
             List<AreaInfo> _lists = new List<AreaInfo>();
             using (AreaInfoTableAdapter _myTA = new AreaInfoTableAdapter())
             {
-                var _areaList=_myTA.GetData().OrderBy(m=>m.AreaName);
+                var _areaList = _myTA.GetData().OrderBy(m => m.AreaName);
                 foreach (var item in _areaList)
                 {
                     AreaInfo _listItem = new AreaInfo();
@@ -736,7 +833,7 @@ namespace DBTask
             List<Organisation> _lists = new List<Organisation>();
             using (OrganisationTableAdapter _myTA = new OrganisationTableAdapter())
             {
-                foreach (var item in _myTA.GetData().OrderBy(m=>m.OrganisationName))
+                foreach (var item in _myTA.GetData().OrderBy(m => m.OrganisationName))
                 {
                     Organisation _listItem = new Organisation();
                     _listItem.ID = item.OrganisationID;

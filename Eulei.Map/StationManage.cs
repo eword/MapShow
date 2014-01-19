@@ -11,16 +11,23 @@ using Eulei.Map.Code;
 namespace Eulei.Map
 {
     public partial class StationManage : Form
-    {
+    {     
         #region field
         private FormStatus _status;
         private static StationManage _Init;
-        private Station _station;
+        private Station _station;  
+        List<KeyValuePair<string, string>> _imageNames = new List<KeyValuePair<string, string>>();
         Task _task;
         #endregion
         private StationManage(FormStatus status, Guid id)
         {
             InitializeComponent();
+            _imageNames.Add(new KeyValuePair<string, string>("市级S", "Sico"));
+            _imageNames.Add(new KeyValuePair<string, string>("区级Q", "Qico"));
+            _imageNames.Add(new KeyValuePair<string, string>("县级X", "Xico"));
+            this.cbb_ImageName.DataSource = this._imageNames;
+            this.cbb_ImageName.DisplayMember = "key";
+            this.cbb_ImageName.ValueMember = "value";
             _task = Task.Init();
             if (status.Equals(FormStatus.Add))
             {
@@ -67,6 +74,8 @@ namespace Eulei.Map
                 _str += "请选择区域\r\n";
             if (string.IsNullOrEmpty(this.cb_organization.Text))
                 _str += "请选择机构\r\n";
+            if (string.IsNullOrEmpty(this.cbb_ImageName.Text))
+                _str += "请选择图标\r\n";
             if (!string.IsNullOrEmpty(_str))
             {
                 MessageBox.Show(_str);

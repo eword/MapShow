@@ -41,6 +41,12 @@
             this.tstb_searchText = new System.Windows.Forms.ToolStripTextBox();
             this.tsb_search = new System.Windows.Forms.ToolStripButton();
             this.dgv_main = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.centerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.latDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.organisationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -52,12 +58,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.centerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.latDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.organisationBindingSource)).BeginInit();
@@ -170,6 +170,54 @@
             this.dgv_main.Size = new System.Drawing.Size(774, 402);
             this.dgv_main.TabIndex = 1;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // fIDDataGridViewTextBoxColumn
+            // 
+            this.fIDDataGridViewTextBoxColumn.DataPropertyName = "FID";
+            this.fIDDataGridViewTextBoxColumn.HeaderText = "FID";
+            this.fIDDataGridViewTextBoxColumn.Name = "fIDDataGridViewTextBoxColumn";
+            this.fIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "机构名称";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 120;
+            // 
+            // centerNameDataGridViewTextBoxColumn
+            // 
+            this.centerNameDataGridViewTextBoxColumn.DataPropertyName = "CenterName";
+            this.centerNameDataGridViewTextBoxColumn.HeaderText = "主要办公点名称";
+            this.centerNameDataGridViewTextBoxColumn.Name = "centerNameDataGridViewTextBoxColumn";
+            this.centerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.centerNameDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // lonDataGridViewTextBoxColumn
+            // 
+            this.lonDataGridViewTextBoxColumn.DataPropertyName = "lon";
+            this.lonDataGridViewTextBoxColumn.HeaderText = "主要办公点经度";
+            this.lonDataGridViewTextBoxColumn.Name = "lonDataGridViewTextBoxColumn";
+            this.lonDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lonDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // latDataGridViewTextBoxColumn
+            // 
+            this.latDataGridViewTextBoxColumn.DataPropertyName = "lat";
+            this.latDataGridViewTextBoxColumn.HeaderText = "主要办公点纬度";
+            this.latDataGridViewTextBoxColumn.Name = "latDataGridViewTextBoxColumn";
+            this.latDataGridViewTextBoxColumn.ReadOnly = true;
+            this.latDataGridViewTextBoxColumn.Width = 180;
+            // 
             // organisationBindingSource
             // 
             this.organisationBindingSource.DataSource = typeof(TaskInterface.Organisation);
@@ -268,54 +316,6 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // fIDDataGridViewTextBoxColumn
-            // 
-            this.fIDDataGridViewTextBoxColumn.DataPropertyName = "FID";
-            this.fIDDataGridViewTextBoxColumn.HeaderText = "FID";
-            this.fIDDataGridViewTextBoxColumn.Name = "fIDDataGridViewTextBoxColumn";
-            this.fIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "Name";
-            this.name.HeaderText = "机构名称";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 120;
-            // 
-            // centerNameDataGridViewTextBoxColumn
-            // 
-            this.centerNameDataGridViewTextBoxColumn.DataPropertyName = "CenterName";
-            this.centerNameDataGridViewTextBoxColumn.HeaderText = "主要办公点名称";
-            this.centerNameDataGridViewTextBoxColumn.Name = "centerNameDataGridViewTextBoxColumn";
-            this.centerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.centerNameDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // lonDataGridViewTextBoxColumn
-            // 
-            this.lonDataGridViewTextBoxColumn.DataPropertyName = "lon";
-            this.lonDataGridViewTextBoxColumn.HeaderText = "主要办公点经度";
-            this.lonDataGridViewTextBoxColumn.Name = "lonDataGridViewTextBoxColumn";
-            this.lonDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lonDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // latDataGridViewTextBoxColumn
-            // 
-            this.latDataGridViewTextBoxColumn.DataPropertyName = "lat";
-            this.latDataGridViewTextBoxColumn.HeaderText = "主要办公点纬度";
-            this.latDataGridViewTextBoxColumn.Name = "latDataGridViewTextBoxColumn";
-            this.latDataGridViewTextBoxColumn.ReadOnly = true;
-            this.latDataGridViewTextBoxColumn.Width = 180;
-            // 
             // OrganisationList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -325,6 +325,7 @@
             this.Controls.Add(this.dgv_main);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrganisationList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "机构列表";

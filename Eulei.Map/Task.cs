@@ -6,7 +6,7 @@ using TaskInterface;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.Data;
-using WHC.Pager.Entity;
+using Eulei.Map.Code;
 
 namespace Eulei.Map
 {
@@ -49,9 +49,9 @@ namespace Eulei.Map
 
 
 
-       public  DataTable GetStationDataTable(PagerInfo _pageInfo)
+       public  DataTable GetStationDataTable(PageInfo _pageInfo)
         {
-           return _task.TaskStation.GetStationList(_pageInfo.PageSize*(_pageInfo.CurrenetPageIndex-1),_pageInfo.PageSize);
+           return _task.TaskStation.GetStationList(_pageInfo.PageSize*(_pageInfo.CurrentPageIndex-1),_pageInfo.PageSize);
         }
         /// <summary>
         /// 释放资源

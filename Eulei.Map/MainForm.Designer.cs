@@ -30,14 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.VW_StatuionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cms_listView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmi_showSatationForListView = new System.Windows.Forms.ToolStripMenuItem();
             this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.MainToolStrip = new System.Windows.Forms.ToolStrip();
             this.tsb_NoSelected = new System.Windows.Forms.ToolStripButton();
@@ -45,10 +44,9 @@
             this.tsb_zoomOut = new System.Windows.Forms.ToolStripButton();
             this.tsb_Pan = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsb_showAllTip = new System.Windows.Forms.ToolStripButton();
-            this.tsb_hideAllTip = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsb_fullShowMap = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsb_reset = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmi_systemManage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_openGST = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +59,7 @@
             this.tsmi_stationList = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_tools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_skin = new System.Windows.Forms.ToolStripMenuItem();
+            this.树形测试ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
@@ -87,8 +86,7 @@
             this.rv_main = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tsc_main = new System.Windows.Forms.ToolStripContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsb_reset = new System.Windows.Forms.ToolStripButton();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.VW_StatuionBindingSource)).BeginInit();
             this.cms_listView.SuspendLayout();
             this.MainToolStrip.SuspendLayout();
@@ -154,12 +152,6 @@
             this.miniToolStrip.Size = new System.Drawing.Size(1141, 22);
             this.miniToolStrip.TabIndex = 2;
             // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(131, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
             // TopToolStripPanel
             // 
             this.TopToolStripPanel.Location = new System.Drawing.Point(0, 0);
@@ -178,9 +170,6 @@
             this.tsb_zoomOut,
             this.tsb_Pan,
             this.toolStripSeparator1,
-            this.tsb_showAllTip,
-            this.tsb_hideAllTip,
-            this.toolStripSeparator2,
             this.tsb_fullShowMap,
             this.toolStripSeparator3,
             this.tsb_reset});
@@ -240,33 +229,6 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
-            // tsb_showAllTip
-            // 
-            this.tsb_showAllTip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsb_showAllTip.Image = ((System.Drawing.Image)(resources.GetObject("tsb_showAllTip.Image")));
-            this.tsb_showAllTip.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_showAllTip.Name = "tsb_showAllTip";
-            this.tsb_showAllTip.Size = new System.Drawing.Size(60, 36);
-            this.tsb_showAllTip.Tag = "notChange";
-            this.tsb_showAllTip.Text = "显示标签";
-            this.tsb_showAllTip.Click += new System.EventHandler(this.tsb_showAllTip_Click);
-            // 
-            // tsb_hideAllTip
-            // 
-            this.tsb_hideAllTip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsb_hideAllTip.Image = ((System.Drawing.Image)(resources.GetObject("tsb_hideAllTip.Image")));
-            this.tsb_hideAllTip.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_hideAllTip.Name = "tsb_hideAllTip";
-            this.tsb_hideAllTip.Size = new System.Drawing.Size(60, 36);
-            this.tsb_hideAllTip.Tag = "notChange";
-            this.tsb_hideAllTip.Text = "隐藏标签";
-            this.tsb_hideAllTip.Click += new System.EventHandler(this.tsb_hideAllTip_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
-            // 
             // tsb_fullShowMap
             // 
             this.tsb_fullShowMap.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -277,6 +239,22 @@
             this.tsb_fullShowMap.Tag = "notChange";
             this.tsb_fullShowMap.Text = "地图全屏";
             this.tsb_fullShowMap.Click += new System.EventHandler(this.tsb_fullShowMap_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            // 
+            // tsb_reset
+            // 
+            this.tsb_reset.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsb_reset.Image = ((System.Drawing.Image)(resources.GetObject("tsb_reset.Image")));
+            this.tsb_reset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_reset.Name = "tsb_reset";
+            this.tsb_reset.Size = new System.Drawing.Size(36, 36);
+            this.tsb_reset.Tag = "notChange";
+            this.tsb_reset.Text = "重置";
+            this.tsb_reset.Click += new System.EventHandler(this.bt_reset_Click);
             // 
             // menuStrip1
             // 
@@ -366,7 +344,8 @@
             // tsmi_tools
             // 
             this.tsmi_tools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_skin});
+            this.tsmi_skin,
+            this.树形测试ToolStripMenuItem});
             this.tsmi_tools.Name = "tsmi_tools";
             this.tsmi_tools.Size = new System.Drawing.Size(44, 21);
             this.tsmi_tools.Text = "工具";
@@ -378,6 +357,13 @@
             this.tsmi_skin.Text = "外观设置";
             this.tsmi_skin.Visible = false;
             this.tsmi_skin.Click += new System.EventHandler(this.tsmi_skin_Click);
+            // 
+            // 树形测试ToolStripMenuItem
+            // 
+            this.树形测试ToolStripMenuItem.Name = "树形测试ToolStripMenuItem";
+            this.树形测试ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.树形测试ToolStripMenuItem.Text = "树形测试";
+            this.树形测试ToolStripMenuItem.Click += new System.EventHandler(this.树形测试ToolStripMenuItem_Click);
             // 
             // RightToolStripPanel
             // 
@@ -422,7 +408,7 @@
             this.eP_siteList.Location = new System.Drawing.Point(841, 0);
             this.eP_siteList.Name = "eP_siteList";
             this.eP_siteList.ShowExpandIcon = true;
-            this.eP_siteList.Size = new System.Drawing.Size(300, 644);
+            this.eP_siteList.Size = new System.Drawing.Size(300, 619);
             this.eP_siteList.TabIndex = 4;
             this.eP_siteList.Text = "网点列表";
             // 
@@ -445,7 +431,7 @@
             // sc_main.Panel2
             // 
             this.sc_main.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.sc_main.Size = new System.Drawing.Size(298, 617);
+            this.sc_main.Size = new System.Drawing.Size(298, 592);
             this.sc_main.SplitterDistance = 31;
             this.sc_main.SplitterWidth = 1;
             this.sc_main.TabIndex = 2;
@@ -493,7 +479,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(298, 585);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(298, 560);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lv_main
@@ -506,10 +492,9 @@
             this.lv_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lv_main.Location = new System.Drawing.Point(3, 3);
             this.lv_main.Name = "lv_main";
-            this.lv_main.Size = new System.Drawing.Size(292, 537);
+            this.lv_main.Size = new System.Drawing.Size(292, 512);
             this.lv_main.TabIndex = 0;
             this.lv_main.UseCompatibleStateImageBehavior = false;
-            this.lv_main.ItemMouseHover += new System.Windows.Forms.ListViewItemMouseHoverEventHandler(this.lv_main_ItemMouseHover);
             this.lv_main.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lv_main_MouseDoubleClick);
             // 
             // columnHeader1
@@ -529,7 +514,7 @@
             this.lb_pageInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_pageInfo.Location = new System.Drawing.Point(3, 567);
+            this.lb_pageInfo.Location = new System.Drawing.Point(3, 542);
             this.lb_pageInfo.Name = "lb_pageInfo";
             this.lb_pageInfo.Size = new System.Drawing.Size(292, 18);
             this.lb_pageInfo.TabIndex = 1;
@@ -543,7 +528,7 @@
             this.panel1.Controls.Add(this.llb_first);
             this.panel1.Controls.Add(this.llb_down);
             this.panel1.Controls.Add(this.llb_up);
-            this.panel1.Location = new System.Drawing.Point(34, 546);
+            this.panel1.Location = new System.Drawing.Point(34, 521);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(230, 18);
             this.panel1.TabIndex = 2;
@@ -560,6 +545,7 @@
             this.llb_last.TabIndex = 3;
             this.llb_last.TabStop = true;
             this.llb_last.Text = "末页";
+            this.llb_last.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_last_LinkClicked);
             // 
             // llb_first
             // 
@@ -573,6 +559,7 @@
             this.llb_first.TabIndex = 2;
             this.llb_first.TabStop = true;
             this.llb_first.Text = "首页";
+            this.llb_first.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_first_LinkClicked);
             // 
             // llb_down
             // 
@@ -586,6 +573,7 @@
             this.llb_down.TabIndex = 1;
             this.llb_down.TabStop = true;
             this.llb_down.Text = "下一页";
+            this.llb_down.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_down_LinkClicked);
             // 
             // llb_up
             // 
@@ -599,6 +587,7 @@
             this.llb_up.TabIndex = 0;
             this.llb_up.TabStop = true;
             this.llb_up.Text = "上一页";
+            this.llb_up.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_up_LinkClicked);
             // 
             // tc_main
             // 
@@ -608,7 +597,7 @@
             this.tc_main.Location = new System.Drawing.Point(0, 39);
             this.tc_main.Name = "tc_main";
             this.tc_main.SelectedIndex = 0;
-            this.tc_main.Size = new System.Drawing.Size(841, 605);
+            this.tc_main.Size = new System.Drawing.Size(841, 580);
             this.tc_main.TabIndex = 5;
             // 
             // tabPage1
@@ -617,7 +606,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(833, 579);
+            this.tabPage1.Size = new System.Drawing.Size(833, 554);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "地图";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -629,11 +618,9 @@
             this.axMap1.Location = new System.Drawing.Point(3, 3);
             this.axMap1.Name = "axMap1";
             this.axMap1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMap1.OcxState")));
-            this.axMap1.Size = new System.Drawing.Size(827, 573);
+            this.axMap1.Size = new System.Drawing.Size(827, 548);
             this.axMap1.TabIndex = 0;
             this.axMap1.MouseMoveEvent += new AxMapXLib.CMapXEvents_MouseMoveEventHandler(this.axMap1_MouseMoveEvent);
-            this.axMap1.SelectionChanged += new System.EventHandler(this.axMap1_SelectionChanged);
-            this.axMap1.ToolUsed += new AxMapXLib.CMapXEvents_ToolUsedEventHandler(this.axMap1_ToolUsed);
             this.axMap1.MapViewChanged += new System.EventHandler(this.axMap1_MapViewChanged);
             // 
             // tp_report
@@ -642,7 +629,7 @@
             this.tp_report.Location = new System.Drawing.Point(4, 22);
             this.tp_report.Name = "tp_report";
             this.tp_report.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_report.Size = new System.Drawing.Size(714, 579);
+            this.tp_report.Size = new System.Drawing.Size(833, 554);
             this.tp_report.TabIndex = 1;
             this.tp_report.Text = "报表";
             this.tp_report.UseVisualStyleBackColor = true;
@@ -650,17 +637,20 @@
             // rv_main
             // 
             this.rv_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource5.Name = "DataSet1";
-            reportDataSource5.Value = this.VW_StatuionBindingSource;
-            this.rv_main.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.VW_StatuionBindingSource;
+            this.rv_main.LocalReport.DataSources.Add(reportDataSource1);
             this.rv_main.LocalReport.ReportEmbeddedResource = "Eulei.Map.Report1.rdlc";
             this.rv_main.Location = new System.Drawing.Point(3, 3);
             this.rv_main.Name = "rv_main";
-            this.rv_main.Size = new System.Drawing.Size(708, 573);
+            this.rv_main.Size = new System.Drawing.Size(827, 548);
             this.rv_main.TabIndex = 0;
             // 
             // tsc_main
             // 
+            this.tsc_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tsc_main.BottomToolStripPanelVisible = false;
             // 
             // tsc_main.ContentPanel
@@ -669,13 +659,12 @@
             this.tsc_main.ContentPanel.Controls.Add(this.tc_main);
             this.tsc_main.ContentPanel.Controls.Add(this.MainToolStrip);
             this.tsc_main.ContentPanel.Controls.Add(this.eP_siteList);
-            this.tsc_main.ContentPanel.Size = new System.Drawing.Size(1141, 644);
-            this.tsc_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tsc_main.ContentPanel.Size = new System.Drawing.Size(1141, 619);
             this.tsc_main.LeftToolStripPanelVisible = false;
             this.tsc_main.Location = new System.Drawing.Point(0, 0);
             this.tsc_main.Name = "tsc_main";
             this.tsc_main.RightToolStripPanelVisible = false;
-            this.tsc_main.Size = new System.Drawing.Size(1141, 669);
+            this.tsc_main.Size = new System.Drawing.Size(1141, 644);
             this.tsc_main.TabIndex = 5;
             this.tsc_main.Text = "toolStripContainer1";
             // 
@@ -685,44 +674,33 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 647);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1141, 22);
-            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripSeparator3
+            // toolStripStatusLabel1
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
-            // 
-            // tsb_reset
-            // 
-            this.tsb_reset.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsb_reset.Image = ((System.Drawing.Image)(resources.GetObject("tsb_reset.Image")));
-            this.tsb_reset.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_reset.Name = "tsb_reset";
-            this.tsb_reset.Size = new System.Drawing.Size(36, 36);
-            this.tsb_reset.Tag = "notChange";
-            this.tsb_reset.Text = "重置";
-            this.tsb_reset.Click += new System.EventHandler(this.bt_reset_Click);
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(131, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1141, 669);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tsc_main);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "泉州市邮政管理局网点分布地图软件主界面草案";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.VW_StatuionBindingSource)).EndInit();
             this.cms_listView.ResumeLayout(false);
@@ -752,6 +730,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -762,16 +741,12 @@
         private System.Windows.Forms.ToolStripMenuItem tsmi_showSatationForListView;
         private System.Windows.Forms.BindingSource VW_StatuionBindingSource;
         private System.Windows.Forms.StatusStrip miniToolStrip;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStrip MainToolStrip;
         private System.Windows.Forms.ToolStripButton tsb_NoSelected;
         private System.Windows.Forms.ToolStripButton tsb_zoomIn;
         private System.Windows.Forms.ToolStripButton tsb_zoomOut;
         private System.Windows.Forms.ToolStripButton tsb_Pan;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton tsb_showAllTip;
-        private System.Windows.Forms.ToolStripButton tsb_hideAllTip;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton tsb_fullShowMap;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmi_systemManage;
@@ -807,14 +782,16 @@
         private System.Windows.Forms.TabPage tp_report;
         private Microsoft.Reporting.WinForms.ReportViewer rv_main;
         private System.Windows.Forms.ToolStripContainer tsc_main;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton tsb_reset;
         private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
         private System.Windows.Forms.ToolStripPanel TopToolStripPanel;
         private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton tsb_reset;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem 树形测试ToolStripMenuItem;
 
 
 

@@ -44,15 +44,15 @@ namespace DBTask.DB {
         
         private configDataTable tableconfig;
         
-        private baseStationDataTable tablebaseStation;
-        
         private stationInfoDataTable tablestationInfo;
-        
-        private VW_baseStationDataTable tableVW_baseStation;
         
         private stationImageInfoDataTable tablestationImageInfo;
         
         private aspnet_UsersDataTable tableaspnet_Users;
+        
+        private baseStationDataTable tablebaseStation;
+        
+        private VW_baseStationDataTable tableVW_baseStation;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -112,20 +112,20 @@ namespace DBTask.DB {
                 if ((ds.Tables["config"] != null)) {
                     base.Tables.Add(new configDataTable(ds.Tables["config"]));
                 }
-                if ((ds.Tables["baseStation"] != null)) {
-                    base.Tables.Add(new baseStationDataTable(ds.Tables["baseStation"]));
-                }
                 if ((ds.Tables["stationInfo"] != null)) {
                     base.Tables.Add(new stationInfoDataTable(ds.Tables["stationInfo"]));
-                }
-                if ((ds.Tables["VW_baseStation"] != null)) {
-                    base.Tables.Add(new VW_baseStationDataTable(ds.Tables["VW_baseStation"]));
                 }
                 if ((ds.Tables["stationImageInfo"] != null)) {
                     base.Tables.Add(new stationImageInfoDataTable(ds.Tables["stationImageInfo"]));
                 }
                 if ((ds.Tables["aspnet_Users"] != null)) {
                     base.Tables.Add(new aspnet_UsersDataTable(ds.Tables["aspnet_Users"]));
+                }
+                if ((ds.Tables["baseStation"] != null)) {
+                    base.Tables.Add(new baseStationDataTable(ds.Tables["baseStation"]));
+                }
+                if ((ds.Tables["VW_baseStation"] != null)) {
+                    base.Tables.Add(new VW_baseStationDataTable(ds.Tables["VW_baseStation"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -249,29 +249,9 @@ namespace DBTask.DB {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public baseStationDataTable baseStation {
-            get {
-                return this.tablebaseStation;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public stationInfoDataTable stationInfo {
             get {
                 return this.tablestationInfo;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public VW_baseStationDataTable VW_baseStation {
-            get {
-                return this.tableVW_baseStation;
             }
         }
         
@@ -292,6 +272,26 @@ namespace DBTask.DB {
         public aspnet_UsersDataTable aspnet_Users {
             get {
                 return this.tableaspnet_Users;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public baseStationDataTable baseStation {
+            get {
+                return this.tablebaseStation;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public VW_baseStationDataTable VW_baseStation {
+            get {
+                return this.tableVW_baseStation;
             }
         }
         
@@ -392,20 +392,20 @@ namespace DBTask.DB {
                 if ((ds.Tables["config"] != null)) {
                     base.Tables.Add(new configDataTable(ds.Tables["config"]));
                 }
-                if ((ds.Tables["baseStation"] != null)) {
-                    base.Tables.Add(new baseStationDataTable(ds.Tables["baseStation"]));
-                }
                 if ((ds.Tables["stationInfo"] != null)) {
                     base.Tables.Add(new stationInfoDataTable(ds.Tables["stationInfo"]));
-                }
-                if ((ds.Tables["VW_baseStation"] != null)) {
-                    base.Tables.Add(new VW_baseStationDataTable(ds.Tables["VW_baseStation"]));
                 }
                 if ((ds.Tables["stationImageInfo"] != null)) {
                     base.Tables.Add(new stationImageInfoDataTable(ds.Tables["stationImageInfo"]));
                 }
                 if ((ds.Tables["aspnet_Users"] != null)) {
                     base.Tables.Add(new aspnet_UsersDataTable(ds.Tables["aspnet_Users"]));
+                }
+                if ((ds.Tables["baseStation"] != null)) {
+                    base.Tables.Add(new baseStationDataTable(ds.Tables["baseStation"]));
+                }
+                if ((ds.Tables["VW_baseStation"] != null)) {
+                    base.Tables.Add(new VW_baseStationDataTable(ds.Tables["VW_baseStation"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -500,22 +500,10 @@ namespace DBTask.DB {
                     this.tableconfig.InitVars();
                 }
             }
-            this.tablebaseStation = ((baseStationDataTable)(base.Tables["baseStation"]));
-            if ((initTable == true)) {
-                if ((this.tablebaseStation != null)) {
-                    this.tablebaseStation.InitVars();
-                }
-            }
             this.tablestationInfo = ((stationInfoDataTable)(base.Tables["stationInfo"]));
             if ((initTable == true)) {
                 if ((this.tablestationInfo != null)) {
                     this.tablestationInfo.InitVars();
-                }
-            }
-            this.tableVW_baseStation = ((VW_baseStationDataTable)(base.Tables["VW_baseStation"]));
-            if ((initTable == true)) {
-                if ((this.tableVW_baseStation != null)) {
-                    this.tableVW_baseStation.InitVars();
                 }
             }
             this.tablestationImageInfo = ((stationImageInfoDataTable)(base.Tables["stationImageInfo"]));
@@ -528,6 +516,18 @@ namespace DBTask.DB {
             if ((initTable == true)) {
                 if ((this.tableaspnet_Users != null)) {
                     this.tableaspnet_Users.InitVars();
+                }
+            }
+            this.tablebaseStation = ((baseStationDataTable)(base.Tables["baseStation"]));
+            if ((initTable == true)) {
+                if ((this.tablebaseStation != null)) {
+                    this.tablebaseStation.InitVars();
+                }
+            }
+            this.tableVW_baseStation = ((VW_baseStationDataTable)(base.Tables["VW_baseStation"]));
+            if ((initTable == true)) {
+                if ((this.tableVW_baseStation != null)) {
+                    this.tableVW_baseStation.InitVars();
                 }
             }
         }
@@ -560,16 +560,16 @@ namespace DBTask.DB {
             base.Tables.Add(this.tableVW_SA_UserInfo);
             this.tableconfig = new configDataTable();
             base.Tables.Add(this.tableconfig);
-            this.tablebaseStation = new baseStationDataTable();
-            base.Tables.Add(this.tablebaseStation);
             this.tablestationInfo = new stationInfoDataTable();
             base.Tables.Add(this.tablestationInfo);
-            this.tableVW_baseStation = new VW_baseStationDataTable();
-            base.Tables.Add(this.tableVW_baseStation);
             this.tablestationImageInfo = new stationImageInfoDataTable();
             base.Tables.Add(this.tablestationImageInfo);
             this.tableaspnet_Users = new aspnet_UsersDataTable();
             base.Tables.Add(this.tableaspnet_Users);
+            this.tablebaseStation = new baseStationDataTable();
+            base.Tables.Add(this.tablebaseStation);
+            this.tableVW_baseStation = new VW_baseStationDataTable();
+            base.Tables.Add(this.tableVW_baseStation);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -634,19 +634,7 @@ namespace DBTask.DB {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializebaseStation() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializestationInfo() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeVW_baseStation() {
             return false;
         }
         
@@ -659,6 +647,18 @@ namespace DBTask.DB {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeaspnet_Users() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializebaseStation() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeVW_baseStation() {
             return false;
         }
         
@@ -748,19 +748,19 @@ namespace DBTask.DB {
         public delegate void configRowChangeEventHandler(object sender, configRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void baseStationRowChangeEventHandler(object sender, baseStationRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void stationInfoRowChangeEventHandler(object sender, stationInfoRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void VW_baseStationRowChangeEventHandler(object sender, VW_baseStationRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void stationImageInfoRowChangeEventHandler(object sender, stationImageInfoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void aspnet_UsersRowChangeEventHandler(object sender, aspnet_UsersRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void baseStationRowChangeEventHandler(object sender, baseStationRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void VW_baseStationRowChangeEventHandler(object sender, VW_baseStationRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3890,412 +3890,6 @@ namespace DBTask.DB {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class baseStationDataTable : global::System.Data.TypedTableBase<baseStationRow> {
-            
-            private global::System.Data.DataColumn columnStationID;
-            
-            private global::System.Data.DataColumn columnStationNum;
-            
-            private global::System.Data.DataColumn columnStationName;
-            
-            private global::System.Data.DataColumn columnStationAddress;
-            
-            private global::System.Data.DataColumn columnStationTEL;
-            
-            private global::System.Data.DataColumn columnStationFax;
-            
-            private global::System.Data.DataColumn columnStationDescription;
-            
-            private global::System.Data.DataColumn columnStationX;
-            
-            private global::System.Data.DataColumn columnStationY;
-            
-            private global::System.Data.DataColumn columnStationAreaID;
-            
-            private global::System.Data.DataColumn columnStationOrganisationID;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public baseStationDataTable() {
-                this.TableName = "baseStation";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal baseStationDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected baseStationDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationIDColumn {
-                get {
-                    return this.columnStationID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationNumColumn {
-                get {
-                    return this.columnStationNum;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationNameColumn {
-                get {
-                    return this.columnStationName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationAddressColumn {
-                get {
-                    return this.columnStationAddress;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationTELColumn {
-                get {
-                    return this.columnStationTEL;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationFaxColumn {
-                get {
-                    return this.columnStationFax;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationDescriptionColumn {
-                get {
-                    return this.columnStationDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationXColumn {
-                get {
-                    return this.columnStationX;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationYColumn {
-                get {
-                    return this.columnStationY;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationAreaIDColumn {
-                get {
-                    return this.columnStationAreaID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationOrganisationIDColumn {
-                get {
-                    return this.columnStationOrganisationID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public baseStationRow this[int index] {
-                get {
-                    return ((baseStationRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event baseStationRowChangeEventHandler baseStationRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event baseStationRowChangeEventHandler baseStationRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event baseStationRowChangeEventHandler baseStationRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event baseStationRowChangeEventHandler baseStationRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddbaseStationRow(baseStationRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public baseStationRow AddbaseStationRow(System.Guid StationID, string StationNum, string StationName, string StationAddress, string StationTEL, string StationFax, string StationDescription, string StationX, string StationY, System.Guid StationAreaID, System.Guid StationOrganisationID) {
-                baseStationRow rowbaseStationRow = ((baseStationRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        StationID,
-                        StationNum,
-                        StationName,
-                        StationAddress,
-                        StationTEL,
-                        StationFax,
-                        StationDescription,
-                        StationX,
-                        StationY,
-                        StationAreaID,
-                        StationOrganisationID};
-                rowbaseStationRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowbaseStationRow);
-                return rowbaseStationRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public baseStationRow FindByStationID(System.Guid StationID) {
-                return ((baseStationRow)(this.Rows.Find(new object[] {
-                            StationID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                baseStationDataTable cln = ((baseStationDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new baseStationDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnStationID = base.Columns["StationID"];
-                this.columnStationNum = base.Columns["StationNum"];
-                this.columnStationName = base.Columns["StationName"];
-                this.columnStationAddress = base.Columns["StationAddress"];
-                this.columnStationTEL = base.Columns["StationTEL"];
-                this.columnStationFax = base.Columns["StationFax"];
-                this.columnStationDescription = base.Columns["StationDescription"];
-                this.columnStationX = base.Columns["StationX"];
-                this.columnStationY = base.Columns["StationY"];
-                this.columnStationAreaID = base.Columns["StationAreaID"];
-                this.columnStationOrganisationID = base.Columns["StationOrganisationID"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnStationID = new global::System.Data.DataColumn("StationID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationID);
-                this.columnStationNum = new global::System.Data.DataColumn("StationNum", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationNum);
-                this.columnStationName = new global::System.Data.DataColumn("StationName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationName);
-                this.columnStationAddress = new global::System.Data.DataColumn("StationAddress", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationAddress);
-                this.columnStationTEL = new global::System.Data.DataColumn("StationTEL", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationTEL);
-                this.columnStationFax = new global::System.Data.DataColumn("StationFax", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationFax);
-                this.columnStationDescription = new global::System.Data.DataColumn("StationDescription", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationDescription);
-                this.columnStationX = new global::System.Data.DataColumn("StationX", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationX);
-                this.columnStationY = new global::System.Data.DataColumn("StationY", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationY);
-                this.columnStationAreaID = new global::System.Data.DataColumn("StationAreaID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationAreaID);
-                this.columnStationOrganisationID = new global::System.Data.DataColumn("StationOrganisationID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationOrganisationID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnStationID}, true));
-                this.columnStationID.AllowDBNull = false;
-                this.columnStationID.Unique = true;
-                this.columnStationNum.MaxLength = 255;
-                this.columnStationName.MaxLength = 255;
-                this.columnStationAddress.MaxLength = 255;
-                this.columnStationTEL.MaxLength = 255;
-                this.columnStationFax.MaxLength = 255;
-                this.columnStationDescription.MaxLength = 536870910;
-                this.columnStationX.MaxLength = 255;
-                this.columnStationY.MaxLength = 255;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public baseStationRow NewbaseStationRow() {
-                return ((baseStationRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new baseStationRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(baseStationRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.baseStationRowChanged != null)) {
-                    this.baseStationRowChanged(this, new baseStationRowChangeEvent(((baseStationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.baseStationRowChanging != null)) {
-                    this.baseStationRowChanging(this, new baseStationRowChangeEvent(((baseStationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.baseStationRowDeleted != null)) {
-                    this.baseStationRowDeleted(this, new baseStationRowChangeEvent(((baseStationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.baseStationRowDeleting != null)) {
-                    this.baseStationRowDeleting(this, new baseStationRowChangeEvent(((baseStationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovebaseStationRow(baseStationRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                StationDataSet ds = new StationDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "baseStationDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class stationInfoDataTable : global::System.Data.TypedTableBase<stationInfoRow> {
             
             private global::System.Data.DataColumn columnStationInfoID;
@@ -4647,761 +4241,6 @@ namespace DBTask.DB {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "stationInfoDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class VW_baseStationDataTable : global::System.Data.TypedTableBase<VW_baseStationRow> {
-            
-            private global::System.Data.DataColumn columnStationID;
-            
-            private global::System.Data.DataColumn columnStationNum;
-            
-            private global::System.Data.DataColumn columnStationName;
-            
-            private global::System.Data.DataColumn columnStationAddress;
-            
-            private global::System.Data.DataColumn columnStationTEL;
-            
-            private global::System.Data.DataColumn columnStationFax;
-            
-            private global::System.Data.DataColumn columnStationDescription;
-            
-            private global::System.Data.DataColumn columnStationX;
-            
-            private global::System.Data.DataColumn columnStationY;
-            
-            private global::System.Data.DataColumn columnStationAreaID;
-            
-            private global::System.Data.DataColumn columnStationOrganisationID;
-            
-            private global::System.Data.DataColumn columnAreaID;
-            
-            private global::System.Data.DataColumn columnAreaName;
-            
-            private global::System.Data.DataColumn columnAreaCenterX;
-            
-            private global::System.Data.DataColumn columnAreaCenterY;
-            
-            private global::System.Data.DataColumn columnAreaPostalCode;
-            
-            private global::System.Data.DataColumn columnAreaEasyCode;
-            
-            private global::System.Data.DataColumn columnOrganisationID;
-            
-            private global::System.Data.DataColumn columnOrganisationName;
-            
-            private global::System.Data.DataColumn columnOrganisationFID;
-            
-            private global::System.Data.DataColumn columnOrganisationCenterX;
-            
-            private global::System.Data.DataColumn columnOrganisationCenterY;
-            
-            private global::System.Data.DataColumn columnOrganisationCenterName;
-            
-            private global::System.Data.DataColumn columnStationInfoID;
-            
-            private global::System.Data.DataColumn columnStationInfoFID;
-            
-            private global::System.Data.DataColumn columnStationInfoPrincipal;
-            
-            private global::System.Data.DataColumn columnStationInfoPrincipalTEL;
-            
-            private global::System.Data.DataColumn columnStationInfoSetLevel;
-            
-            private global::System.Data.DataColumn columnStationInfoPostalCode;
-            
-            private global::System.Data.DataColumn columnStationInfoBusinessModel;
-            
-            private global::System.Data.DataColumn columnStationInfoBusinessScope;
-            
-            private global::System.Data.DataColumn columnStationInfoOpeningHoursBegin;
-            
-            private global::System.Data.DataColumn columnStationInfoOpeningHoursEnd;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VW_baseStationDataTable() {
-                this.TableName = "VW_baseStation";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal VW_baseStationDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected VW_baseStationDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationIDColumn {
-                get {
-                    return this.columnStationID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationNumColumn {
-                get {
-                    return this.columnStationNum;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationNameColumn {
-                get {
-                    return this.columnStationName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationAddressColumn {
-                get {
-                    return this.columnStationAddress;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationTELColumn {
-                get {
-                    return this.columnStationTEL;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationFaxColumn {
-                get {
-                    return this.columnStationFax;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationDescriptionColumn {
-                get {
-                    return this.columnStationDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationXColumn {
-                get {
-                    return this.columnStationX;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationYColumn {
-                get {
-                    return this.columnStationY;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationAreaIDColumn {
-                get {
-                    return this.columnStationAreaID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationOrganisationIDColumn {
-                get {
-                    return this.columnStationOrganisationID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AreaIDColumn {
-                get {
-                    return this.columnAreaID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AreaNameColumn {
-                get {
-                    return this.columnAreaName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AreaCenterXColumn {
-                get {
-                    return this.columnAreaCenterX;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AreaCenterYColumn {
-                get {
-                    return this.columnAreaCenterY;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AreaPostalCodeColumn {
-                get {
-                    return this.columnAreaPostalCode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AreaEasyCodeColumn {
-                get {
-                    return this.columnAreaEasyCode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OrganisationIDColumn {
-                get {
-                    return this.columnOrganisationID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OrganisationNameColumn {
-                get {
-                    return this.columnOrganisationName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OrganisationFIDColumn {
-                get {
-                    return this.columnOrganisationFID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OrganisationCenterXColumn {
-                get {
-                    return this.columnOrganisationCenterX;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OrganisationCenterYColumn {
-                get {
-                    return this.columnOrganisationCenterY;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OrganisationCenterNameColumn {
-                get {
-                    return this.columnOrganisationCenterName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationInfoIDColumn {
-                get {
-                    return this.columnStationInfoID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationInfoFIDColumn {
-                get {
-                    return this.columnStationInfoFID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationInfoPrincipalColumn {
-                get {
-                    return this.columnStationInfoPrincipal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationInfoPrincipalTELColumn {
-                get {
-                    return this.columnStationInfoPrincipalTEL;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationInfoSetLevelColumn {
-                get {
-                    return this.columnStationInfoSetLevel;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationInfoPostalCodeColumn {
-                get {
-                    return this.columnStationInfoPostalCode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationInfoBusinessModelColumn {
-                get {
-                    return this.columnStationInfoBusinessModel;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationInfoBusinessScopeColumn {
-                get {
-                    return this.columnStationInfoBusinessScope;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationInfoOpeningHoursBeginColumn {
-                get {
-                    return this.columnStationInfoOpeningHoursBegin;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StationInfoOpeningHoursEndColumn {
-                get {
-                    return this.columnStationInfoOpeningHoursEnd;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VW_baseStationRow this[int index] {
-                get {
-                    return ((VW_baseStationRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VW_baseStationRowChangeEventHandler VW_baseStationRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VW_baseStationRowChangeEventHandler VW_baseStationRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VW_baseStationRowChangeEventHandler VW_baseStationRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event VW_baseStationRowChangeEventHandler VW_baseStationRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddVW_baseStationRow(VW_baseStationRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VW_baseStationRow AddVW_baseStationRow(
-                        System.Guid StationID, 
-                        string StationNum, 
-                        string StationName, 
-                        string StationAddress, 
-                        string StationTEL, 
-                        string StationFax, 
-                        string StationDescription, 
-                        string StationX, 
-                        string StationY, 
-                        System.Guid StationAreaID, 
-                        System.Guid StationOrganisationID, 
-                        System.Guid AreaID, 
-                        string AreaName, 
-                        string AreaCenterX, 
-                        string AreaCenterY, 
-                        string AreaPostalCode, 
-                        string AreaEasyCode, 
-                        System.Guid OrganisationID, 
-                        string OrganisationName, 
-                        System.Guid OrganisationFID, 
-                        string OrganisationCenterX, 
-                        string OrganisationCenterY, 
-                        string OrganisationCenterName, 
-                        System.Guid StationInfoID, 
-                        System.Guid StationInfoFID, 
-                        string StationInfoPrincipal, 
-                        string StationInfoPrincipalTEL, 
-                        string StationInfoSetLevel, 
-                        string StationInfoPostalCode, 
-                        string StationInfoBusinessModel, 
-                        string StationInfoBusinessScope, 
-                        string StationInfoOpeningHoursBegin, 
-                        string StationInfoOpeningHoursEnd) {
-                VW_baseStationRow rowVW_baseStationRow = ((VW_baseStationRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        StationID,
-                        StationNum,
-                        StationName,
-                        StationAddress,
-                        StationTEL,
-                        StationFax,
-                        StationDescription,
-                        StationX,
-                        StationY,
-                        StationAreaID,
-                        StationOrganisationID,
-                        AreaID,
-                        AreaName,
-                        AreaCenterX,
-                        AreaCenterY,
-                        AreaPostalCode,
-                        AreaEasyCode,
-                        OrganisationID,
-                        OrganisationName,
-                        OrganisationFID,
-                        OrganisationCenterX,
-                        OrganisationCenterY,
-                        OrganisationCenterName,
-                        StationInfoID,
-                        StationInfoFID,
-                        StationInfoPrincipal,
-                        StationInfoPrincipalTEL,
-                        StationInfoSetLevel,
-                        StationInfoPostalCode,
-                        StationInfoBusinessModel,
-                        StationInfoBusinessScope,
-                        StationInfoOpeningHoursBegin,
-                        StationInfoOpeningHoursEnd};
-                rowVW_baseStationRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowVW_baseStationRow);
-                return rowVW_baseStationRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                VW_baseStationDataTable cln = ((VW_baseStationDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new VW_baseStationDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnStationID = base.Columns["StationID"];
-                this.columnStationNum = base.Columns["StationNum"];
-                this.columnStationName = base.Columns["StationName"];
-                this.columnStationAddress = base.Columns["StationAddress"];
-                this.columnStationTEL = base.Columns["StationTEL"];
-                this.columnStationFax = base.Columns["StationFax"];
-                this.columnStationDescription = base.Columns["StationDescription"];
-                this.columnStationX = base.Columns["StationX"];
-                this.columnStationY = base.Columns["StationY"];
-                this.columnStationAreaID = base.Columns["StationAreaID"];
-                this.columnStationOrganisationID = base.Columns["StationOrganisationID"];
-                this.columnAreaID = base.Columns["AreaID"];
-                this.columnAreaName = base.Columns["AreaName"];
-                this.columnAreaCenterX = base.Columns["AreaCenterX"];
-                this.columnAreaCenterY = base.Columns["AreaCenterY"];
-                this.columnAreaPostalCode = base.Columns["AreaPostalCode"];
-                this.columnAreaEasyCode = base.Columns["AreaEasyCode"];
-                this.columnOrganisationID = base.Columns["OrganisationID"];
-                this.columnOrganisationName = base.Columns["OrganisationName"];
-                this.columnOrganisationFID = base.Columns["OrganisationFID"];
-                this.columnOrganisationCenterX = base.Columns["OrganisationCenterX"];
-                this.columnOrganisationCenterY = base.Columns["OrganisationCenterY"];
-                this.columnOrganisationCenterName = base.Columns["OrganisationCenterName"];
-                this.columnStationInfoID = base.Columns["StationInfoID"];
-                this.columnStationInfoFID = base.Columns["StationInfoFID"];
-                this.columnStationInfoPrincipal = base.Columns["StationInfoPrincipal"];
-                this.columnStationInfoPrincipalTEL = base.Columns["StationInfoPrincipalTEL"];
-                this.columnStationInfoSetLevel = base.Columns["StationInfoSetLevel"];
-                this.columnStationInfoPostalCode = base.Columns["StationInfoPostalCode"];
-                this.columnStationInfoBusinessModel = base.Columns["StationInfoBusinessModel"];
-                this.columnStationInfoBusinessScope = base.Columns["StationInfoBusinessScope"];
-                this.columnStationInfoOpeningHoursBegin = base.Columns["StationInfoOpeningHoursBegin"];
-                this.columnStationInfoOpeningHoursEnd = base.Columns["StationInfoOpeningHoursEnd"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnStationID = new global::System.Data.DataColumn("StationID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationID);
-                this.columnStationNum = new global::System.Data.DataColumn("StationNum", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationNum);
-                this.columnStationName = new global::System.Data.DataColumn("StationName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationName);
-                this.columnStationAddress = new global::System.Data.DataColumn("StationAddress", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationAddress);
-                this.columnStationTEL = new global::System.Data.DataColumn("StationTEL", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationTEL);
-                this.columnStationFax = new global::System.Data.DataColumn("StationFax", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationFax);
-                this.columnStationDescription = new global::System.Data.DataColumn("StationDescription", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationDescription);
-                this.columnStationX = new global::System.Data.DataColumn("StationX", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationX);
-                this.columnStationY = new global::System.Data.DataColumn("StationY", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationY);
-                this.columnStationAreaID = new global::System.Data.DataColumn("StationAreaID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationAreaID);
-                this.columnStationOrganisationID = new global::System.Data.DataColumn("StationOrganisationID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationOrganisationID);
-                this.columnAreaID = new global::System.Data.DataColumn("AreaID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAreaID);
-                this.columnAreaName = new global::System.Data.DataColumn("AreaName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAreaName);
-                this.columnAreaCenterX = new global::System.Data.DataColumn("AreaCenterX", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAreaCenterX);
-                this.columnAreaCenterY = new global::System.Data.DataColumn("AreaCenterY", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAreaCenterY);
-                this.columnAreaPostalCode = new global::System.Data.DataColumn("AreaPostalCode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAreaPostalCode);
-                this.columnAreaEasyCode = new global::System.Data.DataColumn("AreaEasyCode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAreaEasyCode);
-                this.columnOrganisationID = new global::System.Data.DataColumn("OrganisationID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrganisationID);
-                this.columnOrganisationName = new global::System.Data.DataColumn("OrganisationName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrganisationName);
-                this.columnOrganisationFID = new global::System.Data.DataColumn("OrganisationFID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrganisationFID);
-                this.columnOrganisationCenterX = new global::System.Data.DataColumn("OrganisationCenterX", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrganisationCenterX);
-                this.columnOrganisationCenterY = new global::System.Data.DataColumn("OrganisationCenterY", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrganisationCenterY);
-                this.columnOrganisationCenterName = new global::System.Data.DataColumn("OrganisationCenterName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrganisationCenterName);
-                this.columnStationInfoID = new global::System.Data.DataColumn("StationInfoID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationInfoID);
-                this.columnStationInfoFID = new global::System.Data.DataColumn("StationInfoFID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationInfoFID);
-                this.columnStationInfoPrincipal = new global::System.Data.DataColumn("StationInfoPrincipal", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationInfoPrincipal);
-                this.columnStationInfoPrincipalTEL = new global::System.Data.DataColumn("StationInfoPrincipalTEL", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationInfoPrincipalTEL);
-                this.columnStationInfoSetLevel = new global::System.Data.DataColumn("StationInfoSetLevel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationInfoSetLevel);
-                this.columnStationInfoPostalCode = new global::System.Data.DataColumn("StationInfoPostalCode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationInfoPostalCode);
-                this.columnStationInfoBusinessModel = new global::System.Data.DataColumn("StationInfoBusinessModel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationInfoBusinessModel);
-                this.columnStationInfoBusinessScope = new global::System.Data.DataColumn("StationInfoBusinessScope", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationInfoBusinessScope);
-                this.columnStationInfoOpeningHoursBegin = new global::System.Data.DataColumn("StationInfoOpeningHoursBegin", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationInfoOpeningHoursBegin);
-                this.columnStationInfoOpeningHoursEnd = new global::System.Data.DataColumn("StationInfoOpeningHoursEnd", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationInfoOpeningHoursEnd);
-                this.columnStationNum.MaxLength = 255;
-                this.columnStationName.MaxLength = 255;
-                this.columnStationAddress.MaxLength = 255;
-                this.columnStationTEL.MaxLength = 255;
-                this.columnStationFax.MaxLength = 255;
-                this.columnStationDescription.MaxLength = 536870910;
-                this.columnStationX.MaxLength = 255;
-                this.columnStationY.MaxLength = 255;
-                this.columnStationAreaID.AllowDBNull = false;
-                this.columnStationOrganisationID.AllowDBNull = false;
-                this.columnAreaName.MaxLength = 255;
-                this.columnAreaCenterX.MaxLength = 255;
-                this.columnAreaCenterY.MaxLength = 255;
-                this.columnAreaPostalCode.MaxLength = 255;
-                this.columnAreaEasyCode.MaxLength = 255;
-                this.columnOrganisationName.MaxLength = 255;
-                this.columnOrganisationCenterX.MaxLength = 255;
-                this.columnOrganisationCenterY.MaxLength = 255;
-                this.columnOrganisationCenterName.MaxLength = 255;
-                this.columnStationInfoPrincipal.MaxLength = 255;
-                this.columnStationInfoPrincipalTEL.MaxLength = 255;
-                this.columnStationInfoSetLevel.MaxLength = 255;
-                this.columnStationInfoPostalCode.MaxLength = 255;
-                this.columnStationInfoBusinessModel.MaxLength = 255;
-                this.columnStationInfoBusinessScope.MaxLength = 536870910;
-                this.columnStationInfoOpeningHoursBegin.MaxLength = 255;
-                this.columnStationInfoOpeningHoursEnd.MaxLength = 255;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VW_baseStationRow NewVW_baseStationRow() {
-                return ((VW_baseStationRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new VW_baseStationRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(VW_baseStationRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.VW_baseStationRowChanged != null)) {
-                    this.VW_baseStationRowChanged(this, new VW_baseStationRowChangeEvent(((VW_baseStationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.VW_baseStationRowChanging != null)) {
-                    this.VW_baseStationRowChanging(this, new VW_baseStationRowChangeEvent(((VW_baseStationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.VW_baseStationRowDeleted != null)) {
-                    this.VW_baseStationRowDeleted(this, new VW_baseStationRowChangeEvent(((VW_baseStationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.VW_baseStationRowDeleting != null)) {
-                    this.VW_baseStationRowDeleting(this, new VW_baseStationRowChangeEvent(((VW_baseStationRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveVW_baseStationRow(VW_baseStationRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                StationDataSet ds = new StationDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "VW_baseStationDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6052,6 +4891,1196 @@ namespace DBTask.DB {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "aspnet_UsersDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class baseStationDataTable : global::System.Data.TypedTableBase<baseStationRow> {
+            
+            private global::System.Data.DataColumn columnStationID;
+            
+            private global::System.Data.DataColumn columnStationNum;
+            
+            private global::System.Data.DataColumn columnStationName;
+            
+            private global::System.Data.DataColumn columnStationAddress;
+            
+            private global::System.Data.DataColumn columnStationTEL;
+            
+            private global::System.Data.DataColumn columnStationFax;
+            
+            private global::System.Data.DataColumn columnStationDescription;
+            
+            private global::System.Data.DataColumn columnStationX;
+            
+            private global::System.Data.DataColumn columnStationY;
+            
+            private global::System.Data.DataColumn columnStationAreaID;
+            
+            private global::System.Data.DataColumn columnStationOrganisationID;
+            
+            private global::System.Data.DataColumn columnStationImageName;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public baseStationDataTable() {
+                this.TableName = "baseStation";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal baseStationDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected baseStationDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationIDColumn {
+                get {
+                    return this.columnStationID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationNumColumn {
+                get {
+                    return this.columnStationNum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationNameColumn {
+                get {
+                    return this.columnStationName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationAddressColumn {
+                get {
+                    return this.columnStationAddress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationTELColumn {
+                get {
+                    return this.columnStationTEL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationFaxColumn {
+                get {
+                    return this.columnStationFax;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationDescriptionColumn {
+                get {
+                    return this.columnStationDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationXColumn {
+                get {
+                    return this.columnStationX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationYColumn {
+                get {
+                    return this.columnStationY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationAreaIDColumn {
+                get {
+                    return this.columnStationAreaID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationOrganisationIDColumn {
+                get {
+                    return this.columnStationOrganisationID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationImageNameColumn {
+                get {
+                    return this.columnStationImageName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public baseStationRow this[int index] {
+                get {
+                    return ((baseStationRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event baseStationRowChangeEventHandler baseStationRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event baseStationRowChangeEventHandler baseStationRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event baseStationRowChangeEventHandler baseStationRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event baseStationRowChangeEventHandler baseStationRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddbaseStationRow(baseStationRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public baseStationRow AddbaseStationRow(System.Guid StationID, string StationNum, string StationName, string StationAddress, string StationTEL, string StationFax, string StationDescription, string StationX, string StationY, System.Guid StationAreaID, System.Guid StationOrganisationID, string StationImageName) {
+                baseStationRow rowbaseStationRow = ((baseStationRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        StationID,
+                        StationNum,
+                        StationName,
+                        StationAddress,
+                        StationTEL,
+                        StationFax,
+                        StationDescription,
+                        StationX,
+                        StationY,
+                        StationAreaID,
+                        StationOrganisationID,
+                        StationImageName};
+                rowbaseStationRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowbaseStationRow);
+                return rowbaseStationRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public baseStationRow FindByStationID(System.Guid StationID) {
+                return ((baseStationRow)(this.Rows.Find(new object[] {
+                            StationID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                baseStationDataTable cln = ((baseStationDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new baseStationDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnStationID = base.Columns["StationID"];
+                this.columnStationNum = base.Columns["StationNum"];
+                this.columnStationName = base.Columns["StationName"];
+                this.columnStationAddress = base.Columns["StationAddress"];
+                this.columnStationTEL = base.Columns["StationTEL"];
+                this.columnStationFax = base.Columns["StationFax"];
+                this.columnStationDescription = base.Columns["StationDescription"];
+                this.columnStationX = base.Columns["StationX"];
+                this.columnStationY = base.Columns["StationY"];
+                this.columnStationAreaID = base.Columns["StationAreaID"];
+                this.columnStationOrganisationID = base.Columns["StationOrganisationID"];
+                this.columnStationImageName = base.Columns["StationImageName"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnStationID = new global::System.Data.DataColumn("StationID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationID);
+                this.columnStationNum = new global::System.Data.DataColumn("StationNum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationNum);
+                this.columnStationName = new global::System.Data.DataColumn("StationName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationName);
+                this.columnStationAddress = new global::System.Data.DataColumn("StationAddress", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationAddress);
+                this.columnStationTEL = new global::System.Data.DataColumn("StationTEL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationTEL);
+                this.columnStationFax = new global::System.Data.DataColumn("StationFax", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationFax);
+                this.columnStationDescription = new global::System.Data.DataColumn("StationDescription", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationDescription);
+                this.columnStationX = new global::System.Data.DataColumn("StationX", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationX);
+                this.columnStationY = new global::System.Data.DataColumn("StationY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationY);
+                this.columnStationAreaID = new global::System.Data.DataColumn("StationAreaID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationAreaID);
+                this.columnStationOrganisationID = new global::System.Data.DataColumn("StationOrganisationID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationOrganisationID);
+                this.columnStationImageName = new global::System.Data.DataColumn("StationImageName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationImageName);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnStationID}, true));
+                this.columnStationID.AllowDBNull = false;
+                this.columnStationID.Unique = true;
+                this.columnStationNum.MaxLength = 255;
+                this.columnStationName.MaxLength = 255;
+                this.columnStationAddress.MaxLength = 255;
+                this.columnStationTEL.MaxLength = 255;
+                this.columnStationFax.MaxLength = 255;
+                this.columnStationDescription.MaxLength = 536870910;
+                this.columnStationX.MaxLength = 255;
+                this.columnStationY.MaxLength = 255;
+                this.columnStationImageName.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public baseStationRow NewbaseStationRow() {
+                return ((baseStationRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new baseStationRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(baseStationRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.baseStationRowChanged != null)) {
+                    this.baseStationRowChanged(this, new baseStationRowChangeEvent(((baseStationRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.baseStationRowChanging != null)) {
+                    this.baseStationRowChanging(this, new baseStationRowChangeEvent(((baseStationRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.baseStationRowDeleted != null)) {
+                    this.baseStationRowDeleted(this, new baseStationRowChangeEvent(((baseStationRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.baseStationRowDeleting != null)) {
+                    this.baseStationRowDeleting(this, new baseStationRowChangeEvent(((baseStationRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovebaseStationRow(baseStationRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                StationDataSet ds = new StationDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "baseStationDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class VW_baseStationDataTable : global::System.Data.TypedTableBase<VW_baseStationRow> {
+            
+            private global::System.Data.DataColumn columnStationID;
+            
+            private global::System.Data.DataColumn columnStationNum;
+            
+            private global::System.Data.DataColumn columnStationName;
+            
+            private global::System.Data.DataColumn columnStationAddress;
+            
+            private global::System.Data.DataColumn columnStationTEL;
+            
+            private global::System.Data.DataColumn columnStationFax;
+            
+            private global::System.Data.DataColumn columnStationDescription;
+            
+            private global::System.Data.DataColumn columnStationX;
+            
+            private global::System.Data.DataColumn columnStationY;
+            
+            private global::System.Data.DataColumn columnStationAreaID;
+            
+            private global::System.Data.DataColumn columnStationOrganisationID;
+            
+            private global::System.Data.DataColumn columnStationImageName;
+            
+            private global::System.Data.DataColumn columnAreaID;
+            
+            private global::System.Data.DataColumn columnAreaName;
+            
+            private global::System.Data.DataColumn columnAreaCenterX;
+            
+            private global::System.Data.DataColumn columnAreaCenterY;
+            
+            private global::System.Data.DataColumn columnAreaPostalCode;
+            
+            private global::System.Data.DataColumn columnAreaEasyCode;
+            
+            private global::System.Data.DataColumn columnOrganisationID;
+            
+            private global::System.Data.DataColumn columnOrganisationName;
+            
+            private global::System.Data.DataColumn columnOrganisationFID;
+            
+            private global::System.Data.DataColumn columnOrganisationCenterX;
+            
+            private global::System.Data.DataColumn columnOrganisationCenterY;
+            
+            private global::System.Data.DataColumn columnOrganisationCenterName;
+            
+            private global::System.Data.DataColumn columnStationInfoID;
+            
+            private global::System.Data.DataColumn columnStationInfoFID;
+            
+            private global::System.Data.DataColumn columnStationInfoPrincipal;
+            
+            private global::System.Data.DataColumn columnStationInfoPrincipalTEL;
+            
+            private global::System.Data.DataColumn columnStationInfoSetLevel;
+            
+            private global::System.Data.DataColumn columnStationInfoPostalCode;
+            
+            private global::System.Data.DataColumn columnStationInfoBusinessModel;
+            
+            private global::System.Data.DataColumn columnStationInfoBusinessScope;
+            
+            private global::System.Data.DataColumn columnStationInfoOpeningHoursBegin;
+            
+            private global::System.Data.DataColumn columnStationInfoOpeningHoursEnd;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VW_baseStationDataTable() {
+                this.TableName = "VW_baseStation";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal VW_baseStationDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected VW_baseStationDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationIDColumn {
+                get {
+                    return this.columnStationID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationNumColumn {
+                get {
+                    return this.columnStationNum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationNameColumn {
+                get {
+                    return this.columnStationName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationAddressColumn {
+                get {
+                    return this.columnStationAddress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationTELColumn {
+                get {
+                    return this.columnStationTEL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationFaxColumn {
+                get {
+                    return this.columnStationFax;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationDescriptionColumn {
+                get {
+                    return this.columnStationDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationXColumn {
+                get {
+                    return this.columnStationX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationYColumn {
+                get {
+                    return this.columnStationY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationAreaIDColumn {
+                get {
+                    return this.columnStationAreaID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationOrganisationIDColumn {
+                get {
+                    return this.columnStationOrganisationID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationImageNameColumn {
+                get {
+                    return this.columnStationImageName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AreaIDColumn {
+                get {
+                    return this.columnAreaID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AreaNameColumn {
+                get {
+                    return this.columnAreaName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AreaCenterXColumn {
+                get {
+                    return this.columnAreaCenterX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AreaCenterYColumn {
+                get {
+                    return this.columnAreaCenterY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AreaPostalCodeColumn {
+                get {
+                    return this.columnAreaPostalCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AreaEasyCodeColumn {
+                get {
+                    return this.columnAreaEasyCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OrganisationIDColumn {
+                get {
+                    return this.columnOrganisationID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OrganisationNameColumn {
+                get {
+                    return this.columnOrganisationName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OrganisationFIDColumn {
+                get {
+                    return this.columnOrganisationFID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OrganisationCenterXColumn {
+                get {
+                    return this.columnOrganisationCenterX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OrganisationCenterYColumn {
+                get {
+                    return this.columnOrganisationCenterY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OrganisationCenterNameColumn {
+                get {
+                    return this.columnOrganisationCenterName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationInfoIDColumn {
+                get {
+                    return this.columnStationInfoID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationInfoFIDColumn {
+                get {
+                    return this.columnStationInfoFID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationInfoPrincipalColumn {
+                get {
+                    return this.columnStationInfoPrincipal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationInfoPrincipalTELColumn {
+                get {
+                    return this.columnStationInfoPrincipalTEL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationInfoSetLevelColumn {
+                get {
+                    return this.columnStationInfoSetLevel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationInfoPostalCodeColumn {
+                get {
+                    return this.columnStationInfoPostalCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationInfoBusinessModelColumn {
+                get {
+                    return this.columnStationInfoBusinessModel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationInfoBusinessScopeColumn {
+                get {
+                    return this.columnStationInfoBusinessScope;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationInfoOpeningHoursBeginColumn {
+                get {
+                    return this.columnStationInfoOpeningHoursBegin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StationInfoOpeningHoursEndColumn {
+                get {
+                    return this.columnStationInfoOpeningHoursEnd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VW_baseStationRow this[int index] {
+                get {
+                    return ((VW_baseStationRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VW_baseStationRowChangeEventHandler VW_baseStationRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VW_baseStationRowChangeEventHandler VW_baseStationRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VW_baseStationRowChangeEventHandler VW_baseStationRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VW_baseStationRowChangeEventHandler VW_baseStationRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddVW_baseStationRow(VW_baseStationRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VW_baseStationRow AddVW_baseStationRow(
+                        System.Guid StationID, 
+                        string StationNum, 
+                        string StationName, 
+                        string StationAddress, 
+                        string StationTEL, 
+                        string StationFax, 
+                        string StationDescription, 
+                        string StationX, 
+                        string StationY, 
+                        System.Guid StationAreaID, 
+                        System.Guid StationOrganisationID, 
+                        string StationImageName, 
+                        System.Guid AreaID, 
+                        string AreaName, 
+                        string AreaCenterX, 
+                        string AreaCenterY, 
+                        string AreaPostalCode, 
+                        string AreaEasyCode, 
+                        System.Guid OrganisationID, 
+                        string OrganisationName, 
+                        System.Guid OrganisationFID, 
+                        string OrganisationCenterX, 
+                        string OrganisationCenterY, 
+                        string OrganisationCenterName, 
+                        System.Guid StationInfoID, 
+                        System.Guid StationInfoFID, 
+                        string StationInfoPrincipal, 
+                        string StationInfoPrincipalTEL, 
+                        string StationInfoSetLevel, 
+                        string StationInfoPostalCode, 
+                        string StationInfoBusinessModel, 
+                        string StationInfoBusinessScope, 
+                        string StationInfoOpeningHoursBegin, 
+                        string StationInfoOpeningHoursEnd) {
+                VW_baseStationRow rowVW_baseStationRow = ((VW_baseStationRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        StationID,
+                        StationNum,
+                        StationName,
+                        StationAddress,
+                        StationTEL,
+                        StationFax,
+                        StationDescription,
+                        StationX,
+                        StationY,
+                        StationAreaID,
+                        StationOrganisationID,
+                        StationImageName,
+                        AreaID,
+                        AreaName,
+                        AreaCenterX,
+                        AreaCenterY,
+                        AreaPostalCode,
+                        AreaEasyCode,
+                        OrganisationID,
+                        OrganisationName,
+                        OrganisationFID,
+                        OrganisationCenterX,
+                        OrganisationCenterY,
+                        OrganisationCenterName,
+                        StationInfoID,
+                        StationInfoFID,
+                        StationInfoPrincipal,
+                        StationInfoPrincipalTEL,
+                        StationInfoSetLevel,
+                        StationInfoPostalCode,
+                        StationInfoBusinessModel,
+                        StationInfoBusinessScope,
+                        StationInfoOpeningHoursBegin,
+                        StationInfoOpeningHoursEnd};
+                rowVW_baseStationRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVW_baseStationRow);
+                return rowVW_baseStationRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                VW_baseStationDataTable cln = ((VW_baseStationDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new VW_baseStationDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnStationID = base.Columns["StationID"];
+                this.columnStationNum = base.Columns["StationNum"];
+                this.columnStationName = base.Columns["StationName"];
+                this.columnStationAddress = base.Columns["StationAddress"];
+                this.columnStationTEL = base.Columns["StationTEL"];
+                this.columnStationFax = base.Columns["StationFax"];
+                this.columnStationDescription = base.Columns["StationDescription"];
+                this.columnStationX = base.Columns["StationX"];
+                this.columnStationY = base.Columns["StationY"];
+                this.columnStationAreaID = base.Columns["StationAreaID"];
+                this.columnStationOrganisationID = base.Columns["StationOrganisationID"];
+                this.columnStationImageName = base.Columns["StationImageName"];
+                this.columnAreaID = base.Columns["AreaID"];
+                this.columnAreaName = base.Columns["AreaName"];
+                this.columnAreaCenterX = base.Columns["AreaCenterX"];
+                this.columnAreaCenterY = base.Columns["AreaCenterY"];
+                this.columnAreaPostalCode = base.Columns["AreaPostalCode"];
+                this.columnAreaEasyCode = base.Columns["AreaEasyCode"];
+                this.columnOrganisationID = base.Columns["OrganisationID"];
+                this.columnOrganisationName = base.Columns["OrganisationName"];
+                this.columnOrganisationFID = base.Columns["OrganisationFID"];
+                this.columnOrganisationCenterX = base.Columns["OrganisationCenterX"];
+                this.columnOrganisationCenterY = base.Columns["OrganisationCenterY"];
+                this.columnOrganisationCenterName = base.Columns["OrganisationCenterName"];
+                this.columnStationInfoID = base.Columns["StationInfoID"];
+                this.columnStationInfoFID = base.Columns["StationInfoFID"];
+                this.columnStationInfoPrincipal = base.Columns["StationInfoPrincipal"];
+                this.columnStationInfoPrincipalTEL = base.Columns["StationInfoPrincipalTEL"];
+                this.columnStationInfoSetLevel = base.Columns["StationInfoSetLevel"];
+                this.columnStationInfoPostalCode = base.Columns["StationInfoPostalCode"];
+                this.columnStationInfoBusinessModel = base.Columns["StationInfoBusinessModel"];
+                this.columnStationInfoBusinessScope = base.Columns["StationInfoBusinessScope"];
+                this.columnStationInfoOpeningHoursBegin = base.Columns["StationInfoOpeningHoursBegin"];
+                this.columnStationInfoOpeningHoursEnd = base.Columns["StationInfoOpeningHoursEnd"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnStationID = new global::System.Data.DataColumn("StationID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationID);
+                this.columnStationNum = new global::System.Data.DataColumn("StationNum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationNum);
+                this.columnStationName = new global::System.Data.DataColumn("StationName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationName);
+                this.columnStationAddress = new global::System.Data.DataColumn("StationAddress", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationAddress);
+                this.columnStationTEL = new global::System.Data.DataColumn("StationTEL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationTEL);
+                this.columnStationFax = new global::System.Data.DataColumn("StationFax", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationFax);
+                this.columnStationDescription = new global::System.Data.DataColumn("StationDescription", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationDescription);
+                this.columnStationX = new global::System.Data.DataColumn("StationX", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationX);
+                this.columnStationY = new global::System.Data.DataColumn("StationY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationY);
+                this.columnStationAreaID = new global::System.Data.DataColumn("StationAreaID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationAreaID);
+                this.columnStationOrganisationID = new global::System.Data.DataColumn("StationOrganisationID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationOrganisationID);
+                this.columnStationImageName = new global::System.Data.DataColumn("StationImageName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationImageName);
+                this.columnAreaID = new global::System.Data.DataColumn("AreaID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAreaID);
+                this.columnAreaName = new global::System.Data.DataColumn("AreaName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAreaName);
+                this.columnAreaCenterX = new global::System.Data.DataColumn("AreaCenterX", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAreaCenterX);
+                this.columnAreaCenterY = new global::System.Data.DataColumn("AreaCenterY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAreaCenterY);
+                this.columnAreaPostalCode = new global::System.Data.DataColumn("AreaPostalCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAreaPostalCode);
+                this.columnAreaEasyCode = new global::System.Data.DataColumn("AreaEasyCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAreaEasyCode);
+                this.columnOrganisationID = new global::System.Data.DataColumn("OrganisationID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrganisationID);
+                this.columnOrganisationName = new global::System.Data.DataColumn("OrganisationName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrganisationName);
+                this.columnOrganisationFID = new global::System.Data.DataColumn("OrganisationFID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrganisationFID);
+                this.columnOrganisationCenterX = new global::System.Data.DataColumn("OrganisationCenterX", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrganisationCenterX);
+                this.columnOrganisationCenterY = new global::System.Data.DataColumn("OrganisationCenterY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrganisationCenterY);
+                this.columnOrganisationCenterName = new global::System.Data.DataColumn("OrganisationCenterName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrganisationCenterName);
+                this.columnStationInfoID = new global::System.Data.DataColumn("StationInfoID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationInfoID);
+                this.columnStationInfoFID = new global::System.Data.DataColumn("StationInfoFID", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationInfoFID);
+                this.columnStationInfoPrincipal = new global::System.Data.DataColumn("StationInfoPrincipal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationInfoPrincipal);
+                this.columnStationInfoPrincipalTEL = new global::System.Data.DataColumn("StationInfoPrincipalTEL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationInfoPrincipalTEL);
+                this.columnStationInfoSetLevel = new global::System.Data.DataColumn("StationInfoSetLevel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationInfoSetLevel);
+                this.columnStationInfoPostalCode = new global::System.Data.DataColumn("StationInfoPostalCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationInfoPostalCode);
+                this.columnStationInfoBusinessModel = new global::System.Data.DataColumn("StationInfoBusinessModel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationInfoBusinessModel);
+                this.columnStationInfoBusinessScope = new global::System.Data.DataColumn("StationInfoBusinessScope", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationInfoBusinessScope);
+                this.columnStationInfoOpeningHoursBegin = new global::System.Data.DataColumn("StationInfoOpeningHoursBegin", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationInfoOpeningHoursBegin);
+                this.columnStationInfoOpeningHoursEnd = new global::System.Data.DataColumn("StationInfoOpeningHoursEnd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationInfoOpeningHoursEnd);
+                this.columnStationNum.MaxLength = 255;
+                this.columnStationName.MaxLength = 255;
+                this.columnStationAddress.MaxLength = 255;
+                this.columnStationTEL.MaxLength = 255;
+                this.columnStationFax.MaxLength = 255;
+                this.columnStationDescription.MaxLength = 536870910;
+                this.columnStationX.MaxLength = 255;
+                this.columnStationY.MaxLength = 255;
+                this.columnStationImageName.MaxLength = 255;
+                this.columnAreaName.MaxLength = 255;
+                this.columnAreaCenterX.MaxLength = 255;
+                this.columnAreaCenterY.MaxLength = 255;
+                this.columnAreaPostalCode.MaxLength = 255;
+                this.columnAreaEasyCode.MaxLength = 255;
+                this.columnOrganisationName.MaxLength = 255;
+                this.columnOrganisationCenterX.MaxLength = 255;
+                this.columnOrganisationCenterY.MaxLength = 255;
+                this.columnOrganisationCenterName.MaxLength = 255;
+                this.columnStationInfoPrincipal.MaxLength = 255;
+                this.columnStationInfoPrincipalTEL.MaxLength = 255;
+                this.columnStationInfoSetLevel.MaxLength = 255;
+                this.columnStationInfoPostalCode.MaxLength = 255;
+                this.columnStationInfoBusinessModel.MaxLength = 255;
+                this.columnStationInfoBusinessScope.MaxLength = 536870910;
+                this.columnStationInfoOpeningHoursBegin.MaxLength = 255;
+                this.columnStationInfoOpeningHoursEnd.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VW_baseStationRow NewVW_baseStationRow() {
+                return ((VW_baseStationRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new VW_baseStationRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(VW_baseStationRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.VW_baseStationRowChanged != null)) {
+                    this.VW_baseStationRowChanged(this, new VW_baseStationRowChangeEvent(((VW_baseStationRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.VW_baseStationRowChanging != null)) {
+                    this.VW_baseStationRowChanging(this, new VW_baseStationRowChangeEvent(((VW_baseStationRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.VW_baseStationRowDeleted != null)) {
+                    this.VW_baseStationRowDeleted(this, new VW_baseStationRowChangeEvent(((VW_baseStationRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.VW_baseStationRowDeleting != null)) {
+                    this.VW_baseStationRowDeleting(this, new VW_baseStationRowChangeEvent(((VW_baseStationRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveVW_baseStationRow(VW_baseStationRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                StationDataSet ds = new StationDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "VW_baseStationDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -7498,312 +7527,6 @@ namespace DBTask.DB {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class baseStationRow : global::System.Data.DataRow {
-            
-            private baseStationDataTable tablebaseStation;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal baseStationRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablebaseStation = ((baseStationDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid StationID {
-                get {
-                    return ((global::System.Guid)(this[this.tablebaseStation.StationIDColumn]));
-                }
-                set {
-                    this[this.tablebaseStation.StationIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationNum {
-                get {
-                    try {
-                        return ((string)(this[this.tablebaseStation.StationNumColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationNum”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablebaseStation.StationNumColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationName {
-                get {
-                    try {
-                        return ((string)(this[this.tablebaseStation.StationNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationName”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablebaseStation.StationNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationAddress {
-                get {
-                    try {
-                        return ((string)(this[this.tablebaseStation.StationAddressColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationAddress”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablebaseStation.StationAddressColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationTEL {
-                get {
-                    try {
-                        return ((string)(this[this.tablebaseStation.StationTELColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationTEL”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablebaseStation.StationTELColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationFax {
-                get {
-                    try {
-                        return ((string)(this[this.tablebaseStation.StationFaxColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationFax”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablebaseStation.StationFaxColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationDescription {
-                get {
-                    try {
-                        return ((string)(this[this.tablebaseStation.StationDescriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationDescription”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablebaseStation.StationDescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationX {
-                get {
-                    try {
-                        return ((string)(this[this.tablebaseStation.StationXColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationX”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablebaseStation.StationXColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationY {
-                get {
-                    try {
-                        return ((string)(this[this.tablebaseStation.StationYColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationY”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablebaseStation.StationYColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid StationAreaID {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tablebaseStation.StationAreaIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationAreaID”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablebaseStation.StationAreaIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid StationOrganisationID {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tablebaseStation.StationOrganisationIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationOrganisationID”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tablebaseStation.StationOrganisationIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationNumNull() {
-                return this.IsNull(this.tablebaseStation.StationNumColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationNumNull() {
-                this[this.tablebaseStation.StationNumColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationNameNull() {
-                return this.IsNull(this.tablebaseStation.StationNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationNameNull() {
-                this[this.tablebaseStation.StationNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationAddressNull() {
-                return this.IsNull(this.tablebaseStation.StationAddressColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationAddressNull() {
-                this[this.tablebaseStation.StationAddressColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationTELNull() {
-                return this.IsNull(this.tablebaseStation.StationTELColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationTELNull() {
-                this[this.tablebaseStation.StationTELColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationFaxNull() {
-                return this.IsNull(this.tablebaseStation.StationFaxColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationFaxNull() {
-                this[this.tablebaseStation.StationFaxColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationDescriptionNull() {
-                return this.IsNull(this.tablebaseStation.StationDescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationDescriptionNull() {
-                this[this.tablebaseStation.StationDescriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationXNull() {
-                return this.IsNull(this.tablebaseStation.StationXColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationXNull() {
-                this[this.tablebaseStation.StationXColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationYNull() {
-                return this.IsNull(this.tablebaseStation.StationYColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationYNull() {
-                this[this.tablebaseStation.StationYColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationAreaIDNull() {
-                return this.IsNull(this.tablebaseStation.StationAreaIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationAreaIDNull() {
-                this[this.tablebaseStation.StationAreaIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationOrganisationIDNull() {
-                return this.IsNull(this.tablebaseStation.StationOrganisationIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationOrganisationIDNull() {
-                this[this.tablebaseStation.StationOrganisationIDColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class stationInfoRow : global::System.Data.DataRow {
             
             private stationInfoDataTable tablestationInfo;
@@ -8059,911 +7782,6 @@ namespace DBTask.DB {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetStationInfoOpeningHoursEndNull() {
                 this[this.tablestationInfo.StationInfoOpeningHoursEndColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class VW_baseStationRow : global::System.Data.DataRow {
-            
-            private VW_baseStationDataTable tableVW_baseStation;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal VW_baseStationRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableVW_baseStation = ((VW_baseStationDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid StationID {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tableVW_baseStation.StationIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationID”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationNum {
-                get {
-                    if (this.IsStationNumNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationNumColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationNumColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationName {
-                get {
-                    if (this.IsStationNameNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationNameColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationAddress {
-                get {
-                    if (this.IsStationAddressNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationAddressColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationAddressColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationTEL {
-                get {
-                    if (this.IsStationTELNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationTELColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationTELColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationFax {
-                get {
-                    if (this.IsStationFaxNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationFaxColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationFaxColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationDescription {
-                get {
-                    if (this.IsStationDescriptionNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationDescriptionColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationDescriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationX {
-                get {
-                    if (this.IsStationXNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationXColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationXColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationY {
-                get {
-                    if (this.IsStationYNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationYColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationYColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid StationAreaID {
-                get {
-                    return ((global::System.Guid)(this[this.tableVW_baseStation.StationAreaIDColumn]));
-                }
-                set {
-                    this[this.tableVW_baseStation.StationAreaIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid StationOrganisationID {
-                get {
-                    return ((global::System.Guid)(this[this.tableVW_baseStation.StationOrganisationIDColumn]));
-                }
-                set {
-                    this[this.tableVW_baseStation.StationOrganisationIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid AreaID {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tableVW_baseStation.AreaIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“AreaID”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.AreaIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AreaName {
-                get {
-                    if (this.IsAreaNameNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.AreaNameColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.AreaNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AreaCenterX {
-                get {
-                    if (this.IsAreaCenterXNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.AreaCenterXColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.AreaCenterXColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AreaCenterY {
-                get {
-                    if (this.IsAreaCenterYNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.AreaCenterYColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.AreaCenterYColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AreaPostalCode {
-                get {
-                    if (this.IsAreaPostalCodeNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.AreaPostalCodeColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.AreaPostalCodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AreaEasyCode {
-                get {
-                    if (this.IsAreaEasyCodeNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.AreaEasyCodeColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.AreaEasyCodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid OrganisationID {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tableVW_baseStation.OrganisationIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“OrganisationID”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.OrganisationIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OrganisationName {
-                get {
-                    if (this.IsOrganisationNameNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.OrganisationNameColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.OrganisationNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid OrganisationFID {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tableVW_baseStation.OrganisationFIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“OrganisationFID”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.OrganisationFIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OrganisationCenterX {
-                get {
-                    if (this.IsOrganisationCenterXNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.OrganisationCenterXColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.OrganisationCenterXColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OrganisationCenterY {
-                get {
-                    if (this.IsOrganisationCenterYNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.OrganisationCenterYColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.OrganisationCenterYColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OrganisationCenterName {
-                get {
-                    if (this.IsOrganisationCenterNameNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.OrganisationCenterNameColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.OrganisationCenterNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid StationInfoID {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tableVW_baseStation.StationInfoIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoID”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationInfoIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.Guid StationInfoFID {
-                get {
-                    try {
-                        return ((global::System.Guid)(this[this.tableVW_baseStation.StationInfoFIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoFID”的值为 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationInfoFIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationInfoPrincipal {
-                get {
-                    if (this.IsStationInfoPrincipalNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationInfoPrincipalColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationInfoPrincipalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationInfoPrincipalTEL {
-                get {
-                    if (this.IsStationInfoPrincipalTELNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationInfoPrincipalTELColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationInfoPrincipalTELColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationInfoSetLevel {
-                get {
-                    if (this.IsStationInfoSetLevelNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationInfoSetLevelColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationInfoSetLevelColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationInfoPostalCode {
-                get {
-                    if (this.IsStationInfoPostalCodeNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationInfoPostalCodeColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationInfoPostalCodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationInfoBusinessModel {
-                get {
-                    if (this.IsStationInfoBusinessModelNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationInfoBusinessModelColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationInfoBusinessModelColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationInfoBusinessScope {
-                get {
-                    if (this.IsStationInfoBusinessScopeNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationInfoBusinessScopeColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationInfoBusinessScopeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationInfoOpeningHoursBegin {
-                get {
-                    if (this.IsStationInfoOpeningHoursBeginNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationInfoOpeningHoursBeginColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationInfoOpeningHoursBeginColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string StationInfoOpeningHoursEnd {
-                get {
-                    if (this.IsStationInfoOpeningHoursEndNull()) {
-                        return string.Empty;
-                    }
-                    else {
-                        return ((string)(this[this.tableVW_baseStation.StationInfoOpeningHoursEndColumn]));
-                    }
-                }
-                set {
-                    this[this.tableVW_baseStation.StationInfoOpeningHoursEndColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationIDNull() {
-                return this.IsNull(this.tableVW_baseStation.StationIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationIDNull() {
-                this[this.tableVW_baseStation.StationIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationNumNull() {
-                return this.IsNull(this.tableVW_baseStation.StationNumColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationNumNull() {
-                this[this.tableVW_baseStation.StationNumColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationNameNull() {
-                return this.IsNull(this.tableVW_baseStation.StationNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationNameNull() {
-                this[this.tableVW_baseStation.StationNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationAddressNull() {
-                return this.IsNull(this.tableVW_baseStation.StationAddressColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationAddressNull() {
-                this[this.tableVW_baseStation.StationAddressColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationTELNull() {
-                return this.IsNull(this.tableVW_baseStation.StationTELColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationTELNull() {
-                this[this.tableVW_baseStation.StationTELColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationFaxNull() {
-                return this.IsNull(this.tableVW_baseStation.StationFaxColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationFaxNull() {
-                this[this.tableVW_baseStation.StationFaxColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationDescriptionNull() {
-                return this.IsNull(this.tableVW_baseStation.StationDescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationDescriptionNull() {
-                this[this.tableVW_baseStation.StationDescriptionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationXNull() {
-                return this.IsNull(this.tableVW_baseStation.StationXColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationXNull() {
-                this[this.tableVW_baseStation.StationXColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationYNull() {
-                return this.IsNull(this.tableVW_baseStation.StationYColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationYNull() {
-                this[this.tableVW_baseStation.StationYColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAreaIDNull() {
-                return this.IsNull(this.tableVW_baseStation.AreaIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAreaIDNull() {
-                this[this.tableVW_baseStation.AreaIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAreaNameNull() {
-                return this.IsNull(this.tableVW_baseStation.AreaNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAreaNameNull() {
-                this[this.tableVW_baseStation.AreaNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAreaCenterXNull() {
-                return this.IsNull(this.tableVW_baseStation.AreaCenterXColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAreaCenterXNull() {
-                this[this.tableVW_baseStation.AreaCenterXColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAreaCenterYNull() {
-                return this.IsNull(this.tableVW_baseStation.AreaCenterYColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAreaCenterYNull() {
-                this[this.tableVW_baseStation.AreaCenterYColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAreaPostalCodeNull() {
-                return this.IsNull(this.tableVW_baseStation.AreaPostalCodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAreaPostalCodeNull() {
-                this[this.tableVW_baseStation.AreaPostalCodeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAreaEasyCodeNull() {
-                return this.IsNull(this.tableVW_baseStation.AreaEasyCodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAreaEasyCodeNull() {
-                this[this.tableVW_baseStation.AreaEasyCodeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOrganisationIDNull() {
-                return this.IsNull(this.tableVW_baseStation.OrganisationIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOrganisationIDNull() {
-                this[this.tableVW_baseStation.OrganisationIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOrganisationNameNull() {
-                return this.IsNull(this.tableVW_baseStation.OrganisationNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOrganisationNameNull() {
-                this[this.tableVW_baseStation.OrganisationNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOrganisationFIDNull() {
-                return this.IsNull(this.tableVW_baseStation.OrganisationFIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOrganisationFIDNull() {
-                this[this.tableVW_baseStation.OrganisationFIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOrganisationCenterXNull() {
-                return this.IsNull(this.tableVW_baseStation.OrganisationCenterXColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOrganisationCenterXNull() {
-                this[this.tableVW_baseStation.OrganisationCenterXColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOrganisationCenterYNull() {
-                return this.IsNull(this.tableVW_baseStation.OrganisationCenterYColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOrganisationCenterYNull() {
-                this[this.tableVW_baseStation.OrganisationCenterYColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOrganisationCenterNameNull() {
-                return this.IsNull(this.tableVW_baseStation.OrganisationCenterNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOrganisationCenterNameNull() {
-                this[this.tableVW_baseStation.OrganisationCenterNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationInfoIDNull() {
-                return this.IsNull(this.tableVW_baseStation.StationInfoIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationInfoIDNull() {
-                this[this.tableVW_baseStation.StationInfoIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationInfoFIDNull() {
-                return this.IsNull(this.tableVW_baseStation.StationInfoFIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationInfoFIDNull() {
-                this[this.tableVW_baseStation.StationInfoFIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationInfoPrincipalNull() {
-                return this.IsNull(this.tableVW_baseStation.StationInfoPrincipalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationInfoPrincipalNull() {
-                this[this.tableVW_baseStation.StationInfoPrincipalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationInfoPrincipalTELNull() {
-                return this.IsNull(this.tableVW_baseStation.StationInfoPrincipalTELColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationInfoPrincipalTELNull() {
-                this[this.tableVW_baseStation.StationInfoPrincipalTELColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationInfoSetLevelNull() {
-                return this.IsNull(this.tableVW_baseStation.StationInfoSetLevelColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationInfoSetLevelNull() {
-                this[this.tableVW_baseStation.StationInfoSetLevelColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationInfoPostalCodeNull() {
-                return this.IsNull(this.tableVW_baseStation.StationInfoPostalCodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationInfoPostalCodeNull() {
-                this[this.tableVW_baseStation.StationInfoPostalCodeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationInfoBusinessModelNull() {
-                return this.IsNull(this.tableVW_baseStation.StationInfoBusinessModelColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationInfoBusinessModelNull() {
-                this[this.tableVW_baseStation.StationInfoBusinessModelColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationInfoBusinessScopeNull() {
-                return this.IsNull(this.tableVW_baseStation.StationInfoBusinessScopeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationInfoBusinessScopeNull() {
-                this[this.tableVW_baseStation.StationInfoBusinessScopeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationInfoOpeningHoursBeginNull() {
-                return this.IsNull(this.tableVW_baseStation.StationInfoOpeningHoursBeginColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationInfoOpeningHoursBeginNull() {
-                this[this.tableVW_baseStation.StationInfoOpeningHoursBeginColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStationInfoOpeningHoursEndNull() {
-                return this.IsNull(this.tableVW_baseStation.StationInfoOpeningHoursEndColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStationInfoOpeningHoursEndNull() {
-                this[this.tableVW_baseStation.StationInfoOpeningHoursEndColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9268,6 +8086,1307 @@ namespace DBTask.DB {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLastActivityDateNull() {
                 this[this.tableaspnet_Users.LastActivityDateColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class baseStationRow : global::System.Data.DataRow {
+            
+            private baseStationDataTable tablebaseStation;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal baseStationRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablebaseStation = ((baseStationDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid StationID {
+                get {
+                    return ((global::System.Guid)(this[this.tablebaseStation.StationIDColumn]));
+                }
+                set {
+                    this[this.tablebaseStation.StationIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationNum {
+                get {
+                    try {
+                        return ((string)(this[this.tablebaseStation.StationNumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationNum”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablebaseStation.StationNumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationName {
+                get {
+                    try {
+                        return ((string)(this[this.tablebaseStation.StationNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationName”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablebaseStation.StationNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationAddress {
+                get {
+                    try {
+                        return ((string)(this[this.tablebaseStation.StationAddressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationAddress”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablebaseStation.StationAddressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationTEL {
+                get {
+                    try {
+                        return ((string)(this[this.tablebaseStation.StationTELColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationTEL”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablebaseStation.StationTELColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationFax {
+                get {
+                    try {
+                        return ((string)(this[this.tablebaseStation.StationFaxColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationFax”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablebaseStation.StationFaxColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationDescription {
+                get {
+                    try {
+                        return ((string)(this[this.tablebaseStation.StationDescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationDescription”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablebaseStation.StationDescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationX {
+                get {
+                    try {
+                        return ((string)(this[this.tablebaseStation.StationXColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationX”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablebaseStation.StationXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationY {
+                get {
+                    try {
+                        return ((string)(this[this.tablebaseStation.StationYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationY”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablebaseStation.StationYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid StationAreaID {
+                get {
+                    try {
+                        return ((global::System.Guid)(this[this.tablebaseStation.StationAreaIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationAreaID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablebaseStation.StationAreaIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid StationOrganisationID {
+                get {
+                    try {
+                        return ((global::System.Guid)(this[this.tablebaseStation.StationOrganisationIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationOrganisationID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablebaseStation.StationOrganisationIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationImageName {
+                get {
+                    try {
+                        return ((string)(this[this.tablebaseStation.StationImageNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“baseStation”中列“StationImageName”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tablebaseStation.StationImageNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationNumNull() {
+                return this.IsNull(this.tablebaseStation.StationNumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationNumNull() {
+                this[this.tablebaseStation.StationNumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationNameNull() {
+                return this.IsNull(this.tablebaseStation.StationNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationNameNull() {
+                this[this.tablebaseStation.StationNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationAddressNull() {
+                return this.IsNull(this.tablebaseStation.StationAddressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationAddressNull() {
+                this[this.tablebaseStation.StationAddressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationTELNull() {
+                return this.IsNull(this.tablebaseStation.StationTELColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationTELNull() {
+                this[this.tablebaseStation.StationTELColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationFaxNull() {
+                return this.IsNull(this.tablebaseStation.StationFaxColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationFaxNull() {
+                this[this.tablebaseStation.StationFaxColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationDescriptionNull() {
+                return this.IsNull(this.tablebaseStation.StationDescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationDescriptionNull() {
+                this[this.tablebaseStation.StationDescriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationXNull() {
+                return this.IsNull(this.tablebaseStation.StationXColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationXNull() {
+                this[this.tablebaseStation.StationXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationYNull() {
+                return this.IsNull(this.tablebaseStation.StationYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationYNull() {
+                this[this.tablebaseStation.StationYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationAreaIDNull() {
+                return this.IsNull(this.tablebaseStation.StationAreaIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationAreaIDNull() {
+                this[this.tablebaseStation.StationAreaIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationOrganisationIDNull() {
+                return this.IsNull(this.tablebaseStation.StationOrganisationIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationOrganisationIDNull() {
+                this[this.tablebaseStation.StationOrganisationIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationImageNameNull() {
+                return this.IsNull(this.tablebaseStation.StationImageNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationImageNameNull() {
+                this[this.tablebaseStation.StationImageNameColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class VW_baseStationRow : global::System.Data.DataRow {
+            
+            private VW_baseStationDataTable tableVW_baseStation;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal VW_baseStationRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVW_baseStation = ((VW_baseStationDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid StationID {
+                get {
+                    try {
+                        return ((global::System.Guid)(this[this.tableVW_baseStation.StationIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationNum {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationNumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationNum”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationNumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationName {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationName”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationAddress {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationAddressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationAddress”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationAddressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationTEL {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationTELColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationTEL”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationTELColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationFax {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationFaxColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationFax”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationFaxColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationDescription {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationDescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationDescription”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationDescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationX {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationXColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationX”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationY {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationY”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid StationAreaID {
+                get {
+                    try {
+                        return ((global::System.Guid)(this[this.tableVW_baseStation.StationAreaIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationAreaID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationAreaIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid StationOrganisationID {
+                get {
+                    try {
+                        return ((global::System.Guid)(this[this.tableVW_baseStation.StationOrganisationIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationOrganisationID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationOrganisationIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationImageName {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationImageNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationImageName”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationImageNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid AreaID {
+                get {
+                    try {
+                        return ((global::System.Guid)(this[this.tableVW_baseStation.AreaIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“AreaID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.AreaIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AreaName {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.AreaNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“AreaName”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.AreaNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AreaCenterX {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.AreaCenterXColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“AreaCenterX”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.AreaCenterXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AreaCenterY {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.AreaCenterYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“AreaCenterY”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.AreaCenterYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AreaPostalCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.AreaPostalCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“AreaPostalCode”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.AreaPostalCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AreaEasyCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.AreaEasyCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“AreaEasyCode”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.AreaEasyCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid OrganisationID {
+                get {
+                    try {
+                        return ((global::System.Guid)(this[this.tableVW_baseStation.OrganisationIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“OrganisationID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.OrganisationIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OrganisationName {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.OrganisationNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“OrganisationName”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.OrganisationNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid OrganisationFID {
+                get {
+                    try {
+                        return ((global::System.Guid)(this[this.tableVW_baseStation.OrganisationFIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“OrganisationFID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.OrganisationFIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OrganisationCenterX {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.OrganisationCenterXColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“OrganisationCenterX”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.OrganisationCenterXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OrganisationCenterY {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.OrganisationCenterYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“OrganisationCenterY”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.OrganisationCenterYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OrganisationCenterName {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.OrganisationCenterNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“OrganisationCenterName”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.OrganisationCenterNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid StationInfoID {
+                get {
+                    try {
+                        return ((global::System.Guid)(this[this.tableVW_baseStation.StationInfoIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationInfoIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.Guid StationInfoFID {
+                get {
+                    try {
+                        return ((global::System.Guid)(this[this.tableVW_baseStation.StationInfoFIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoFID”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationInfoFIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationInfoPrincipal {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationInfoPrincipalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoPrincipal”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationInfoPrincipalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationInfoPrincipalTEL {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationInfoPrincipalTELColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoPrincipalTEL”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationInfoPrincipalTELColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationInfoSetLevel {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationInfoSetLevelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoSetLevel”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationInfoSetLevelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationInfoPostalCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationInfoPostalCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoPostalCode”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationInfoPostalCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationInfoBusinessModel {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationInfoBusinessModelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoBusinessModel”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationInfoBusinessModelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationInfoBusinessScope {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationInfoBusinessScopeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoBusinessScope”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationInfoBusinessScopeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationInfoOpeningHoursBegin {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationInfoOpeningHoursBeginColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoOpeningHoursBegin”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationInfoOpeningHoursBeginColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string StationInfoOpeningHoursEnd {
+                get {
+                    try {
+                        return ((string)(this[this.tableVW_baseStation.StationInfoOpeningHoursEndColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“VW_baseStation”中列“StationInfoOpeningHoursEnd”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableVW_baseStation.StationInfoOpeningHoursEndColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationIDNull() {
+                return this.IsNull(this.tableVW_baseStation.StationIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationIDNull() {
+                this[this.tableVW_baseStation.StationIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationNumNull() {
+                return this.IsNull(this.tableVW_baseStation.StationNumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationNumNull() {
+                this[this.tableVW_baseStation.StationNumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationNameNull() {
+                return this.IsNull(this.tableVW_baseStation.StationNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationNameNull() {
+                this[this.tableVW_baseStation.StationNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationAddressNull() {
+                return this.IsNull(this.tableVW_baseStation.StationAddressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationAddressNull() {
+                this[this.tableVW_baseStation.StationAddressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationTELNull() {
+                return this.IsNull(this.tableVW_baseStation.StationTELColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationTELNull() {
+                this[this.tableVW_baseStation.StationTELColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationFaxNull() {
+                return this.IsNull(this.tableVW_baseStation.StationFaxColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationFaxNull() {
+                this[this.tableVW_baseStation.StationFaxColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationDescriptionNull() {
+                return this.IsNull(this.tableVW_baseStation.StationDescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationDescriptionNull() {
+                this[this.tableVW_baseStation.StationDescriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationXNull() {
+                return this.IsNull(this.tableVW_baseStation.StationXColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationXNull() {
+                this[this.tableVW_baseStation.StationXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationYNull() {
+                return this.IsNull(this.tableVW_baseStation.StationYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationYNull() {
+                this[this.tableVW_baseStation.StationYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationAreaIDNull() {
+                return this.IsNull(this.tableVW_baseStation.StationAreaIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationAreaIDNull() {
+                this[this.tableVW_baseStation.StationAreaIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationOrganisationIDNull() {
+                return this.IsNull(this.tableVW_baseStation.StationOrganisationIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationOrganisationIDNull() {
+                this[this.tableVW_baseStation.StationOrganisationIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationImageNameNull() {
+                return this.IsNull(this.tableVW_baseStation.StationImageNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationImageNameNull() {
+                this[this.tableVW_baseStation.StationImageNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAreaIDNull() {
+                return this.IsNull(this.tableVW_baseStation.AreaIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAreaIDNull() {
+                this[this.tableVW_baseStation.AreaIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAreaNameNull() {
+                return this.IsNull(this.tableVW_baseStation.AreaNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAreaNameNull() {
+                this[this.tableVW_baseStation.AreaNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAreaCenterXNull() {
+                return this.IsNull(this.tableVW_baseStation.AreaCenterXColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAreaCenterXNull() {
+                this[this.tableVW_baseStation.AreaCenterXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAreaCenterYNull() {
+                return this.IsNull(this.tableVW_baseStation.AreaCenterYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAreaCenterYNull() {
+                this[this.tableVW_baseStation.AreaCenterYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAreaPostalCodeNull() {
+                return this.IsNull(this.tableVW_baseStation.AreaPostalCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAreaPostalCodeNull() {
+                this[this.tableVW_baseStation.AreaPostalCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAreaEasyCodeNull() {
+                return this.IsNull(this.tableVW_baseStation.AreaEasyCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAreaEasyCodeNull() {
+                this[this.tableVW_baseStation.AreaEasyCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOrganisationIDNull() {
+                return this.IsNull(this.tableVW_baseStation.OrganisationIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOrganisationIDNull() {
+                this[this.tableVW_baseStation.OrganisationIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOrganisationNameNull() {
+                return this.IsNull(this.tableVW_baseStation.OrganisationNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOrganisationNameNull() {
+                this[this.tableVW_baseStation.OrganisationNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOrganisationFIDNull() {
+                return this.IsNull(this.tableVW_baseStation.OrganisationFIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOrganisationFIDNull() {
+                this[this.tableVW_baseStation.OrganisationFIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOrganisationCenterXNull() {
+                return this.IsNull(this.tableVW_baseStation.OrganisationCenterXColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOrganisationCenterXNull() {
+                this[this.tableVW_baseStation.OrganisationCenterXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOrganisationCenterYNull() {
+                return this.IsNull(this.tableVW_baseStation.OrganisationCenterYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOrganisationCenterYNull() {
+                this[this.tableVW_baseStation.OrganisationCenterYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOrganisationCenterNameNull() {
+                return this.IsNull(this.tableVW_baseStation.OrganisationCenterNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOrganisationCenterNameNull() {
+                this[this.tableVW_baseStation.OrganisationCenterNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationInfoIDNull() {
+                return this.IsNull(this.tableVW_baseStation.StationInfoIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationInfoIDNull() {
+                this[this.tableVW_baseStation.StationInfoIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationInfoFIDNull() {
+                return this.IsNull(this.tableVW_baseStation.StationInfoFIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationInfoFIDNull() {
+                this[this.tableVW_baseStation.StationInfoFIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationInfoPrincipalNull() {
+                return this.IsNull(this.tableVW_baseStation.StationInfoPrincipalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationInfoPrincipalNull() {
+                this[this.tableVW_baseStation.StationInfoPrincipalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationInfoPrincipalTELNull() {
+                return this.IsNull(this.tableVW_baseStation.StationInfoPrincipalTELColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationInfoPrincipalTELNull() {
+                this[this.tableVW_baseStation.StationInfoPrincipalTELColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationInfoSetLevelNull() {
+                return this.IsNull(this.tableVW_baseStation.StationInfoSetLevelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationInfoSetLevelNull() {
+                this[this.tableVW_baseStation.StationInfoSetLevelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationInfoPostalCodeNull() {
+                return this.IsNull(this.tableVW_baseStation.StationInfoPostalCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationInfoPostalCodeNull() {
+                this[this.tableVW_baseStation.StationInfoPostalCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationInfoBusinessModelNull() {
+                return this.IsNull(this.tableVW_baseStation.StationInfoBusinessModelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationInfoBusinessModelNull() {
+                this[this.tableVW_baseStation.StationInfoBusinessModelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationInfoBusinessScopeNull() {
+                return this.IsNull(this.tableVW_baseStation.StationInfoBusinessScopeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationInfoBusinessScopeNull() {
+                this[this.tableVW_baseStation.StationInfoBusinessScopeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationInfoOpeningHoursBeginNull() {
+                return this.IsNull(this.tableVW_baseStation.StationInfoOpeningHoursBeginColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationInfoOpeningHoursBeginNull() {
+                this[this.tableVW_baseStation.StationInfoOpeningHoursBeginColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStationInfoOpeningHoursEndNull() {
+                return this.IsNull(this.tableVW_baseStation.StationInfoOpeningHoursEndColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStationInfoOpeningHoursEndNull() {
+                this[this.tableVW_baseStation.StationInfoOpeningHoursEndColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9615,40 +9734,6 @@ namespace DBTask.DB {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class baseStationRowChangeEvent : global::System.EventArgs {
-            
-            private baseStationRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public baseStationRowChangeEvent(baseStationRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public baseStationRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class stationInfoRowChangeEvent : global::System.EventArgs {
             
             private stationInfoRow eventRow;
@@ -9665,40 +9750,6 @@ namespace DBTask.DB {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public stationInfoRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class VW_baseStationRowChangeEvent : global::System.EventArgs {
-            
-            private VW_baseStationRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VW_baseStationRowChangeEvent(VW_baseStationRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public VW_baseStationRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -9767,6 +9818,74 @@ namespace DBTask.DB {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public aspnet_UsersRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class baseStationRowChangeEvent : global::System.EventArgs {
+            
+            private baseStationRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public baseStationRowChangeEvent(baseStationRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public baseStationRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class VW_baseStationRowChangeEvent : global::System.EventArgs {
+            
+            private VW_baseStationRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VW_baseStationRowChangeEvent(VW_baseStationRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VW_baseStationRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -13381,723 +13500,6 @@ namespace DBTask.DB.StationDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class baseStationTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
-        
-        private global::System.Data.OleDb.OleDbConnection _connection;
-        
-        private global::System.Data.OleDb.OleDbTransaction _transaction;
-        
-        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public baseStationTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.OleDb.OleDbConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.OleDb.OleDbTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "baseStation";
-            tableMapping.ColumnMappings.Add("StationID", "StationID");
-            tableMapping.ColumnMappings.Add("StationNum", "StationNum");
-            tableMapping.ColumnMappings.Add("StationName", "StationName");
-            tableMapping.ColumnMappings.Add("StationAddress", "StationAddress");
-            tableMapping.ColumnMappings.Add("StationTEL", "StationTEL");
-            tableMapping.ColumnMappings.Add("StationFax", "StationFax");
-            tableMapping.ColumnMappings.Add("StationDescription", "StationDescription");
-            tableMapping.ColumnMappings.Add("StationX", "StationX");
-            tableMapping.ColumnMappings.Add("StationY", "StationY");
-            tableMapping.ColumnMappings.Add("StationAreaID", "StationAreaID");
-            tableMapping.ColumnMappings.Add("StationOrganisationID", "StationOrganisationID");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `baseStation` WHERE ((`StationID` = ?) AND ((? = 1 AND `StationNum` IS NULL) OR (`StationNum` = ?)) AND ((? = 1 AND `StationName` IS NULL) OR (`StationName` = ?)) AND ((? = 1 AND `StationAddress` IS NULL) OR (`StationAddress` = ?)) AND ((? = 1 AND `StationTEL` IS NULL) OR (`StationTEL` = ?)) AND ((? = 1 AND `StationFax` IS NULL) OR (`StationFax` = ?)) AND ((? = 1 AND `StationX` IS NULL) OR (`StationX` = ?)) AND ((? = 1 AND `StationY` IS NULL) OR (`StationY` = ?)) AND ((? = 1 AND `StationAreaID` IS NULL) OR (`StationAreaID` = ?)) AND ((? = 1 AND `StationOrganisationID` IS NULL) OR (`StationOrganisationID` = ?)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationNum", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationNum", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationAddress", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationAddress", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationTEL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationTEL", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationFax", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationFax", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationX", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationX", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationAreaID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationAreaID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationOrganisationID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationOrganisationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `baseStation` (`StationID`, `StationNum`, `StationName`, `StationAddr" +
-                "ess`, `StationTEL`, `StationFax`, `StationDescription`, `StationX`, `StationY`, " +
-                "`StationAreaID`, `StationOrganisationID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, " +
-                "?)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationNum", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationAddress", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationTEL", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationFax", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationDescription", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationDescription", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationX", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationAreaID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationOrganisationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `baseStation` SET `StationID` = ?, `StationNum` = ?, `StationName` = ?, `StationAddress` = ?, `StationTEL` = ?, `StationFax` = ?, `StationDescription` = ?, `StationX` = ?, `StationY` = ?, `StationAreaID` = ?, `StationOrganisationID` = ? WHERE ((`StationID` = ?) AND ((? = 1 AND `StationNum` IS NULL) OR (`StationNum` = ?)) AND ((? = 1 AND `StationName` IS NULL) OR (`StationName` = ?)) AND ((? = 1 AND `StationAddress` IS NULL) OR (`StationAddress` = ?)) AND ((? = 1 AND `StationTEL` IS NULL) OR (`StationTEL` = ?)) AND ((? = 1 AND `StationFax` IS NULL) OR (`StationFax` = ?)) AND ((? = 1 AND `StationX` IS NULL) OR (`StationX` = ?)) AND ((? = 1 AND `StationY` IS NULL) OR (`StationY` = ?)) AND ((? = 1 AND `StationAreaID` IS NULL) OR (`StationAreaID` = ?)) AND ((? = 1 AND `StationOrganisationID` IS NULL) OR (`StationOrganisationID` = ?)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationNum", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationAddress", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationTEL", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationFax", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationDescription", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationDescription", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationX", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationAreaID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationOrganisationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationNum", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationNum", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationAddress", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationAddress", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationTEL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationTEL", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationFax", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationFax", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationX", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationX", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationAreaID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationAreaID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationOrganisationID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationOrganisationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Original, false, null));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::DBTask.Properties.Settings.Default.StationConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
-            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT StationID, StationNum, StationName, StationAddress, StationTEL, StationFax" +
-                ", StationDescription, StationX, StationY, StationAreaID, StationOrganisationID F" +
-                "ROM baseStation";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM `baseStation` WHERE (`StationID` = ?) ";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationID", global::System.Data.OleDb.OleDbType.Guid, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationID", global::System.Data.DataRowVersion.Original, false, null));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(StationDataSet.baseStationDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual StationDataSet.baseStationDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            StationDataSet.baseStationDataTable dataTable = new StationDataSet.baseStationDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(StationDataSet.baseStationDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(StationDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "baseStation");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(global::System.Nullable<global::System.Guid> Original_StationID, string Original_StationNum, string Original_StationName, string Original_StationAddress, string Original_StationTEL, string Original_StationFax, string Original_StationX, string Original_StationY, global::System.Nullable<global::System.Guid> Original_StationAreaID, global::System.Nullable<global::System.Guid> Original_StationOrganisationID) {
-            if ((Original_StationID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((System.Guid)(Original_StationID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((Original_StationNum == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_StationNum));
-            }
-            if ((Original_StationName == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_StationName));
-            }
-            if ((Original_StationAddress == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_StationAddress));
-            }
-            if ((Original_StationTEL == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_StationTEL));
-            }
-            if ((Original_StationFax == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_StationFax));
-            }
-            if ((Original_StationX == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_StationX));
-            }
-            if ((Original_StationY == null)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_StationY));
-            }
-            if ((Original_StationAreaID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((System.Guid)(Original_StationAreaID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_StationOrganisationID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((System.Guid)(Original_StationOrganisationID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.Guid> StationID, string StationNum, string StationName, string StationAddress, string StationTEL, string StationFax, string StationDescription, string StationX, string StationY, global::System.Nullable<global::System.Guid> StationAreaID, global::System.Nullable<global::System.Guid> StationOrganisationID) {
-            if ((StationID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((System.Guid)(StationID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((StationNum == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(StationNum));
-            }
-            if ((StationName == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(StationName));
-            }
-            if ((StationAddress == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(StationAddress));
-            }
-            if ((StationTEL == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(StationTEL));
-            }
-            if ((StationFax == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(StationFax));
-            }
-            if ((StationDescription == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(StationDescription));
-            }
-            if ((StationX == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(StationX));
-            }
-            if ((StationY == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(StationY));
-            }
-            if ((StationAreaID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((System.Guid)(StationAreaID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((StationOrganisationID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((System.Guid)(StationOrganisationID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    global::System.Nullable<global::System.Guid> StationID, 
-                    string StationNum, 
-                    string StationName, 
-                    string StationAddress, 
-                    string StationTEL, 
-                    string StationFax, 
-                    string StationDescription, 
-                    string StationX, 
-                    string StationY, 
-                    global::System.Nullable<global::System.Guid> StationAreaID, 
-                    global::System.Nullable<global::System.Guid> StationOrganisationID, 
-                    global::System.Nullable<global::System.Guid> Original_StationID, 
-                    string Original_StationNum, 
-                    string Original_StationName, 
-                    string Original_StationAddress, 
-                    string Original_StationTEL, 
-                    string Original_StationFax, 
-                    string Original_StationX, 
-                    string Original_StationY, 
-                    global::System.Nullable<global::System.Guid> Original_StationAreaID, 
-                    global::System.Nullable<global::System.Guid> Original_StationOrganisationID) {
-            if ((StationID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.Guid)(StationID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((StationNum == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(StationNum));
-            }
-            if ((StationName == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(StationName));
-            }
-            if ((StationAddress == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(StationAddress));
-            }
-            if ((StationTEL == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(StationTEL));
-            }
-            if ((StationFax == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(StationFax));
-            }
-            if ((StationDescription == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(StationDescription));
-            }
-            if ((StationX == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(StationX));
-            }
-            if ((StationY == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(StationY));
-            }
-            if ((StationAreaID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.Guid)(StationAreaID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((StationOrganisationID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.Guid)(StationOrganisationID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_StationID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.Guid)(Original_StationID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_StationNum == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_StationNum));
-            }
-            if ((Original_StationName == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_StationName));
-            }
-            if ((Original_StationAddress == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_StationAddress));
-            }
-            if ((Original_StationTEL == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_StationTEL));
-            }
-            if ((Original_StationFax == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_StationFax));
-            }
-            if ((Original_StationX == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_StationX));
-            }
-            if ((Original_StationY == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_StationY));
-            }
-            if ((Original_StationAreaID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((System.Guid)(Original_StationAreaID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            if ((Original_StationOrganisationID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((System.Guid)(Original_StationOrganisationID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string StationNum, 
-                    string StationName, 
-                    string StationAddress, 
-                    string StationTEL, 
-                    string StationFax, 
-                    string StationDescription, 
-                    string StationX, 
-                    string StationY, 
-                    global::System.Nullable<global::System.Guid> StationAreaID, 
-                    global::System.Nullable<global::System.Guid> StationOrganisationID, 
-                    global::System.Nullable<global::System.Guid> Original_StationID, 
-                    string Original_StationNum, 
-                    string Original_StationName, 
-                    string Original_StationAddress, 
-                    string Original_StationTEL, 
-                    string Original_StationFax, 
-                    string Original_StationX, 
-                    string Original_StationY, 
-                    global::System.Nullable<global::System.Guid> Original_StationAreaID, 
-                    global::System.Nullable<global::System.Guid> Original_StationOrganisationID) {
-            return this.Update(Original_StationID, StationNum, StationName, StationAddress, StationTEL, StationFax, StationDescription, StationX, StationY, StationAreaID, StationOrganisationID, Original_StationID, Original_StationNum, Original_StationName, Original_StationAddress, Original_StationTEL, Original_StationFax, Original_StationX, Original_StationY, Original_StationAreaID, Original_StationOrganisationID);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(object StationID) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
-            if ((StationID == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((object)(StationID));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class stationInfoTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
@@ -14762,205 +14164,6 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                 }
             }
             return returnValue;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class VW_baseStationTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
-        
-        private global::System.Data.OleDb.OleDbConnection _connection;
-        
-        private global::System.Data.OleDb.OleDbTransaction _transaction;
-        
-        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public VW_baseStationTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.OleDb.OleDbConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.OleDb.OleDbTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "VW_baseStation";
-            tableMapping.ColumnMappings.Add("StationID", "StationID");
-            tableMapping.ColumnMappings.Add("StationNum", "StationNum");
-            tableMapping.ColumnMappings.Add("StationName", "StationName");
-            tableMapping.ColumnMappings.Add("StationAddress", "StationAddress");
-            tableMapping.ColumnMappings.Add("StationTEL", "StationTEL");
-            tableMapping.ColumnMappings.Add("StationFax", "StationFax");
-            tableMapping.ColumnMappings.Add("StationDescription", "StationDescription");
-            tableMapping.ColumnMappings.Add("StationX", "StationX");
-            tableMapping.ColumnMappings.Add("StationY", "StationY");
-            tableMapping.ColumnMappings.Add("StationAreaID", "StationAreaID");
-            tableMapping.ColumnMappings.Add("StationOrganisationID", "StationOrganisationID");
-            tableMapping.ColumnMappings.Add("AreaID", "AreaID");
-            tableMapping.ColumnMappings.Add("AreaName", "AreaName");
-            tableMapping.ColumnMappings.Add("AreaCenterX", "AreaCenterX");
-            tableMapping.ColumnMappings.Add("AreaCenterY", "AreaCenterY");
-            tableMapping.ColumnMappings.Add("AreaPostalCode", "AreaPostalCode");
-            tableMapping.ColumnMappings.Add("AreaEasyCode", "AreaEasyCode");
-            tableMapping.ColumnMappings.Add("OrganisationID", "OrganisationID");
-            tableMapping.ColumnMappings.Add("OrganisationName", "OrganisationName");
-            tableMapping.ColumnMappings.Add("OrganisationFID", "OrganisationFID");
-            tableMapping.ColumnMappings.Add("OrganisationCenterX", "OrganisationCenterX");
-            tableMapping.ColumnMappings.Add("OrganisationCenterY", "OrganisationCenterY");
-            tableMapping.ColumnMappings.Add("OrganisationCenterName", "OrganisationCenterName");
-            tableMapping.ColumnMappings.Add("StationInfoID", "StationInfoID");
-            tableMapping.ColumnMappings.Add("StationInfoFID", "StationInfoFID");
-            tableMapping.ColumnMappings.Add("StationInfoPrincipal", "StationInfoPrincipal");
-            tableMapping.ColumnMappings.Add("StationInfoPrincipalTEL", "StationInfoPrincipalTEL");
-            tableMapping.ColumnMappings.Add("StationInfoSetLevel", "StationInfoSetLevel");
-            tableMapping.ColumnMappings.Add("StationInfoPostalCode", "StationInfoPostalCode");
-            tableMapping.ColumnMappings.Add("StationInfoBusinessModel", "StationInfoBusinessModel");
-            tableMapping.ColumnMappings.Add("StationInfoBusinessScope", "StationInfoBusinessScope");
-            tableMapping.ColumnMappings.Add("StationInfoOpeningHoursBegin", "StationInfoOpeningHoursBegin");
-            tableMapping.ColumnMappings.Add("StationInfoOpeningHoursEnd", "StationInfoOpeningHoursEnd");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::DBTask.Properties.Settings.Default.StationConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
-            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT StationID, StationNum, StationName, StationAddress, StationTEL, StationFax, StationDescription, StationX, StationY, StationAreaID, StationOrganisationID, AreaID, AreaName, AreaCenterX, AreaCenterY, AreaPostalCode, AreaEasyCode, OrganisationID, OrganisationName, OrganisationFID, OrganisationCenterX, OrganisationCenterY, OrganisationCenterName, StationInfoID, StationInfoFID, StationInfoPrincipal, StationInfoPrincipalTEL, StationInfoSetLevel, StationInfoPostalCode, StationInfoBusinessModel, StationInfoBusinessScope, StationInfoOpeningHoursBegin, StationInfoOpeningHoursEnd FROM VW_baseStation";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(StationDataSet.VW_baseStationDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual StationDataSet.VW_baseStationDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            StationDataSet.VW_baseStationDataTable dataTable = new StationDataSet.VW_baseStationDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
         }
     }
     
@@ -15795,6 +14998,959 @@ namespace DBTask.DB.StationDataSetTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class baseStationTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public baseStationTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "baseStation";
+            tableMapping.ColumnMappings.Add("StationID", "StationID");
+            tableMapping.ColumnMappings.Add("StationNum", "StationNum");
+            tableMapping.ColumnMappings.Add("StationName", "StationName");
+            tableMapping.ColumnMappings.Add("StationAddress", "StationAddress");
+            tableMapping.ColumnMappings.Add("StationTEL", "StationTEL");
+            tableMapping.ColumnMappings.Add("StationFax", "StationFax");
+            tableMapping.ColumnMappings.Add("StationDescription", "StationDescription");
+            tableMapping.ColumnMappings.Add("StationX", "StationX");
+            tableMapping.ColumnMappings.Add("StationY", "StationY");
+            tableMapping.ColumnMappings.Add("StationAreaID", "StationAreaID");
+            tableMapping.ColumnMappings.Add("StationOrganisationID", "StationOrganisationID");
+            tableMapping.ColumnMappings.Add("StationImageName", "StationImageName");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `baseStation` WHERE ((`StationID` = ?) AND ((? = 1 AND `StationNum` IS NULL) OR (`StationNum` = ?)) AND ((? = 1 AND `StationName` IS NULL) OR (`StationName` = ?)) AND ((? = 1 AND `StationAddress` IS NULL) OR (`StationAddress` = ?)) AND ((? = 1 AND `StationTEL` IS NULL) OR (`StationTEL` = ?)) AND ((? = 1 AND `StationFax` IS NULL) OR (`StationFax` = ?)) AND ((? = 1 AND `StationX` IS NULL) OR (`StationX` = ?)) AND ((? = 1 AND `StationY` IS NULL) OR (`StationY` = ?)) AND ((? = 1 AND `StationAreaID` IS NULL) OR (`StationAreaID` = ?)) AND ((? = 1 AND `StationOrganisationID` IS NULL) OR (`StationOrganisationID` = ?)) AND ((? = 1 AND `StationImageName` IS NULL) OR (`StationImageName` = ?)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationNum", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationNum", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationAddress", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationAddress", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationTEL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationTEL", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationFax", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationFax", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationX", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationX", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationAreaID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationAreaID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationOrganisationID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationOrganisationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationImageName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationImageName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationImageName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationImageName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `baseStation` (`StationID`, `StationNum`, `StationName`, `StationAddress`, `StationTEL`, `StationFax`, `StationDescription`, `StationX`, `StationY`, `StationAreaID`, `StationOrganisationID`, `StationImageName`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationNum", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationAddress", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationTEL", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationFax", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationDescription", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationDescription", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationX", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationAreaID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationOrganisationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationImageName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationImageName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `baseStation` SET `StationID` = ?, `StationNum` = ?, `StationName` = ?, `StationAddress` = ?, `StationTEL` = ?, `StationFax` = ?, `StationDescription` = ?, `StationX` = ?, `StationY` = ?, `StationAreaID` = ?, `StationOrganisationID` = ?, `StationImageName` = ? WHERE ((`StationID` = ?) AND ((? = 1 AND `StationNum` IS NULL) OR (`StationNum` = ?)) AND ((? = 1 AND `StationName` IS NULL) OR (`StationName` = ?)) AND ((? = 1 AND `StationAddress` IS NULL) OR (`StationAddress` = ?)) AND ((? = 1 AND `StationTEL` IS NULL) OR (`StationTEL` = ?)) AND ((? = 1 AND `StationFax` IS NULL) OR (`StationFax` = ?)) AND ((? = 1 AND `StationX` IS NULL) OR (`StationX` = ?)) AND ((? = 1 AND `StationY` IS NULL) OR (`StationY` = ?)) AND ((? = 1 AND `StationAreaID` IS NULL) OR (`StationAreaID` = ?)) AND ((? = 1 AND `StationOrganisationID` IS NULL) OR (`StationOrganisationID` = ?)) AND ((? = 1 AND `StationImageName` IS NULL) OR (`StationImageName` = ?)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationNum", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationAddress", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationTEL", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationFax", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationDescription", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationDescription", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationX", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationAreaID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationOrganisationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationImageName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationImageName", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationNum", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationNum", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationNum", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationName", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationAddress", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationAddress", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAddress", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationTEL", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationTEL", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationTEL", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationFax", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationFax", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationFax", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationX", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationX", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationX", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationY", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationY", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationY", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationAreaID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationAreaID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationAreaID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationOrganisationID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationOrganisationID", global::System.Data.OleDb.OleDbType.Guid, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationOrganisationID", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_StationImageName", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationImageName", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_StationImageName", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationImageName", global::System.Data.DataRowVersion.Original, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::DBTask.Properties.Settings.Default.StationConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT StationID, StationNum, StationName, StationAddress, StationTEL, StationFax" +
+                ", StationDescription, StationX, StationY, StationAreaID, StationOrganisationID, " +
+                "StationImageName FROM baseStation";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "DELETE FROM `baseStation` WHERE (`StationID` = ?) ";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("StationID", global::System.Data.OleDb.OleDbType.Guid, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "StationID", global::System.Data.DataRowVersion.Original, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(StationDataSet.baseStationDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual StationDataSet.baseStationDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            StationDataSet.baseStationDataTable dataTable = new StationDataSet.baseStationDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(StationDataSet.baseStationDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(StationDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "baseStation");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(global::System.Nullable<global::System.Guid> Original_StationID, string Original_StationNum, string Original_StationName, string Original_StationAddress, string Original_StationTEL, string Original_StationFax, string Original_StationX, string Original_StationY, global::System.Nullable<global::System.Guid> Original_StationAreaID, global::System.Nullable<global::System.Guid> Original_StationOrganisationID, string Original_StationImageName) {
+            if ((Original_StationID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((System.Guid)(Original_StationID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Original_StationNum == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_StationNum));
+            }
+            if ((Original_StationName == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_StationName));
+            }
+            if ((Original_StationAddress == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_StationAddress));
+            }
+            if ((Original_StationTEL == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_StationTEL));
+            }
+            if ((Original_StationFax == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_StationFax));
+            }
+            if ((Original_StationX == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_StationX));
+            }
+            if ((Original_StationY == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_StationY));
+            }
+            if ((Original_StationAreaID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((System.Guid)(Original_StationAreaID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_StationOrganisationID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((System.Guid)(Original_StationOrganisationID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Original_StationImageName == null)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_StationImageName));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<global::System.Guid> StationID, string StationNum, string StationName, string StationAddress, string StationTEL, string StationFax, string StationDescription, string StationX, string StationY, global::System.Nullable<global::System.Guid> StationAreaID, global::System.Nullable<global::System.Guid> StationOrganisationID, string StationImageName) {
+            if ((StationID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((System.Guid)(StationID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((StationNum == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(StationNum));
+            }
+            if ((StationName == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(StationName));
+            }
+            if ((StationAddress == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(StationAddress));
+            }
+            if ((StationTEL == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(StationTEL));
+            }
+            if ((StationFax == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(StationFax));
+            }
+            if ((StationDescription == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(StationDescription));
+            }
+            if ((StationX == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(StationX));
+            }
+            if ((StationY == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(StationY));
+            }
+            if ((StationAreaID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.Guid)(StationAreaID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((StationOrganisationID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((System.Guid)(StationOrganisationID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((StationImageName == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(StationImageName));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    global::System.Nullable<global::System.Guid> StationID, 
+                    string StationNum, 
+                    string StationName, 
+                    string StationAddress, 
+                    string StationTEL, 
+                    string StationFax, 
+                    string StationDescription, 
+                    string StationX, 
+                    string StationY, 
+                    global::System.Nullable<global::System.Guid> StationAreaID, 
+                    global::System.Nullable<global::System.Guid> StationOrganisationID, 
+                    string StationImageName, 
+                    global::System.Nullable<global::System.Guid> Original_StationID, 
+                    string Original_StationNum, 
+                    string Original_StationName, 
+                    string Original_StationAddress, 
+                    string Original_StationTEL, 
+                    string Original_StationFax, 
+                    string Original_StationX, 
+                    string Original_StationY, 
+                    global::System.Nullable<global::System.Guid> Original_StationAreaID, 
+                    global::System.Nullable<global::System.Guid> Original_StationOrganisationID, 
+                    string Original_StationImageName) {
+            if ((StationID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.Guid)(StationID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((StationNum == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(StationNum));
+            }
+            if ((StationName == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(StationName));
+            }
+            if ((StationAddress == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(StationAddress));
+            }
+            if ((StationTEL == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(StationTEL));
+            }
+            if ((StationFax == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(StationFax));
+            }
+            if ((StationDescription == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(StationDescription));
+            }
+            if ((StationX == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(StationX));
+            }
+            if ((StationY == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(StationY));
+            }
+            if ((StationAreaID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.Guid)(StationAreaID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((StationOrganisationID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.Guid)(StationOrganisationID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((StationImageName == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(StationImageName));
+            }
+            if ((Original_StationID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.Guid)(Original_StationID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_StationNum == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_StationNum));
+            }
+            if ((Original_StationName == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_StationName));
+            }
+            if ((Original_StationAddress == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_StationAddress));
+            }
+            if ((Original_StationTEL == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_StationTEL));
+            }
+            if ((Original_StationFax == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_StationFax));
+            }
+            if ((Original_StationX == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_StationX));
+            }
+            if ((Original_StationY == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_StationY));
+            }
+            if ((Original_StationAreaID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((System.Guid)(Original_StationAreaID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((Original_StationOrganisationID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.Guid)(Original_StationOrganisationID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((Original_StationImageName == null)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_StationImageName));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string StationNum, 
+                    string StationName, 
+                    string StationAddress, 
+                    string StationTEL, 
+                    string StationFax, 
+                    string StationDescription, 
+                    string StationX, 
+                    string StationY, 
+                    global::System.Nullable<global::System.Guid> StationAreaID, 
+                    global::System.Nullable<global::System.Guid> StationOrganisationID, 
+                    string StationImageName, 
+                    global::System.Nullable<global::System.Guid> Original_StationID, 
+                    string Original_StationNum, 
+                    string Original_StationName, 
+                    string Original_StationAddress, 
+                    string Original_StationTEL, 
+                    string Original_StationFax, 
+                    string Original_StationX, 
+                    string Original_StationY, 
+                    global::System.Nullable<global::System.Guid> Original_StationAreaID, 
+                    global::System.Nullable<global::System.Guid> Original_StationOrganisationID, 
+                    string Original_StationImageName) {
+            return this.Update(Original_StationID, StationNum, StationName, StationAddress, StationTEL, StationFax, StationDescription, StationX, StationY, StationAreaID, StationOrganisationID, StationImageName, Original_StationID, Original_StationNum, Original_StationName, Original_StationAddress, Original_StationTEL, Original_StationFax, Original_StationX, Original_StationY, Original_StationAreaID, Original_StationOrganisationID, Original_StationImageName);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(object StationID) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            if ((StationID == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((object)(StationID));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class VW_baseStationTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public VW_baseStationTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "VW_baseStation";
+            tableMapping.ColumnMappings.Add("StationID", "StationID");
+            tableMapping.ColumnMappings.Add("StationNum", "StationNum");
+            tableMapping.ColumnMappings.Add("StationName", "StationName");
+            tableMapping.ColumnMappings.Add("StationAddress", "StationAddress");
+            tableMapping.ColumnMappings.Add("StationTEL", "StationTEL");
+            tableMapping.ColumnMappings.Add("StationFax", "StationFax");
+            tableMapping.ColumnMappings.Add("StationDescription", "StationDescription");
+            tableMapping.ColumnMappings.Add("StationX", "StationX");
+            tableMapping.ColumnMappings.Add("StationY", "StationY");
+            tableMapping.ColumnMappings.Add("StationAreaID", "StationAreaID");
+            tableMapping.ColumnMappings.Add("StationOrganisationID", "StationOrganisationID");
+            tableMapping.ColumnMappings.Add("StationImageName", "StationImageName");
+            tableMapping.ColumnMappings.Add("AreaID", "AreaID");
+            tableMapping.ColumnMappings.Add("AreaName", "AreaName");
+            tableMapping.ColumnMappings.Add("AreaCenterX", "AreaCenterX");
+            tableMapping.ColumnMappings.Add("AreaCenterY", "AreaCenterY");
+            tableMapping.ColumnMappings.Add("AreaPostalCode", "AreaPostalCode");
+            tableMapping.ColumnMappings.Add("AreaEasyCode", "AreaEasyCode");
+            tableMapping.ColumnMappings.Add("OrganisationID", "OrganisationID");
+            tableMapping.ColumnMappings.Add("OrganisationName", "OrganisationName");
+            tableMapping.ColumnMappings.Add("OrganisationFID", "OrganisationFID");
+            tableMapping.ColumnMappings.Add("OrganisationCenterX", "OrganisationCenterX");
+            tableMapping.ColumnMappings.Add("OrganisationCenterY", "OrganisationCenterY");
+            tableMapping.ColumnMappings.Add("OrganisationCenterName", "OrganisationCenterName");
+            tableMapping.ColumnMappings.Add("StationInfoID", "StationInfoID");
+            tableMapping.ColumnMappings.Add("StationInfoFID", "StationInfoFID");
+            tableMapping.ColumnMappings.Add("StationInfoPrincipal", "StationInfoPrincipal");
+            tableMapping.ColumnMappings.Add("StationInfoPrincipalTEL", "StationInfoPrincipalTEL");
+            tableMapping.ColumnMappings.Add("StationInfoSetLevel", "StationInfoSetLevel");
+            tableMapping.ColumnMappings.Add("StationInfoPostalCode", "StationInfoPostalCode");
+            tableMapping.ColumnMappings.Add("StationInfoBusinessModel", "StationInfoBusinessModel");
+            tableMapping.ColumnMappings.Add("StationInfoBusinessScope", "StationInfoBusinessScope");
+            tableMapping.ColumnMappings.Add("StationInfoOpeningHoursBegin", "StationInfoOpeningHoursBegin");
+            tableMapping.ColumnMappings.Add("StationInfoOpeningHoursEnd", "StationInfoOpeningHoursEnd");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::DBTask.Properties.Settings.Default.StationConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT StationID, StationNum, StationName, StationAddress, StationTEL, StationFax, StationDescription, StationX, StationY, StationAreaID, StationOrganisationID, StationImageName, AreaID, AreaName, AreaCenterX, AreaCenterY, AreaPostalCode, AreaEasyCode, OrganisationID, OrganisationName, OrganisationFID, OrganisationCenterX, OrganisationCenterY, OrganisationCenterName, StationInfoID, StationInfoFID, StationInfoPrincipal, StationInfoPrincipalTEL, StationInfoSetLevel, StationInfoPostalCode, StationInfoBusinessModel, StationInfoBusinessScope, StationInfoOpeningHoursBegin, StationInfoOpeningHoursEnd FROM VW_baseStation";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(StationDataSet.VW_baseStationDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual StationDataSet.VW_baseStationDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            StationDataSet.VW_baseStationDataTable dataTable = new StationDataSet.VW_baseStationDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15822,13 +15978,13 @@ namespace DBTask.DB.StationDataSetTableAdapters {
         
         private configTableAdapter _configTableAdapter;
         
-        private baseStationTableAdapter _baseStationTableAdapter;
-        
         private stationInfoTableAdapter _stationInfoTableAdapter;
         
         private stationImageInfoTableAdapter _stationImageInfoTableAdapter;
         
         private aspnet_UsersTableAdapter _aspnet_UsersTableAdapter;
+        
+        private baseStationTableAdapter _baseStationTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -15962,20 +16118,6 @@ namespace DBTask.DB.StationDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public baseStationTableAdapter baseStationTableAdapter {
-            get {
-                return this._baseStationTableAdapter;
-            }
-            set {
-                this._baseStationTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public stationInfoTableAdapter stationInfoTableAdapter {
             get {
                 return this._stationInfoTableAdapter;
@@ -16010,6 +16152,20 @@ namespace DBTask.DB.StationDataSetTableAdapters {
             }
             set {
                 this._aspnet_UsersTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public baseStationTableAdapter baseStationTableAdapter {
+            get {
+                return this._baseStationTableAdapter;
+            }
+            set {
+                this._baseStationTableAdapter = value;
             }
         }
         
@@ -16064,10 +16220,6 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                             && (this._configTableAdapter.Connection != null))) {
                     return this._configTableAdapter.Connection;
                 }
-                if (((this._baseStationTableAdapter != null) 
-                            && (this._baseStationTableAdapter.Connection != null))) {
-                    return this._baseStationTableAdapter.Connection;
-                }
                 if (((this._stationInfoTableAdapter != null) 
                             && (this._stationInfoTableAdapter.Connection != null))) {
                     return this._stationInfoTableAdapter.Connection;
@@ -16079,6 +16231,10 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                 if (((this._aspnet_UsersTableAdapter != null) 
                             && (this._aspnet_UsersTableAdapter.Connection != null))) {
                     return this._aspnet_UsersTableAdapter.Connection;
+                }
+                if (((this._baseStationTableAdapter != null) 
+                            && (this._baseStationTableAdapter.Connection != null))) {
+                    return this._baseStationTableAdapter.Connection;
                 }
                 return null;
             }
@@ -16117,9 +16273,6 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                 if ((this._configTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._baseStationTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._stationInfoTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -16127,6 +16280,9 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                     count = (count + 1);
                 }
                 if ((this._aspnet_UsersTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._baseStationTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -16212,15 +16368,6 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._baseStationTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.baseStation.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._baseStationTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._stationInfoTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.stationInfo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -16245,6 +16392,15 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._aspnet_UsersTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._baseStationTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.baseStation.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._baseStationTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -16322,14 +16478,6 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._baseStationTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.baseStation.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._baseStationTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._stationInfoTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.stationInfo.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -16354,6 +16502,14 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._baseStationTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.baseStation.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._baseStationTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -16364,6 +16520,14 @@ namespace DBTask.DB.StationDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(StationDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._baseStationTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.baseStation.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._baseStationTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._aspnet_UsersTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.aspnet_Users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -16385,14 +16549,6 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._stationInfoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._baseStationTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.baseStation.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._baseStationTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -16531,10 +16687,6 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                         && (this.MatchTableAdapterConnection(this._configTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
-            if (((this._baseStationTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._baseStationTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
-            }
             if (((this._stationInfoTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._stationInfoTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
@@ -16545,6 +16697,10 @@ namespace DBTask.DB.StationDataSetTableAdapters {
             }
             if (((this._aspnet_UsersTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._aspnet_UsersTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
+            }
+            if (((this._baseStationTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._baseStationTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
@@ -16650,15 +16806,6 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._configTableAdapter.Adapter);
                     }
                 }
-                if ((this._baseStationTableAdapter != null)) {
-                    revertConnections.Add(this._baseStationTableAdapter, this._baseStationTableAdapter.Connection);
-                    this._baseStationTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._baseStationTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._baseStationTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._baseStationTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._baseStationTableAdapter.Adapter);
-                    }
-                }
                 if ((this._stationInfoTableAdapter != null)) {
                     revertConnections.Add(this._stationInfoTableAdapter, this._stationInfoTableAdapter.Connection);
                     this._stationInfoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
@@ -16684,6 +16831,15 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                     if (this._aspnet_UsersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._aspnet_UsersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._aspnet_UsersTableAdapter.Adapter);
+                    }
+                }
+                if ((this._baseStationTableAdapter != null)) {
+                    revertConnections.Add(this._baseStationTableAdapter, this._baseStationTableAdapter.Connection);
+                    this._baseStationTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._baseStationTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._baseStationTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._baseStationTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._baseStationTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -16776,10 +16932,6 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                     this._configTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._configTableAdapter]));
                     this._configTableAdapter.Transaction = null;
                 }
-                if ((this._baseStationTableAdapter != null)) {
-                    this._baseStationTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._baseStationTableAdapter]));
-                    this._baseStationTableAdapter.Transaction = null;
-                }
                 if ((this._stationInfoTableAdapter != null)) {
                     this._stationInfoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._stationInfoTableAdapter]));
                     this._stationInfoTableAdapter.Transaction = null;
@@ -16791,6 +16943,10 @@ namespace DBTask.DB.StationDataSetTableAdapters {
                 if ((this._aspnet_UsersTableAdapter != null)) {
                     this._aspnet_UsersTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._aspnet_UsersTableAdapter]));
                     this._aspnet_UsersTableAdapter.Transaction = null;
+                }
+                if ((this._baseStationTableAdapter != null)) {
+                    this._baseStationTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._baseStationTableAdapter]));
+                    this._baseStationTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

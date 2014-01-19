@@ -66,6 +66,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gb_picBox = new System.Windows.Forms.GroupBox();
             this.pl_playBox = new System.Windows.Forms.Panel();
+            this.lb_timer = new System.Windows.Forms.Label();
             this.bt_fullPlay = new System.Windows.Forms.Button();
             this.lb_title = new System.Windows.Forms.Label();
             this.bt_next = new System.Windows.Forms.Button();
@@ -75,7 +76,7 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lb_timer = new System.Windows.Forms.Label();
+            this.llb_edit = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Info_bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_picture)).BeginInit();
@@ -460,6 +461,16 @@
             this.pl_playBox.Size = new System.Drawing.Size(512, 430);
             this.pl_playBox.TabIndex = 0;
             // 
+            // lb_timer
+            // 
+            this.lb_timer.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lb_timer.Location = new System.Drawing.Point(6, 380);
+            this.lb_timer.Name = "lb_timer";
+            this.lb_timer.Size = new System.Drawing.Size(45, 23);
+            this.lb_timer.TabIndex = 20;
+            this.lb_timer.Text = "{0}秒";
+            this.lb_timer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // bt_fullPlay
             // 
             this.bt_fullPlay.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -560,20 +571,23 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // lb_timer
+            // llb_edit
             // 
-            this.lb_timer.Location = new System.Drawing.Point(6, 380);
-            this.lb_timer.Name = "lb_timer";
-            this.lb_timer.Size = new System.Drawing.Size(45, 23);
-            this.lb_timer.TabIndex = 20;
-            this.lb_timer.Text = "{0}秒";
-            this.lb_timer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llb_edit.AutoSize = true;
+            this.llb_edit.Location = new System.Drawing.Point(13, 464);
+            this.llb_edit.Name = "llb_edit";
+            this.llb_edit.Size = new System.Drawing.Size(59, 12);
+            this.llb_edit.TabIndex = 5;
+            this.llb_edit.TabStop = true;
+            this.llb_edit.Text = "纠错/编辑";
+            this.llb_edit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_edit_LinkClicked);
             // 
             // StationInfoBrowse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 483);
+            this.Controls.Add(this.llb_edit);
             this.Controls.Add(this.gb_picBox);
             this.Controls.Add(this.groupBox1);
             this.Name = "StationInfoBrowse";
@@ -589,6 +603,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -641,5 +656,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lb_timer;
+        private System.Windows.Forms.LinkLabel llb_edit;
     }
 }
