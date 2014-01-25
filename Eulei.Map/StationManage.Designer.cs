@@ -60,6 +60,8 @@
             this.bt_getPoint = new System.Windows.Forms.Button();
             this.lb_imageName = new System.Windows.Forms.Label();
             this.cbb_ImageName = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lb_zoom = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bs_bindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_areabindingSource)).BeginInit();
@@ -380,6 +382,25 @@
             this.cbb_ImageName.Size = new System.Drawing.Size(121, 20);
             this.cbb_ImageName.TabIndex = 6;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(402, 307);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 12);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "缩放率：";
+            // 
+            // lb_zoom
+            // 
+            this.lb_zoom.AutoSize = true;
+            this.lb_zoom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_bindingSource, "Zoom", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.lb_zoom.Location = new System.Drawing.Point(455, 307);
+            this.lb_zoom.Name = "lb_zoom";
+            this.lb_zoom.Size = new System.Drawing.Size(23, 12);
+            this.lb_zoom.TabIndex = 8;
+            this.lb_zoom.Text = "0.0";
+            // 
             // StationManage
             // 
             this.AcceptButton = this.bt_OK;
@@ -387,6 +408,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_cancel;
             this.ClientSize = new System.Drawing.Size(659, 392);
+            this.Controls.Add(this.lb_zoom);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.cbb_ImageName);
             this.Controls.Add(this.lb_imageName);
             this.Controls.Add(this.bt_getPoint);
@@ -441,5 +464,7 @@
         private System.Windows.Forms.BindingSource bs_bindingSource;
         private System.Windows.Forms.Label lb_imageName;
         private System.Windows.Forms.ComboBox cbb_ImageName;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lb_zoom;
     }
 }

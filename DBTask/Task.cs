@@ -43,6 +43,8 @@ namespace DBTask
                     _listItem.lat = double.Parse(item.StationY);
                 if (!item.IsStationXNull())
                     _listItem.lon = double.Parse(item.StationX);
+                if (!item.IsStationZoomNull())
+                    _listItem.Zoom = double.Parse(item.StationZoom);
                 //if (!item.IsStationAreaIDNull())
                 _listItem.AreaID = item.StationAreaID;
                 //if (!item.IsStationOrganisationIDNull())
@@ -91,7 +93,8 @@ namespace DBTask
                     _listItem.AreaInfoEasyCode = item.AreaEasyCode;
                 if (!item.IsAreaPostalCodeNull())
                     _listItem.AreaInfoPostalCode = item.AreaPostalCode;
-
+                if (!item.IsAreaOrderNull())
+                    _listItem.AreaInfoOrder = item.AreaOrder;
             }
             return _listItem;
         }
@@ -124,6 +127,8 @@ namespace DBTask
                         _listItem.lat = double.Parse(item.StationY);
                     if (!item.IsStationXNull())
                         _listItem.lon = double.Parse(item.StationX);
+                    if (!item.IsStationZoomNull())
+                        _listItem.Zoom = double.Parse(item.StationZoom);
                     //if (!item.IsStationAreaIDNull())
                     _listItem.AreaID = item.StationAreaID;
                     //if (!item.IsStationOrganisationIDNull())
@@ -172,7 +177,8 @@ namespace DBTask
                         _listItem.AreaInfoEasyCode = item.AreaEasyCode;
                     if (!item.IsAreaPostalCodeNull())
                         _listItem.AreaInfoPostalCode = item.AreaPostalCode;
-
+                    if (!item.IsAreaOrderNull())
+                        _listItem.AreaInfoOrder = item.AreaOrder;
 
 
                     _lists.Add(_listItem);
@@ -209,7 +215,7 @@ namespace DBTask
             List<VW_Statuion> _lists = new List<VW_Statuion>();
             using (VW_baseStationTableAdapter _myTA = new VW_baseStationTableAdapter())
             {
-                foreach (var item in _myTA.GetData().AsQueryable().Where(sql, _params).Skip(skip).Take(pageSize).OrderBy(m => m.StationName))
+                foreach (var item in _myTA.GetData().AsQueryable().Where(sql, _params).Skip(skip).Take(pageSize).OrderBy(m => m.StationImageName).OrderBy(m=>m.AreaOrder))
                 {
                     VW_Statuion _listItem = new VW_Statuion();
                     _listItem.ID = item.StationID;
@@ -229,6 +235,8 @@ namespace DBTask
                         _listItem.lat = double.Parse(item.StationY);
                     if (!item.IsStationXNull())
                         _listItem.lon = double.Parse(item.StationX);
+                    if (!item.IsStationZoomNull())
+                        _listItem.Zoom = double.Parse(item.StationZoom);
                     //if (!item.IsStationAreaIDNull())
                     _listItem.AreaID = item.StationAreaID;
                     //if (!item.IsStationOrganisationIDNull())
@@ -277,6 +285,8 @@ namespace DBTask
                         _listItem.AreaInfoEasyCode = item.AreaEasyCode;
                     if (!item.IsAreaPostalCodeNull())
                         _listItem.AreaInfoPostalCode = item.AreaPostalCode;
+                    if (!item.IsAreaOrderNull())
+                        _listItem.AreaInfoOrder = item.AreaOrder;
 
 
 
@@ -314,6 +324,8 @@ namespace DBTask
                         _listItem.lat = double.Parse(item.StationY);
                     if (!item.IsStationXNull())
                         _listItem.lon = double.Parse(item.StationX);
+                    if (!item.IsStationZoomNull())
+                        _listItem.Zoom = double.Parse(item.StationZoom);
                     if (!item.IsStationAreaIDNull())
                         _listItem.AreaID = item.StationAreaID;
                     if (!item.IsStationOrganisationIDNull())
@@ -370,6 +382,8 @@ namespace DBTask
                         _listItem.lat = double.Parse(item.StationY);
                     if (!item.IsStationXNull())
                         _listItem.lon = double.Parse(item.StationX);
+                    if (!item.IsStationZoomNull())
+                        _listItem.Zoom = double.Parse(item.StationZoom);
                     if (!item.IsStationAreaIDNull())
                         _listItem.AreaID = item.StationAreaID;
                     if (!item.IsStationOrganisationIDNull())
@@ -415,6 +429,8 @@ namespace DBTask
                         _listItem.lat = double.Parse(item.StationY);
                     if (!item.IsStationXNull())
                         _listItem.lon = double.Parse(item.StationX);
+                    if (!item.IsStationZoomNull())
+                        _listItem.Zoom = double.Parse(item.StationZoom);
                     if (!item.IsStationAreaIDNull())
                         _listItem.AreaID = item.StationAreaID;
                     if (!item.IsStationOrganisationIDNull())
@@ -453,6 +469,7 @@ namespace DBTask
                         , station.AreaID
                         , station.OrganisationID
                         , station.ImageName
+                        ,station.Zoom.ToString()
                         );
                 }
             }
@@ -484,6 +501,7 @@ namespace DBTask
                     _item.StationDescription = station.Description;
                     _item.StationX = station.lon.ToString();
                     _item.StationY = station.lat.ToString();
+                    _item.StationZoom = station.Zoom.ToString();
                     _item.StationAreaID = station.AreaID;
                     _item.StationOrganisationID = station.OrganisationID;
                     _item.StationImageName = station.ImageName;
@@ -601,8 +619,10 @@ namespace DBTask
                     _return.Name = _item["AreaName"].ToString();
                     _return.lon = double.Parse(_item["AreaCenterX"].ToString());
                     _return.lat = double.Parse(_item["AreaCenterY"].ToString());
+                    _return.Zoom = double.Parse(_item["AreaZoom"].ToString());
                     _return.PostalCode = _item["AreaPostalCode"].ToString();
                     _return.EasyCode = _item["AreaEasyCode"].ToString();
+                    _return.Order = int.Parse(_item["AreaOrder"].ToString());
                 }
             }
             catch (Exception ex)
@@ -627,8 +647,10 @@ namespace DBTask
                         , areaInfo.Name
                         , areaInfo.lon.ToString()
                         , areaInfo.lat.ToString()
+                        , areaInfo.Zoom.ToString()
                         , areaInfo.PostalCode
                         , areaInfo.EasyCode
+                        , areaInfo.Order
                         );
                 }
             }
@@ -655,8 +677,10 @@ namespace DBTask
                     _item["AreaName"] = areaInfo.Name;
                     _item["AreaCenterX"] = areaInfo.lon.ToString();
                     _item["AreaCenterY"] = areaInfo.lat.ToString();
+                    _item["AreaZoom"] = areaInfo.Zoom.ToString();
                     _item["AreaPostalCode"] = areaInfo.PostalCode;
                     _item["AreaEasyCode"] = areaInfo.EasyCode;
+                    _item["AreaOrder"] = areaInfo.Order;
                     _myTA.Update(_item);
                 }
             }
@@ -700,16 +724,23 @@ namespace DBTask
             List<AreaInfo> _lists = new List<AreaInfo>();
             using (AreaInfoTableAdapter _myTA = new AreaInfoTableAdapter())
             {
-                var _areaList = _myTA.GetData().OrderBy(m => m.AreaName);
+                var _areaList = _myTA.GetData().OrderBy(m => m.AreaOrder);
                 foreach (var item in _areaList)
                 {
                     AreaInfo _listItem = new AreaInfo();
                     _listItem.ID = item.AreaID;
                     _listItem.Name = item.AreaName;
                     _listItem.EasyCode = item.AreaEasyCode;
+                    if (!item.IsAreaCenterXNull())
                     _listItem.lon = double.Parse(item.AreaCenterX);
+                    if (!item.IsAreaCenterYNull())
                     _listItem.lat = double.Parse(item.AreaCenterY);
+                    if (!item.IsAreaZoomNull())
+                    _listItem.Zoom = double.Parse(item.AreaZoom);
+                    if (!item.IsAreaPostalCodeNull())
                     _listItem.PostalCode = item.AreaPostalCode;
+                    if (!item.IsAreaOrderNull())
+                    _listItem.Order = item.AreaOrder;
                     _lists.Add(_listItem);
                 }
             }
@@ -736,6 +767,14 @@ namespace DBTask
                     _return.CenterName = _item.OrganisationCenterName;
                     _return.lon = double.Parse(_item.OrganisationCenterX);
                     _return.lat = double.Parse(_item.OrganisationCenterY);
+                    if (!_item.IsOrganisationMapCenterXNull())
+                    _return.Maplon = double.Parse(_item.OrganisationMapCenterX);
+                    if (!_item.IsOrganisationMapCenterYNull())
+                    _return.Maplat = double.Parse(_item.OrganisationMapCenterY);
+                    if (!_item.IsOrganisationMapZoomNull())
+                    _return.MapZoom = double.Parse(_item.OrganisationMapZoom);
+                    if (!_item.IsOrganisationOrderNull())
+                    _return.Order = _item.OrganisationOrder;
                 }
             }
             catch (Exception ex)
@@ -758,10 +797,14 @@ namespace DBTask
                     _myTA.Insert(
                         organisation.ID
                         , organisation.Name
-                          , organisation.FID
+                        , organisation.FID
                         , organisation.lon.ToString()
                         , organisation.lat.ToString()
                         , organisation.CenterName
+                        ,organisation.Maplon.ToString()
+                        ,organisation.Maplat.ToString()
+                        ,organisation.MapZoom.ToString()
+                        ,organisation.Order
                         );
                 }
             }
@@ -790,6 +833,10 @@ namespace DBTask
                     _item.OrganisationCenterName = organisation.CenterName;
                     _item.OrganisationCenterX = organisation.lon.ToString();
                     _item.OrganisationCenterY = organisation.lat.ToString();
+                    _item.OrganisationMapCenterX = organisation.Maplon.ToString();
+                    _item.OrganisationMapCenterY = organisation.Maplat.ToString();
+                    _item.OrganisationMapZoom = organisation.MapZoom.ToString();
+                    _item.OrganisationOrder = organisation.Order;
                     _myTA.Update(_item);
                 }
             }
@@ -833,7 +880,7 @@ namespace DBTask
             List<Organisation> _lists = new List<Organisation>();
             using (OrganisationTableAdapter _myTA = new OrganisationTableAdapter())
             {
-                foreach (var item in _myTA.GetData().OrderBy(m => m.OrganisationName))
+                foreach (var item in _myTA.GetData().OrderBy(m => m.OrganisationOrder))
                 {
                     Organisation _listItem = new Organisation();
                     _listItem.ID = item.OrganisationID;
@@ -842,6 +889,14 @@ namespace DBTask
                     _listItem.CenterName = item.OrganisationCenterName;
                     _listItem.lon = double.Parse(item.OrganisationCenterX);
                     _listItem.lat = double.Parse(item.OrganisationCenterY);
+                    if (!item.IsOrganisationMapCenterXNull())
+                        _listItem.Maplon = double.Parse(item.OrganisationMapCenterX);
+                    if (!item.IsOrganisationMapCenterYNull())
+                        _listItem.Maplat = double.Parse(item.OrganisationMapCenterY);
+                    if (!item.IsOrganisationMapZoomNull())
+                        _listItem.MapZoom = double.Parse(item.OrganisationMapZoom);
+                    if (!item.IsOrganisationOrderNull())
+                        _listItem.Order = item.OrganisationOrder;
                     _lists.Add(_listItem);
                 }
             }

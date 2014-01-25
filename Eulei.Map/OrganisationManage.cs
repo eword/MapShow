@@ -40,10 +40,35 @@ namespace Eulei.Map
             return _Init;
         }
         #region event
+        /// <summary>
+        /// 输入验证
+        /// </summary>
+        /// <returns>true:通过验证；false：未通过</returns>
+        private bool InputValidation()
+        {
+            bool _return = true;
+            string _str = string.Empty;
+            if (string.IsNullOrEmpty(this.tb_name.Text))
+                _str += "请输入机构名称\r\n";
+            if (string.IsNullOrEmpty(this.lb_mapZoom.Text))
+                _str += "请输入经纬度及缩放率\r\n";
+            if (string.IsNullOrEmpty(this.tb_order.Text))
+                _str += "请输入排序号\r\n";
+            if (!string.IsNullOrEmpty(_str))
+            {
+                MessageBox.Show(_str);
+                _return = false;
+            }
+            return _return;
+        }
         private void bt_Ok_Click(object sender, EventArgs e)
         {
             try
             {
+                if (!this.InputValidation())
+                {
+                    return;
+                }
                 if (this._status.Equals(FormStatus.Add))
                 {
                     Task.Init().TaskStation.AddOrganisation(this._organisation);
@@ -73,6 +98,9 @@ namespace Eulei.Map
             {
                 this.lb_lon.Text = e1.Lon.ToString();
                 this.lb_lat.Text = e1.Lat.ToString();
+                this.lb_mapLon.Text = e1.Lon.ToString();
+                this.lb_mapLat.Text = e1.Lat.ToString();
+                this.lb_mapZoom.Text = e1.Zoom.ToString();
             });
             _gp.ShowDialog();
         }

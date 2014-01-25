@@ -18,6 +18,7 @@ namespace Eulei.Map
         private OrganisationList()
         {
             InitializeComponent();
+            this.SetMenu();
             _task = Task.Init();
             this.BindData();
             this.FormClosed += new FormClosedEventHandler(
@@ -26,7 +27,17 @@ namespace Eulei.Map
                     _organisationList = null;
                 }
                 );
+        
         }
+        #region 权限控制
+        private void SetMenu()
+        {
+            AuthortyControl _ac = AuthortyControl.Init();
+            this.tsb_add.Visible = _ac.Control.GetAuthority("OrganisationInfoAdd");
+            this.tsb_del.Visible = _ac.Control.GetAuthority("OrganisationInfoAdd"); 
+            _ac.Dispose();
+        }
+        #endregion
         public static OrganisationList Init()
         {
             if (_organisationList == null)

@@ -34,6 +34,22 @@ namespace TaskInterface
         /// 纬度
         /// </summary>
         public double lat { get; set; }
+        /// <summary>
+        /// 经度
+        /// </summary>
+        public double Maplon { get; set; }
+        /// <summary>
+        /// 纬度
+        /// </summary>
+        public double Maplat { get; set; }
+        /// <summary>
+        /// 地图缩放倍率
+        /// </summary>
+        public double MapZoom { set; get; }
+        /// <summary>
+        /// 排序号
+        /// </summary>
+        public int Order { get; set; }
 
     }
 }

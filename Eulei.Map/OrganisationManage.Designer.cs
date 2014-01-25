@@ -43,6 +43,14 @@
             this.bt_getPoint = new System.Windows.Forms.Button();
             this.bt_Ok = new System.Windows.Forms.Button();
             this.bt_cancel = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lb_mapLon = new System.Windows.Forms.Label();
+            this.lb_mapLat = new System.Windows.Forms.Label();
+            this.lb_mapZoom = new System.Windows.Forms.Label();
+            this.tb_order = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bs_bindingSource)).BeginInit();
             this.SuspendLayout();
@@ -62,12 +70,22 @@
             this.tableLayoutPanel1.Controls.Add(this.tb_centerName, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.lb_lon, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lb_lat, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lb_mapLon, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lb_mapLat, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lb_mapZoom, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tb_order, 3, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(718, 100);
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(718, 140);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -94,7 +112,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 50);
+            this.label3.Location = new System.Drawing.Point(3, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 12);
             this.label3.TabIndex = 2;
@@ -103,7 +121,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(360, 50);
+            this.label4.Location = new System.Drawing.Point(360, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 12);
             this.label4.TabIndex = 3;
@@ -132,7 +150,7 @@
             // lb_lon
             // 
             this.lb_lon.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_bindingSource, "lon", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.lb_lon.Location = new System.Drawing.Point(110, 50);
+            this.lb_lon.Location = new System.Drawing.Point(110, 32);
             this.lb_lon.Name = "lb_lon";
             this.lb_lon.Size = new System.Drawing.Size(244, 23);
             this.lb_lon.TabIndex = 6;
@@ -141,7 +159,7 @@
             // lb_lat
             // 
             this.lb_lat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_bindingSource, "lat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.lb_lat.Location = new System.Drawing.Point(467, 50);
+            this.lb_lat.Location = new System.Drawing.Point(467, 32);
             this.lb_lat.Name = "lb_lat";
             this.lb_lat.Size = new System.Drawing.Size(244, 23);
             this.lb_lat.TabIndex = 7;
@@ -149,7 +167,7 @@
             // 
             // bt_getPoint
             // 
-            this.bt_getPoint.Location = new System.Drawing.Point(13, 134);
+            this.bt_getPoint.Location = new System.Drawing.Point(13, 160);
             this.bt_getPoint.Name = "bt_getPoint";
             this.bt_getPoint.Size = new System.Drawing.Size(75, 23);
             this.bt_getPoint.TabIndex = 1;
@@ -159,7 +177,7 @@
             // 
             // bt_Ok
             // 
-            this.bt_Ok.Location = new System.Drawing.Point(541, 133);
+            this.bt_Ok.Location = new System.Drawing.Point(541, 159);
             this.bt_Ok.Name = "bt_Ok";
             this.bt_Ok.Size = new System.Drawing.Size(75, 23);
             this.bt_Ok.TabIndex = 2;
@@ -170,7 +188,7 @@
             // bt_cancel
             // 
             this.bt_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bt_cancel.Location = new System.Drawing.Point(633, 134);
+            this.bt_cancel.Location = new System.Drawing.Point(633, 160);
             this.bt_cancel.Name = "bt_cancel";
             this.bt_cancel.Size = new System.Drawing.Size(75, 23);
             this.bt_cancel.TabIndex = 3;
@@ -178,13 +196,84 @@
             this.bt_cancel.UseVisualStyleBackColor = true;
             this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 64);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "经    度：";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(360, 64);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 12);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "纬    度：";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 12);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "缩 放 率：";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(360, 96);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 12);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "排 序 号：";
+            // 
+            // lb_mapLon
+            // 
+            this.lb_mapLon.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_bindingSource, "Maplon", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.lb_mapLon.Location = new System.Drawing.Point(110, 64);
+            this.lb_mapLon.Name = "lb_mapLon";
+            this.lb_mapLon.Size = new System.Drawing.Size(179, 23);
+            this.lb_mapLon.TabIndex = 13;
+            this.lb_mapLon.Text = "0.0";
+            // 
+            // lb_mapLat
+            // 
+            this.lb_mapLat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_bindingSource, "Maplat", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.lb_mapLat.Location = new System.Drawing.Point(467, 64);
+            this.lb_mapLat.Name = "lb_mapLat";
+            this.lb_mapLat.Size = new System.Drawing.Size(196, 23);
+            this.lb_mapLat.TabIndex = 14;
+            this.lb_mapLat.Text = "0.0";
+            // 
+            // lb_mapZoom
+            // 
+            this.lb_mapZoom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_bindingSource, "MapZoom", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.lb_mapZoom.Location = new System.Drawing.Point(110, 96);
+            this.lb_mapZoom.Name = "lb_mapZoom";
+            this.lb_mapZoom.Size = new System.Drawing.Size(179, 23);
+            this.lb_mapZoom.TabIndex = 15;
+            this.lb_mapZoom.Text = "0";
+            // 
+            // tb_order
+            // 
+            this.tb_order.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_bindingSource, "Order", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tb_order.Location = new System.Drawing.Point(467, 99);
+            this.tb_order.Name = "tb_order";
+            this.tb_order.Size = new System.Drawing.Size(244, 21);
+            this.tb_order.TabIndex = 16;
+            // 
             // OrganisationManage
             // 
             this.AcceptButton = this.bt_Ok;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bt_cancel;
-            this.ClientSize = new System.Drawing.Size(738, 163);
+            this.ClientSize = new System.Drawing.Size(738, 291);
             this.Controls.Add(this.bt_cancel);
             this.Controls.Add(this.bt_Ok);
             this.Controls.Add(this.bt_getPoint);
@@ -216,5 +305,13 @@
         private System.Windows.Forms.Button bt_Ok;
         private System.Windows.Forms.Button bt_cancel;
         private System.Windows.Forms.BindingSource bs_bindingSource;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lb_mapLon;
+        private System.Windows.Forms.Label lb_mapLat;
+        private System.Windows.Forms.Label lb_mapZoom;
+        private System.Windows.Forms.TextBox tb_order;
     }
 }

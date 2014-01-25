@@ -21,9 +21,9 @@ namespace Eulei.Control
         public AuthorityControl()
         {
             this.AuthorityDictionary.Add("InfoManege", true);
-            this.AuthorityDictionary.Add("AreaInfoManege", true);
-            this.AuthorityDictionary.Add("OrganisationInfoManege", true);
-            this.AuthorityDictionary.Add("StationInfoManege", true);
+            this.AuthorityDictionary.Add("AreaInfoAdd", true);
+            this.AuthorityDictionary.Add("OrganisationInfoAdd", true);
+            this.AuthorityDictionary.Add("StationInfoAdd", true);
         }
 
         public void Dispose()

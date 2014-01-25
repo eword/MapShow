@@ -53,7 +53,7 @@ namespace Eulei.Map
             }
             else
             {
-                MessageBox.Show(icopatch);
+                //MessageBox.Show(icopatch);
             }
             this.Info_bindingSource.DataSource = this._vw_statuion;
             this.bs_picture.DataSource = this._stationImageInfos;

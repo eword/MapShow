@@ -63,7 +63,7 @@ namespace Eulei.Map
         private void axMap1_DblClick(object sender, EventArgs e)
         {
             this.Close();
-            this.OnGetPointCloed(new EuleiPointEventArgs() { Lon=x,Lat=y});
+            this.OnGetPointCloed(new EuleiPointEventArgs() { Lon=x,Lat=y,Zoom=axMap1.Zoom});
         
           
         }

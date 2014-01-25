@@ -27,6 +27,10 @@ namespace TaskInterface
         /// </summary>
         public double lat { get; set; }
         /// <summary>
+        /// 地图缩放倍率
+        /// </summary>
+        public double Zoom { set; get; }
+        /// <summary>
         /// 邮编
         /// </summary>
         public string PostalCode { get; set; }
@@ -34,5 +38,9 @@ namespace TaskInterface
         /// 简码
         /// </summary>
         public string EasyCode { get; set; }
+        /// <summary>
+        /// 排序号
+        /// </summary>
+        public int Order { get; set; }
     }
 }

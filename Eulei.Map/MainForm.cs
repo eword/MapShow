@@ -28,7 +28,9 @@ namespace Eulei.Map
         Task _task = Task.Init();
         //站点列表数据源对象
         List<VW_Statuion> _VWstationSource;
-        List<VW_Statuion> _VWstationSourceAll;
+        //List<VW_Statuion> _VWstationSourceAll;
+        //区域列表数据源对象
+        List<Organisation> _Organisation;
         //区域列表数据源对象
         List<AreaInfo> _areas;
         /// <summary>
@@ -44,19 +46,25 @@ namespace Eulei.Map
 
         ImageList il_main = new ImageList();
         bool _isRemoveToolTip = true;
+        #region 树形
+        /// <summary>
+        /// lick图标
+        /// </summary>
+        string _linkPath = AppDomain.CurrentDomain.BaseDirectory + "Resources\\link.ico";
+        /// <summary>
+        /// ICO图标
+        /// </summary>
         string _ICOPath = AppDomain.CurrentDomain.BaseDirectory + "Resources\\ICO.png";
         /// <summary>
         /// 区级图标
         /// </summary>
-        string _QbmgPath = AppDomain.CurrentDomain.BaseDirectory + "Resources\\Qico.bmp";
+        string _QbmgPath = AppDomain.CurrentDomain.BaseDirectory + "Resources\\2Qico.png";
         /// <summary>
         /// 市级图标
         /// </summary>
-        string _SbmgPath = AppDomain.CurrentDomain.BaseDirectory + "Resources\\Sico.bmp";
-        /// <summary>
-        /// 县级图标
-        /// </summary>
-        string _XbmgPath = AppDomain.CurrentDomain.BaseDirectory + "Resources\\Xico.bmp";
+        string _SbmgPath = AppDomain.CurrentDomain.BaseDirectory + "Resources\\1Sico.png";
+
+        #endregion
         /// <summary>
         /// SQL linq 参数
         /// </summary>
@@ -69,12 +77,34 @@ namespace Eulei.Map
         #endregion
         public MainForm()
         {
-            InitializeComponent();
-            this._VWstationSourceAll = Task.Init().TaskStation.GetVW_StatuionList();
-            this.Init();
-            this.SetMenu();
-            this._isFullPlay = false;
+            try
+            {
+                Form _loading = new Form();
+                _loading.FormBorderStyle = FormBorderStyle.None;
+                _loading.StartPosition = FormStartPosition.CenterScreen;
+                _loading.Height = 200;
+                _loading.Width = 350;
+                System.Windows.Forms.Label _lld = new System.Windows.Forms.Label();
+                _lld.AutoSize = false;
+                _lld.Dock = DockStyle.Fill;
+                _lld.TextAlign = ContentAlignment.MiddleCenter;
+                _lld.Text = "数据加载中，请稍后……";
+                _loading.Controls.Add(_lld);
+                _loading.Show();
+                InitializeComponent();
 
+                //this._VWstationSourceAll = Task.Init().TaskStation.GetVW_StatuionList();
+                this.Init();
+                //this.SetMenu();
+                this._isFullPlay = false;
+                _loading.Close();
+            }
+            catch (Exception ex)
+            {
+                //记录异常信息。
+                Eulei.Log.FileOperation.WriteErrorLog(ex.Message);
+                MessageBox.Show(ex.Message);
+            }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -175,7 +205,7 @@ namespace Eulei.Map
             this.currentMousex = e.x;
             this.currentMousey = e.y;
             axMap1.ConvertCoord(ref e.x, ref  e.y, ref this.currentMapx, ref this.currentMapy, MapXLib.ConversionConstants.miScreenToMap);
-            toolStripStatusLabel1.Text = string.Format("X:{0} Y:{1}(mouseX:{2} mouseY{3})Zoom{4}", currentMapx, currentMapy, e.x, e.y, this.axMap1.Zoom);
+            toolStripStatusLabel1.Text = string.Format("经纬度：（{0}|{1}）,鼠标坐标(X:{2}|Y{3})，缩放率（{4}）", currentMapx, currentMapy, e.x, e.y, this.axMap1.Zoom);
         }
 
 
@@ -244,14 +274,25 @@ namespace Eulei.Map
         }
         private void tsmi_showSatationForListView_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in this.lv_main.SelectedItems)
+            if (this.tv_main.SelectedNode != null)
             {
-                VW_Statuion _vws = item.Tag as VW_Statuion;
-                if (_vws != null)
+
+                var item = this.tv_main.SelectedNode.Tag as VW_Statuion;
+
+                if (item != null)
                 {
-                    StationInfoBrowse _sib = StationInfoBrowse.Init(_vws.ID);
+                    StationInfoBrowse _sib = StationInfoBrowse.Init(item.ID);
                     _sib.ShowDialog();
                 }
+                else
+                {
+                    MessageBox.Show("您选择的不是网点，而是机构，请选择网点再尝试打开。");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("您先选择网点再尝试打开。");
             }
         }
         private void tsmi_organisationList_Click(object sender, EventArgs e)
@@ -413,46 +454,7 @@ namespace Eulei.Map
 
             this.BindData();
         }
-        private void lv_main_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            ListViewHitTestInfo info = this.lv_main.HitTest(e.X, e.Y);
-            if (info.Item != null)
-            {
-                this._isRemoveToolTip = false;
-                VW_Statuion _vws = info.Item.Tag as VW_Statuion;
-                if (_vws == null)
-                {
-                    return;
-                }
-                axMap1.ZoomTo(axMap1.Zoom, _vws.lon, _vws.lat);
-                string _str = "";
-                if (!string.IsNullOrEmpty(_vws.Name))
-                    _str += "网店名称:" + _vws.Name + "\r\n";
-                if (!string.IsNullOrEmpty(_vws.OrganisationName))
-                    _str += "所属机构:" + _vws.OrganisationName + "\r\n";
-                if (!string.IsNullOrEmpty(_vws.AreaInfoName))
-                    _str += "所属区域:" + _vws.AreaInfoName + "\r\n";
-                if (!string.IsNullOrEmpty(_vws.TEL))
-                    _str += "电    话:" + _vws.TEL + "\r\n";
-                if (!string.IsNullOrEmpty(_vws.Fax))
-                    _str += "传    真:" + _vws.Fax + "\r\n";
-                if (!string.IsNullOrEmpty(_vws.Address))
-                    _str += "地    址:" + _vws.Address + "\r\n";
-                if (!string.IsNullOrEmpty(_vws.StationInfoPrincipal))
-                    _str += "负 责 人:" + _vws.StationInfoPrincipal + "\r\n";
-                if (!string.IsNullOrEmpty(_vws.StationInfoPrincipalTEL))
-                    _str += "负责人电话:" + _vws.StationInfoPrincipalTEL;
 
-                this.MapToolTip.Active = false;
-                this.MapToolTip.IsBalloon = true;
-                this.MapToolTip.SetToolTip(this.axMap1, _str);
-                this.MapToolTip.Active = true;
-                this.MapToolTip.Show(_str, this.axMap1, this.axMap1.Width / 2, (int)this.axMap1.Height / 2);
-
-
-            }
-
-        }
 
         #endregion
 
@@ -471,7 +473,7 @@ namespace Eulei.Map
                     (sender1, e1) =>
                     {
 
-                        this.axMap1.ZoomTo(this.axMap1.Zoom, item.lon, item.lat);
+                        this.axMap1.ZoomTo(item.Zoom, item.lon, item.lat);
                         //生成查询语句
                         _sql = " 1=1 ";
                         this._params = null;
@@ -495,23 +497,13 @@ namespace Eulei.Map
 
                         _pageInfo.CurrentPageIndex = 1;
                         this.BindData();
-                        //this.SetToolTip(true);
+                        //this.SetToolTip(true);                
 
                     }
                     );
                 _tsbItem.Text = item.Name;
                 _tsbItem.Tag = "area";
                 this.MainToolStrip.Items.Add(_tsbItem);
-            }
-        }
-        private void SetOrganisationGroup()
-        {
-            List<Organisation> _organisations = _task.TaskStation.GetOrganisationList();
-            foreach (var item in _organisations)
-            {
-                ListViewGroup _lvg = new ListViewGroup(item.ID.ToString(), item.Name);
-                this.lv_main.Groups.Add(_lvg);
-
             }
         }
         /// <summary>
@@ -547,61 +539,49 @@ namespace Eulei.Map
         }
         private void BindData()
         {
-            this._pageInfo.PageSize = 200;
+            this._pageInfo.PageSize = 1000;
             this._pageInfo.RecordCount = _task.TaskStation.GetVW_StatuionList(_sql, this._params);
             this._VWstationSource = _task.TaskStation.GetVW_StatuionList(this._sql, this._params, (_pageInfo.PageSize * (_pageInfo.CurrentPageIndex - 1)), _pageInfo.PageSize);
+            this._Organisation = _task.TaskStation.GetOrganisationList();
+            this.BindTreeViewData();
             this.SetPageLabel();
-            this.lv_main.Items.Clear();
-            this.il_main.Images.Clear();
-            this.lv_main.View = View.Tile;
-            this.lv_main.TileSize = new Size(200, 40);
-            this.lv_main.LargeImageList = this.il_main;
-            this.lv_main.BeginUpdate();
-            if (File.Exists(_ICOPath))
-            {
-                Image _im = Image.FromFile(_ICOPath);
-                this.il_main.Images.Add("ICO", _im);
-                this.il_main.ImageSize = new Size(22, 32);
-            }
-            else
-            {
-                MessageBox.Show("图标缺失！");
-            }
-            foreach (var item in this._VWstationSource)
-            {
-                ListViewItem _lvi = new ListViewItem();
-                _lvi.ImageKey = "ICO";
-                _lvi.Tag = item;
-                _lvi.Text = item.Name;
-                _lvi.SubItems.Add(item.AreaInfoName);
-                _lvi.SubItems.Add(item.OrganisationName);
-                _lvi.Group = this.lv_main.Groups[item.OrganisationID.ToString()];
-                this.lv_main.Items.Add(_lvi);
-            }
-            this.lv_main.EndUpdate();
-            this.lv_main.ShowGroups = true;
             this.VW_StatuionBindingSource.DataSource = this._VWstationSource;
             this.rv_main.RefreshReport();
+            this.NewUserLayer(this.m_layerName);
         }
         /// <summary>
         /// 选择、更换GST文件
         /// </summary>
         private void SetGST()
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.DefaultExt = "*.gst";
-            openFileDialog1.InitialDirectory = appDirectory;
-            openFileDialog1.Filter = "geoset file (*.gst)|*.gst";
+            try
+            {
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                openFileDialog1.DefaultExt = "*.gst";
+                openFileDialog1.InitialDirectory = appDirectory;
+                openFileDialog1.Filter = "geoset file (*.gst)|*.gst";
 
-            openFileDialog1.ShowDialog();
+                openFileDialog1.ShowDialog();
 
-            if (openFileDialog1.FileName == "")
-                return;
-            axMap1.GeoSet = openFileDialog1.FileName;
-            this.axMap1.TitleText = "";
-            this.NewUserLayer(this.m_layerName);
-            this._config.GstPath = openFileDialog1.FileName.Replace(this.mapDefaultDirectory, "");
-            _task.TaskConfig.SetConfig(this._config);
+                if (openFileDialog1.FileName == "")
+                    return;
+                axMap1.GeoSet = openFileDialog1.FileName;
+                this.axMap1.TitleText = "";
+                if (this._VWstationSource != null)
+                    if (this._VWstationSource.Count > 0)
+                    {
+                        this.NewUserLayer(this.m_layerName);
+                    }
+                this._config.GstPath = openFileDialog1.FileName.Replace(this.mapDefaultDirectory, "");
+                _task.TaskConfig.SetConfig(this._config);
+            }
+            catch (Exception ex)
+            {
+
+                //记录异常信息。
+                Eulei.Log.FileOperation.WriteErrorLog(ex.Message);
+                MessageBox.Show(ex.Message);
+            }
         }
         /// <summary>
         /// 初始化地图位置
@@ -618,8 +598,9 @@ namespace Eulei.Map
                    _config.CenterY
                     );
             }
-            catch
-            {
+            catch (Exception ex)
+            {                //记录异常信息。
+                Eulei.Log.FileOperation.WriteErrorLog(ex.Message);
                 MessageBox.Show("未设置默认位置，请点击“系统设置”下的“保存默认位置”功能。");
                 return false;
             }
@@ -647,12 +628,12 @@ namespace Eulei.Map
             if (File.Exists(_config.GstPath))
             {
                 axMap1.GeoSet = _config.GstPath;
-                this.NewUserLayer(this.m_layerName);
+                // this.NewUserLayer(this.m_layerName);
             }
             else if (File.Exists(this.mapDefaultDirectory + _config.GstPath))
             {
                 axMap1.GeoSet = this.mapDefaultDirectory + _config.GstPath;
-                this.NewUserLayer(this.m_layerName);
+                //  this.NewUserLayer(this.m_layerName);
             }
             else
             {
@@ -672,18 +653,19 @@ namespace Eulei.Map
         /// </summary>
         public void Init()
         {
-            this.SetAreaLink();
-            this.SetOrganisationGroup();
-            this._pageInfo.CurrentPageIndex = 1;
-            this.BindData();
             this._config = _task.TaskConfig.GetConfigInfo();
+            this.SetAreaLink();
+            this.InitTreeView();
+            this._pageInfo.CurrentPageIndex = 1;
+            this.InitMapx();
+            this.BindData();
             string _skinFilePath = appDirectory + "Skins\\" + this._config.Skin;
             if (!string.IsNullOrEmpty(this._config.Skin) && File.Exists(_skinFilePath))
             {
                 //this.skinEngine1.SkinFile = _skinFilePath;
             }
             //初始化Mapx
-            this.InitMapx();
+
 
             // this._Init = false;
         }
@@ -694,6 +676,7 @@ namespace Eulei.Map
         {
             try
             {
+
                 MapXLib.Layer layer;
                 MapXLib.Fields flds = new MapXLib.FieldsClass();
 
@@ -719,9 +702,14 @@ namespace Eulei.Map
 
 
 
-
-
-                layer = axMap1.Layers.Add(li);
+                foreach (MapXLib.Layer item in axMap1.Layers)
+                {
+                    if (item.Name.Equals(layerName))
+                    {
+                        axMap1.Layers.Remove(item);
+                    }
+                }
+                layer = axMap1.Layers.Add(li,-1);
                 layer.ZoomLayer = true;
                 layer.ZoomMin = 0;
                 layer.ZoomMax = 200;
@@ -730,7 +718,7 @@ namespace Eulei.Map
                 ds = axMap1.DataSets.Add(MapXLib.DatasetTypeConstants.miDataSetLayer, layer);
 
 
-                foreach (var item in this._VWstationSourceAll)
+                foreach (var item in this._VWstationSource)
                 {
                     rvs = ds.get_RowValues(0);
                     rvs._Item("ID").Value = item.ID.ToString();
@@ -756,6 +744,7 @@ namespace Eulei.Map
                 layer.LabelProperties.Dataset = ds;
                 layer.LabelProperties.DataField = ds.Fields["Name"];
                 layer.LabelProperties.Position = MapXLib.PositionConstants.miPositionBC;
+                layer.LabelProperties.Overlap = true;
                 layer.LabelProperties.Style.TextFont.Size = 10;
                 layer.LabelProperties.LabelZoom = true;
                 layer.LabelProperties.LabelZoomMax = 200;
@@ -804,7 +793,9 @@ namespace Eulei.Map
             {
                 _fullForm.TopMost = false;
                 _fullForm.FormBorderStyle = FormBorderStyle.Sizable;
+                _fullForm.tsc_main.TopToolStripPanelVisible = true;
                 _fullForm.tsb_fullShowMap.Text = "地图全屏";
+                _fullForm.eP_siteList.Expand = true;
                 this.Visible = true;
                 this._isFullPlay = false;
                 _fullForm = null;
@@ -814,14 +805,18 @@ namespace Eulei.Map
         private void SetMenu()
         {
             AuthortyControl _ac = AuthortyControl.Init();
-            this.tsmi_infoManage.Visible = _ac.Control.GetAuthority("InfoManege");
-            this.tsmi_organisationList.Visible = _ac.Control.GetAuthority("OrganisationInfoManege");
-            this.tsmi_areas.Visible = _ac.Control.GetAuthority("AreaInfoManege");
-            this.tsmi_stationList.Visible = _ac.Control.GetAuthority("StationInfoManege");
+            //this.tsmi_infoManage.Visible = _ac.Control.GetAuthority("InfoManege");
+            //this.tsmi_organisationList.Visible = _ac.Control.GetAuthority("OrganisationInfoManege");
+            //this.tsmi_areas.Visible = _ac.Control.GetAuthority("AreaInfoManege");
+            //this.tsmi_stationList.Visible = _ac.Control.GetAuthority("StationInfoManege");
             _ac.Dispose();
         }
         #endregion
 
+
+
+
+        #endregion
         private void axMap1_DblClick(object sender, EventArgs e)
         {
             if (this.axMap1.CurrentTool.Equals(ToolConstants.miArrowTool))
@@ -878,10 +873,6 @@ namespace Eulei.Map
                 }
             }
         }
-
-
-        #endregion
-
         private void axMap1_MapViewChanged(object sender, EventArgs e)
         {
             if (!this._isRemoveToolTip)
@@ -895,12 +886,154 @@ namespace Eulei.Map
             }
         }
 
-
-
-        private void lv_main_ItemMouseHover(object sender, ListViewItemMouseHoverEventArgs e)
+        private void InitTreeView()
         {
+            #region 单击事件
+            this.tv_main.NodeMouseClick += new TreeNodeMouseClickEventHandler((sender1, e1) =>
+            {
+                if (e1.Button.Equals(MouseButtons.Right))
+                {
+                    if (e1.Node != null)
+                    {
+                        this.tv_main.SelectedNode = e1.Node;
+                    }
+                }
+            });
+            #endregion
+            #region 双击事件
+            this.tv_main.NodeMouseDoubleClick += new TreeNodeMouseClickEventHandler((sender1, e1) =>
+                   {                      
+                       if(e1.Node.Level>1)
+                       if (this.tc_main.SelectedTab.Name.Equals("tp_map"))
+                       {
+                           var item = e1.Node.Tag as VW_Statuion;
+                           if (item != null)
+                           {
+                               axMap1.ZoomTo(item.Zoom, item.lon, item.lat);
+                               string _str = "";
+                               if (!string.IsNullOrEmpty(item.Name))
+                                   _str += "网店名称:" + item.Name + "\r\n";
+                               if (!string.IsNullOrEmpty(item.OrganisationName))
+                                   _str += "所属机构:" + item.OrganisationName + "\r\n";
+                               if (!string.IsNullOrEmpty(item.AreaInfoName))
+                                   _str += "所属区域:" + item.AreaInfoName + "\r\n";
+                               if (!string.IsNullOrEmpty(item.TEL))
+                                   _str += "电    话:" + item.TEL + "\r\n";
+                               if (!string.IsNullOrEmpty(item.Fax))
+                                   _str += "传    真:" + item.Fax + "\r\n";
+                               if (!string.IsNullOrEmpty(item.Address))
+                                   _str += "地    址:" + item.Address + "\r\n";
+                               if (!string.IsNullOrEmpty(item.StationInfoPrincipal))
+                                   _str += "负 责 人:" + item.StationInfoPrincipal + "\r\n";
+                               if (!string.IsNullOrEmpty(item.StationInfoPrincipalTEL))
+                                   _str += "负责人电话:" + item.StationInfoPrincipalTEL;
+
+                               this.MapToolTip.Active = false;
+                               this.MapToolTip.IsBalloon = true;
+                               this.MapToolTip.SetToolTip(this.axMap1, _str);
+                               this.MapToolTip.Active = true;
+                               this.MapToolTip.Show(_str, this.axMap1, this.axMap1.Width / 2, (int)this.axMap1.Height / 2);
+                               this._isRemoveToolTip = false;
+
+                           }
+                       }
+                   });
+            #endregion
+            if (File.Exists(this._linkPath))
+            {
+                Image _im = Image.FromFile(_linkPath);
+                this.il_main.Images.Add("Link", _im);
+                this.il_main.ImageSize = new Size(22, 32);
+            }
+            else
+            {
+                MessageBox.Show("Link图标缺失！");
+            }
+            if (File.Exists(this._ICOPath))
+            {
+                Image _im = Image.FromFile(_ICOPath);
+                this.il_main.Images.Add("ICO", _im);
+                this.il_main.ImageSize = new Size(22, 32);
+            }
+            else
+            {
+                MessageBox.Show("ICO图标缺失！");
+            }
+            if (File.Exists(this._SbmgPath))
+            {
+
+                Image _im = Image.FromFile(_SbmgPath);
+                this.il_main.Images.Add("1Sico", _im);
+                this.il_main.ImageSize = new Size(22, 32);
+            }
+            else
+            {
+                MessageBox.Show("1Sico图标缺失！");
+            }
+            if (File.Exists(this._QbmgPath))
+            {
+                Image _im = Image.FromFile(_QbmgPath);
+                this.il_main.Images.Add("2Qico", _im);
+                this.il_main.ImageSize = new Size(22, 32);
+            }
+            else
+            {
+                MessageBox.Show("2Qico图标缺失！");
+            }
+
+            this.il_main.ImageSize = new Size(24, 24);
+            this.tv_main.ImageList = this.il_main;
+            this.tv_main.LineColor = Color.Blue;
+            this.tv_main.FullRowSelect = true;
+            this.tv_main.ItemHeight = 38;
+            this.tv_main.ShowLines = true;
+            this.tv_main.ShowRootLines = true;
+            
 
         }
+        private void BindTreeViewData()
+        {
+            this.tv_main.Nodes.Clear();
+            TreeNode root = new TreeNode();
+            root.Text = string.Format("泉州快递企业-[共{0}家(法人{1}家，分支{2})]", this._VWstationSource.Count.ToString()
+            , this._VWstationSource.Where(m => m.ImageName.Equals("1Sico")).Count().ToString()
+             , this._VWstationSource.Where(m => m.ImageName.Equals("2Qico")).Count().ToString()
+            );
+            root.Tag = "";
+            root.ImageKey = "Link";
+            root.SelectedImageKey = "Link";
+            root.Expand();
+
+            foreach (var item in this._Organisation)
+            {
+                var chinden = this._VWstationSource.Where(m => m.OrganisationID.Equals(item.ID));
+                TreeNode organisation = new TreeNode();
+                organisation.Text = item.Name + "--(" + chinden.Count().ToString() + "家)";
+                organisation.Tag = item;
+                organisation.ImageKey = "ICO";
+                organisation.SelectedImageKey = "ICO";
+                organisation.ContextMenuStrip = this.cms_organisation;
+                foreach (var chinder in chinden)
+                {
+                    TreeNode node = new TreeNode();
+                    node.Text = chinder.Name;
+                    node.Tag = chinder;
+                    node.ImageKey = chinder.ImageName;
+                    node.SelectedImageKey = chinder.ImageName;
+                    node.ContextMenuStrip = this.cms_listView;
+                    organisation.Nodes.Add(node);
+                }
+                if (organisation.Nodes.Count > 0)
+                {
+                    root.Nodes.Add(organisation);
+                }
+            }
+            if (root.Nodes.Count > 0)
+            {
+                this.tv_main.Nodes.Add(root);
+            }
+        }
+
 
         private void MainForm_Deactivate(object sender, EventArgs e)
         {
@@ -910,11 +1043,49 @@ namespace Eulei.Map
             }
         }
 
-        private void 树形测试ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tc_main_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tree _tr = new tree();
-            _tr.Show();
+            if (this.MapToolTip.Active)
+            {
+                this.MapToolTip.Active = false;
+            }
         }
+
+        private void tsmi_organisation_Click(object sender, EventArgs e)
+        {
+            if (this.tv_main.SelectedNode != null)
+            {
+                var item = this.tv_main.SelectedNode.Tag as Organisation;
+                if (item != null)
+                {
+                    this.axMap1.ZoomTo(item.MapZoom, item.Maplon, item.Maplat);
+                    //生成查询语句
+                    _sql = " 1=1 ";
+                    this._params = null;
+                    this._params = new object[] { item.ID };
+                    //网点区域ID
+                    if (_sql.Equals(""))
+                    {
+                        _sql = _sql
+                            + " ("
+                            + "OrganisationID.Equals(@0)"
+                            + ")";
+                    }
+                    else
+                    {
+                        _sql = _sql
+                          + " and "
+                            + "  ("
+                           + "OrganisationID.Equals(@0)"
+                            + ")";
+                    }
+
+                    _pageInfo.CurrentPageIndex = 1;
+                    this.BindData();
+                }
+            }
+        }
+
         #region 备份代码
 
         //private void lv_main_ItemMouseHover(object sender, ListViewItemMouseHoverEventArgs e)

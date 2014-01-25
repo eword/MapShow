@@ -1,21 +1,29 @@
-﻿namespace DBTask.DB {
-    
-    
-    public partial class StationDataSet {
-    }
-}
+﻿namespace DBTask.DB
+{
 
-namespace DBTask.DB.StationDataSetTableAdapters {
-    partial class baseStationTableAdapter
+
+    public partial class StationDataSet
     {
+        partial class VW_baseStationDataTable
+        {
+
+        }
     }
 
-    partial class stationInfoTableAdapter
+    namespace DBTask.DB.StationDataSetTableAdapters
     {
-    }
+        partial class baseStationTableAdapter
+        {
+        }
 
-    
-    
-    public partial class AreaInfoTableAdapter {
+        partial class stationInfoTableAdapter
+        {
+        }
+
+
+
+        public partial class AreaInfoTableAdapter
+        {
+        }
     }
 }

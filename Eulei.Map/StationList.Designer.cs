@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StationList));
             Eulei.Map.MyControl.CurrentPageIndexChangedEventArgs currentPageIndexChangedEventArgs1 = new Eulei.Map.MyControl.CurrentPageIndexChangedEventArgs();
             Eulei.Map.Code.PageInfo pageInfo1 = new Eulei.Map.Code.PageInfo();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StationList));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,6 +53,7 @@
             this.tsb_edit = new System.Windows.Forms.ToolStripButton();
             this.tsb_del = new System.Windows.Forms.ToolStripButton();
             this.tsb_refresh = new System.Windows.Forms.ToolStripButton();
+            this.pager1 = new Eulei.Map.MyControl.Pager();
             this.dgv_main = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +69,6 @@
             this.stationInfoPostalCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stationInfoBusinessModelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bs_main = new System.Windows.Forms.BindingSource(this.components);
-            this.pager1 = new Eulei.Map.MyControl.Pager();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -97,8 +97,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pager1);
             this.splitContainer1.Panel2.Controls.Add(this.dgv_main);
-            this.splitContainer1.Size = new System.Drawing.Size(755, 608);
-            this.splitContainer1.SplitterDistance = 156;
+            this.splitContainer1.Size = new System.Drawing.Size(755, 625);
+            this.splitContainer1.SplitterDistance = 160;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -271,7 +271,7 @@
             // 
             // tsb_add
             // 
-            this.tsb_add.Image = ((System.Drawing.Image)(resources.GetObject("tsb_add.Image")));
+            this.tsb_add.Image = global::Eulei.Map.Properties.Resources._22;
             this.tsb_add.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_add.Name = "tsb_add";
             this.tsb_add.Size = new System.Drawing.Size(52, 22);
@@ -280,7 +280,7 @@
             // 
             // tsb_edit
             // 
-            this.tsb_edit.Image = ((System.Drawing.Image)(resources.GetObject("tsb_edit.Image")));
+            this.tsb_edit.Image = global::Eulei.Map.Properties.Resources._33;
             this.tsb_edit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_edit.Name = "tsb_edit";
             this.tsb_edit.Size = new System.Drawing.Size(52, 22);
@@ -289,7 +289,7 @@
             // 
             // tsb_del
             // 
-            this.tsb_del.Image = ((System.Drawing.Image)(resources.GetObject("tsb_del.Image")));
+            this.tsb_del.Image = global::Eulei.Map.Properties.Resources._11;
             this.tsb_del.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_del.Name = "tsb_del";
             this.tsb_del.Size = new System.Drawing.Size(52, 22);
@@ -298,12 +298,27 @@
             // 
             // tsb_refresh
             // 
-            this.tsb_refresh.Image = ((System.Drawing.Image)(resources.GetObject("tsb_refresh.Image")));
+            this.tsb_refresh.Image = global::Eulei.Map.Properties.Resources._00;
             this.tsb_refresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_refresh.Name = "tsb_refresh";
             this.tsb_refresh.Size = new System.Drawing.Size(52, 22);
             this.tsb_refresh.Text = "刷新";
             this.tsb_refresh.Click += new System.EventHandler(this.winGridViewPager1_OnRefresh);
+            // 
+            // pager1
+            // 
+            this.pager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pager1.Location = new System.Drawing.Point(3, 439);
+            this.pager1.Name = "pager1";
+            pageInfo1.CurrentPageIndex = 1;
+            pageInfo1.PageSize = 0;
+            pageInfo1.RecordCount = 0;
+            currentPageIndexChangedEventArgs1.PageInfo = pageInfo1;
+            this.pager1.PageInfoEventArgs = currentPageIndexChangedEventArgs1;
+            this.pager1.Size = new System.Drawing.Size(747, 27);
+            this.pager1.TabIndex = 1;
+            this.pager1.CurrentPageIndexChanged += new Eulei.Map.MyControl.CurrentPageIndexChangedEventHandler(this.pager1_CurrentPageIndexChanged);
             // 
             // dgv_main
             // 
@@ -332,7 +347,7 @@
             this.dgv_main.Name = "dgv_main";
             this.dgv_main.RowTemplate.Height = 23;
             this.dgv_main.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_main.Size = new System.Drawing.Size(747, 429);
+            this.dgv_main.Size = new System.Drawing.Size(747, 430);
             this.dgv_main.TabIndex = 0;
             // 
             // ID
@@ -418,26 +433,11 @@
             // 
             this.bs_main.DataSource = typeof(TaskInterface.VW_Statuion);
             // 
-            // pager1
-            // 
-            this.pager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pager1.Location = new System.Drawing.Point(3, 432);
-            this.pager1.Name = "pager1";
-            pageInfo1.CurrentPageIndex = 1;
-            pageInfo1.PageSize = 0;
-            pageInfo1.RecordCount = 0;
-            currentPageIndexChangedEventArgs1.PageInfo = pageInfo1;
-            this.pager1.PageInfoEventArgs = currentPageIndexChangedEventArgs1;
-            this.pager1.Size = new System.Drawing.Size(747, 25);
-            this.pager1.TabIndex = 1;
-            this.pager1.CurrentPageIndexChanged += new Eulei.Map.MyControl.CurrentPageIndexChangedEventHandler(this.pager1_CurrentPageIndexChanged);
-            // 
             // StationList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 608);
+            this.ClientSize = new System.Drawing.Size(755, 625);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

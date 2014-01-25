@@ -10,5 +10,6 @@ namespace Eulei.Map.Code
     {
         public double Lon { set; get; }
         public double Lat { set; get; }
+        public double Zoom { set; get; }
     }
 }

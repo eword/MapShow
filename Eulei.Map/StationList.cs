@@ -29,10 +29,19 @@ namespace Eulei.Map
         public StationList()
         {
             InitializeComponent();
+            this.SetMenu();
             this.Load += StationList_Load;
-
+            
         }
-
+        #region 权限控制
+        private void SetMenu()
+        {
+            AuthortyControl _ac = AuthortyControl.Init();
+            this.tsb_add.Visible = _ac.Control.GetAuthority("StationInfoAdd");
+            this.tsb_del.Visible = _ac.Control.GetAuthority("StationInfoAdd"); 
+            _ac.Dispose();
+        }
+        #endregion
         void StationList_Load(object sender, EventArgs e)
         {
             _task = Task.Init();
@@ -74,6 +83,7 @@ namespace Eulei.Map
             this.pager1.PageInfoEventArgs.PageInfo.RecordCount = _task.TaskStation.GetVW_StatuionList(this._sql, this._params);
             this._vw_stations = _task.TaskStation.GetVW_StatuionList(this._sql, this._params, this.pager1.PageInfoEventArgs.PageInfo.PageSize * (this.pager1.PageInfoEventArgs.PageInfo.CurrentPageIndex - 1), this.pager1.PageInfoEventArgs.PageInfo.PageSize);
             this.bs_main.DataSource = this._vw_stations;
+            this.pager1.Refresh();
             //#region 添加别名解析
             //this.winGridViewPager1.AddColumnAlias("ID", "编号");
             //this.winGridViewPager1.AddColumnAlias("Num", "网点编号");
@@ -110,8 +120,8 @@ namespace Eulei.Map
             {
                 foreach (DataGridViewRow row in grid.SelectedRows)
                 {
-                    string _name = row.Cells["Name"].Value != null ? row.Cells["Name"].Value.ToString() :
-                        row.Cells["Num"].Value != null ? row.Cells["Num"].Value.ToString() : "";
+                    string _name = row.Cells["nameDataGridViewTextBoxColumn"].Value != null ? row.Cells["nameDataGridViewTextBoxColumn"].Value.ToString() :
+                        row.Cells["numDataGridViewTextBoxColumn"].Value != null ? row.Cells["numDataGridViewTextBoxColumn"].Value.ToString() : "";
                     if (!MessageBox.Show("您确定删除“" + _name + "”这条记录么？", "提醒", MessageBoxButtons.YesNo).Equals(DialogResult.Yes))
                     {
                         return;

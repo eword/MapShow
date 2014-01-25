@@ -42,6 +42,10 @@
             this.lb_lat = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tb_postalCode = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lb_zoom = new System.Windows.Forms.Label();
+            this.tb_order = new System.Windows.Forms.TextBox();
             this.bt_OK = new System.Windows.Forms.Button();
             this.bt_cancel = new System.Windows.Forms.Button();
             this.bt_getPoint = new System.Windows.Forms.Button();
@@ -64,15 +68,20 @@
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lb_lon, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lb_lat, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tb_postalCode, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tb_postalCode, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lb_zoom, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tb_order, 3, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(530, 108);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(530, 143);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -152,7 +161,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 72);
+            this.label7.Location = new System.Drawing.Point(3, 108);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 8;
@@ -161,14 +170,49 @@
             // tb_postalCode
             // 
             this.tb_postalCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_bindingSource, "PostalCode", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tb_postalCode.Location = new System.Drawing.Point(74, 75);
+            this.tb_postalCode.Location = new System.Drawing.Point(74, 111);
             this.tb_postalCode.Name = "tb_postalCode";
             this.tb_postalCode.Size = new System.Drawing.Size(179, 21);
             this.tb_postalCode.TabIndex = 9;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "缩 放 率：";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(259, 72);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 12);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "排 序 号：";
+            // 
+            // lb_zoom
+            // 
+            this.lb_zoom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_bindingSource, "Zoom", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.lb_zoom.Location = new System.Drawing.Point(74, 72);
+            this.lb_zoom.Name = "lb_zoom";
+            this.lb_zoom.Size = new System.Drawing.Size(179, 23);
+            this.lb_zoom.TabIndex = 12;
+            this.lb_zoom.Text = "0";
+            // 
+            // tb_order
+            // 
+            this.tb_order.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_bindingSource, "Order", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tb_order.Location = new System.Drawing.Point(330, 75);
+            this.tb_order.Name = "tb_order";
+            this.tb_order.Size = new System.Drawing.Size(196, 21);
+            this.tb_order.TabIndex = 13;
+            // 
             // bt_OK
             // 
-            this.bt_OK.Location = new System.Drawing.Point(342, 144);
+            this.bt_OK.Location = new System.Drawing.Point(342, 178);
             this.bt_OK.Name = "bt_OK";
             this.bt_OK.Size = new System.Drawing.Size(75, 23);
             this.bt_OK.TabIndex = 1;
@@ -179,7 +223,7 @@
             // bt_cancel
             // 
             this.bt_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bt_cancel.Location = new System.Drawing.Point(450, 144);
+            this.bt_cancel.Location = new System.Drawing.Point(450, 178);
             this.bt_cancel.Name = "bt_cancel";
             this.bt_cancel.Size = new System.Drawing.Size(75, 23);
             this.bt_cancel.TabIndex = 2;
@@ -189,7 +233,7 @@
             // 
             // bt_getPoint
             // 
-            this.bt_getPoint.Location = new System.Drawing.Point(17, 144);
+            this.bt_getPoint.Location = new System.Drawing.Point(17, 178);
             this.bt_getPoint.Name = "bt_getPoint";
             this.bt_getPoint.Size = new System.Drawing.Size(75, 23);
             this.bt_getPoint.TabIndex = 3;
@@ -204,7 +248,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.CancelButton = this.bt_cancel;
-            this.ClientSize = new System.Drawing.Size(551, 179);
+            this.ClientSize = new System.Drawing.Size(551, 318);
             this.Controls.Add(this.bt_getPoint);
             this.Controls.Add(this.bt_cancel);
             this.Controls.Add(this.bt_OK);
@@ -242,5 +286,9 @@
         private System.Windows.Forms.Button bt_OK;
         private System.Windows.Forms.Button bt_cancel;
         private System.Windows.Forms.Button bt_getPoint;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lb_zoom;
+        private System.Windows.Forms.TextBox tb_order;
     }
 }

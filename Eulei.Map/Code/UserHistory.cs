@@ -12,7 +12,7 @@ namespace Eulei.Map.Code
     {
         private static UserHistory _userHistory;
         private Root _usersRoot;
-        public static readonly string filePath = AppDomain.CurrentDomain.BaseDirectory + "UserHistory/User";
+        public static readonly string filePath = AppDomain.CurrentDomain.BaseDirectory + "UserHistory/User.xml";
         private UserHistory()
         {          
         }

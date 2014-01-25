@@ -154,5 +154,9 @@ namespace TaskInterface
         /// 简码
         /// </summary>
         public string AreaInfoEasyCode { get; set; }
+        /// <summary>
+        /// 区域排序号
+        /// </summary>
+        public int AreaInfoOrder { get; set; }
     }
 }

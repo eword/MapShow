@@ -37,11 +37,35 @@ namespace Eulei.Map
         }
         #endregion
         #region event
+        /// <summary>
+        /// 输入验证
+        /// </summary>
+        /// <returns>true:通过验证；false：未通过</returns>
+        private bool InputValidation()
+        {
+            bool _return = true;
+            string _str = string.Empty;
+            if (string.IsNullOrEmpty(this.cb_userName.Text))
+                _str += "请输入账号\r\n";
+            if (string.IsNullOrEmpty(this.tb_PassWord.Text))
+                _str += "请输入密码\r\n";
+
+            if (!string.IsNullOrEmpty(_str))
+            {
+                MessageBox.Show(_str);
+                _return = false;
+            }
+            return _return;
+        }
         private void bt_OK_Click(object sender, EventArgs e)
         {
 
             try
             {
+                if (!this.InputValidation())
+                {
+                    return;
+                }
                 //初始化membership
                 TaskMemberShip _memberShipProvider = TaskMemberShip.Init();
                 //验证账号信息

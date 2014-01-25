@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Eulei.Map.Code;
 using System.IO;
+using Eulei.Log;
 namespace Eulei.Map
 {
     static class Program
@@ -23,15 +24,20 @@ namespace Eulei.Map
                 //判断历史用户配置文件是否存在
                 if (File.Exists(UserHistory.filePath))
                 {
+
                     //载录历史用户配置文件
                     UserHistory.Init().Load();
+
                     //判断用户是否陪了自动登陆
                     if (UserHistory.Init().UserRoot.RememberMe)
                     {
+
                         //string _userName = DESHelper.DESDecrypt(UserHistory.Init().UserRoot.LastUser);
                         string _userName = UserHistory.Init().UserRoot.LastUser;
+
                         if (TaskMemberShip.Init().MembershipService.AutoLogin(_userName) != null)
                         {
+
                             //成功登陆，加载主窗体
                             _autoLoginStatus = true;
                         }
@@ -41,21 +47,25 @@ namespace Eulei.Map
 
             }
             catch (Exception ex)
-            {
+            {             
+                //记录异常信息。
+                Eulei.Log.FileOperation.WriteErrorLog(ex.Message);
                 MessageBox.Show("自动登入设置异常！" + ex.Message);
             }
             //显示登陆框
-            //try
-            //{
-            if (_autoLoginStatus)
-                Application.Run(new MainForm());
-            else
-                Login();
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            try
+            {
+                if (_autoLoginStatus)
+                    Application.Run(new MainForm());
+                else
+                    Login();
+            }
+            catch (Exception ex)
+            {               
+                //记录异常信息。
+                Eulei.Log.FileOperation.WriteErrorLog(ex.Message);
+                MessageBox.Show(ex.Message);
+            }
 
 
         }

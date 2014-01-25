@@ -20,10 +20,10 @@ namespace Eulei.ControlLimit
         private Dictionary<string, bool> AuthorityDictionary = new Dictionary<string, bool>();
         public AuthorityControl()
         {
-            this.AuthorityDictionary.Add("InfoManege",false);
-            this.AuthorityDictionary.Add("AreaInfoManege", false);
-            this.AuthorityDictionary.Add("OrganisationInfoManege", false);
-            this.AuthorityDictionary.Add("StationInfoManege", false);
+            this.AuthorityDictionary.Add("InfoManege",true);
+            this.AuthorityDictionary.Add("AreaInfoAdd", false);
+            this.AuthorityDictionary.Add("OrganisationInfoAdd", false);
+            this.AuthorityDictionary.Add("StationInfoAdd", false);
         }
 
         public void Dispose()

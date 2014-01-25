@@ -158,6 +158,22 @@ namespace TaskInterface
                 this._lat = value;
             }
         }
+        private double _zoom = 0.0;
+        /// <summary>
+        /// 纬度
+        /// </summary>
+        public double Zoom
+        {
+            get
+            {
+                return this._zoom;
+            }
+            set
+            {
+                //if (value != null)
+                this._zoom = value;
+            }
+        }
         private Guid _areaID = Guid.NewGuid();
         /// <summary>
         /// AreaID区域ID：GUID

@@ -16,8 +16,19 @@ namespace Eulei.Map
         public AreaList()
         {
             InitializeComponent();
+            this.SetMenu();
             this.Init();
+          
         }
+        #region 权限控制
+        private void SetMenu()
+        {
+            AuthortyControl _ac = AuthortyControl.Init();
+            this.tsb_add.Visible = _ac.Control.GetAuthority("AreaInfoAdd");
+            this.tsb_del.Visible = _ac.Control.GetAuthority("AreaInfoAdd"); 
+            _ac.Dispose();
+        }
+        #endregion
         void Init()
         {_areaInfos= Task.Init().TaskStation.GetAreaList();
         this.bindingSource1.DataSource = _areaInfos;

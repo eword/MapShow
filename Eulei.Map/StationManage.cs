@@ -22,9 +22,8 @@ namespace Eulei.Map
         private StationManage(FormStatus status, Guid id)
         {
             InitializeComponent();
-            _imageNames.Add(new KeyValuePair<string, string>("市级S", "Sico"));
-            _imageNames.Add(new KeyValuePair<string, string>("区级Q", "Qico"));
-            _imageNames.Add(new KeyValuePair<string, string>("县级X", "Xico"));
+            _imageNames.Add(new KeyValuePair<string, string>("企业法人", "1Sico"));
+            _imageNames.Add(new KeyValuePair<string, string>("分支机构", "2Qico"));
             this.cbb_ImageName.DataSource = this._imageNames;
             this.cbb_ImageName.DisplayMember = "key";
             this.cbb_ImageName.ValueMember = "value";
@@ -92,6 +91,7 @@ namespace Eulei.Map
             {
                 this.lb_lon.Text = e1.Lon.ToString();
                 this.lb_lat.Text = e1.Lat.ToString();
+                this.lb_zoom.Text = e1.Zoom.ToString();
             });
             _gp.ShowDialog();
         }
