@@ -348,6 +348,7 @@ namespace Eulei.Map
             this._sql = "1=1";
             this._params = null;
             this._params = new string[] { "" };
+            this.axMap1.ZoomTo(_config.Zoom,_config.CenterX,_config.CenterY);
             this.BindData();
         }
 
