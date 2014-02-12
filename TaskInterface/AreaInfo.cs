@@ -26,10 +26,22 @@ namespace TaskInterface
         /// 纬度
         /// </summary>
         public double lat { get; set; }
+        double _zoom = 1;
         /// <summary>
         /// 地图缩放倍率
         /// </summary>
-        public double Zoom { set; get; }
+        public double Zoom
+        {
+            set
+            {
+                if (value != null)
+                    this._zoom = value;
+            }
+            get
+            {
+                return _zoom;
+            }
+        }
         /// <summary>
         /// 邮编
         /// </summary>

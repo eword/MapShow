@@ -47,7 +47,7 @@ namespace Eulei.Map
 
             }
             catch (Exception ex)
-            {             
+            {
                 //记录异常信息。
                 Eulei.Log.FileOperation.WriteErrorLog(ex.Message);
                 MessageBox.Show("自动登入设置异常！" + ex.Message);
@@ -61,10 +61,13 @@ namespace Eulei.Map
                     Login();
             }
             catch (Exception ex)
-            {               
+            {
                 //记录异常信息。
                 Eulei.Log.FileOperation.WriteErrorLog(ex.Message);
-                MessageBox.Show(ex.Message);
+                if (MessageBox.Show(ex.Message + "\r\n是否重新打开程序？", "提醒", MessageBoxButtons.YesNo).Equals(DialogResult.Yes))
+                {
+                    Application.Run(new MainForm());
+                }
             }
 
 

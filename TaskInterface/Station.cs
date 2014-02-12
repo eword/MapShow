@@ -158,7 +158,7 @@ namespace TaskInterface
                 this._lat = value;
             }
         }
-        private double _zoom = 0.0;
+        private double _zoom = 1;
         /// <summary>
         /// 纬度
         /// </summary>

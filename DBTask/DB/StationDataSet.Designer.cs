@@ -4499,6 +4499,7 @@ namespace DBTask.DB {
                 this.columnAreaName.MaxLength = 255;
                 this.columnAreaCenterX.MaxLength = 255;
                 this.columnAreaCenterY.MaxLength = 255;
+                this.columnAreaZoom.DefaultValue = ((string)("1"));
                 this.columnAreaZoom.MaxLength = 255;
                 this.columnAreaPostalCode.MaxLength = 255;
                 this.columnAreaEasyCode.MaxLength = 255;
@@ -4892,6 +4893,7 @@ namespace DBTask.DB {
                 this.columnOrganisationCenterName.MaxLength = 255;
                 this.columnOrganisationMapCenterX.MaxLength = 255;
                 this.columnOrganisationMapCenterY.MaxLength = 255;
+                this.columnOrganisationMapZoom.DefaultValue = ((string)("1"));
                 this.columnOrganisationMapZoom.MaxLength = 255;
             }
             
@@ -5328,6 +5330,7 @@ namespace DBTask.DB {
                 this.columnStationX.MaxLength = 255;
                 this.columnStationY.MaxLength = 255;
                 this.columnStationImageName.MaxLength = 255;
+                this.columnStationZoom.DefaultValue = ((string)("1"));
                 this.columnStationZoom.MaxLength = 255;
             }
             

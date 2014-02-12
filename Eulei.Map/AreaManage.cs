@@ -42,7 +42,19 @@ namespace Eulei.Map
 
         private void bt_getPoint_Click(object sender, EventArgs e)
         {
-            GetPoint _gp = new GetPoint();
+            GetPoint _gp;
+            if ((this._areaInfo.lon * this._areaInfo.lat).Equals(0))
+            {
+                 _gp = new GetPoint(null);
+            }
+            else
+            {
+                GetPoint.MapPosition _mp = new GetPoint.MapPosition();
+                _mp.X = this._areaInfo.lon;
+                _mp.Y = this._areaInfo.lat;
+                _mp.Zoom = this._areaInfo.Zoom;
+                 _gp = new GetPoint(_mp);
+            }
             _gp.GetPointCloed += new Code.GetPointCloedEventHandler((sender1, e1) =>
             {
                 this.lb_lon.Text = e1.Lon.ToString();
@@ -59,6 +71,10 @@ namespace Eulei.Map
         {
             bool _return = true;
             string _str = string.Empty;
+            if (!(double.Parse(this.lb_zoom.Text) > 0))
+            {
+                this.lb_zoom.Text = "1";
+            }
             if (string.IsNullOrEmpty(this.tb_areaName.Text))
                 _str += "请输入区域名称\r\n";
             if (string.IsNullOrEmpty(this.tb_easyCode.Text))
@@ -84,16 +100,23 @@ namespace Eulei.Map
             {
                 return;
             }
-           
-            if (this._status.Equals(FormStatus.Add))
+            try
             {
-                Task.Init().TaskStation.AddAreaInfo(this._areaInfo);
+                if (this._status.Equals(FormStatus.Add))
+                {
+                    Task.Init().TaskStation.AddAreaInfo(this._areaInfo);
+                }
+                else if (this._status.Equals(FormStatus.Edit))
+                {
+                    Task.Init().TaskStation.EditAreaInfo(this._areaInfo);
+                }
+                this.DialogResult = DialogResult.OK;
             }
-            else if (this._status.Equals(FormStatus.Edit))
+            catch (Exception ex)
             {
-                Task.Init().TaskStation.EditAreaInfo(this._areaInfo);
+                Log.FileOperation.WriteErrorLog(ex.Message);
+                MessageBox.Show("保存失败，详情请查看日志！@" + ex.Message);
             }
-            this.DialogResult = DialogResult.OK;
         }
 
         private void bt_cancel_Click(object sender, EventArgs e)

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.VW_StatuionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cms_listView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmi_showSatationForListView = new System.Windows.Forms.ToolStripMenuItem();
@@ -601,7 +601,7 @@
             this.tp_report.Location = new System.Drawing.Point(4, 22);
             this.tp_report.Name = "tp_report";
             this.tp_report.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_report.Size = new System.Drawing.Size(833, 554);
+            this.tp_report.Size = new System.Drawing.Size(796, 554);
             this.tp_report.TabIndex = 1;
             this.tp_report.Text = "报表";
             this.tp_report.UseVisualStyleBackColor = true;
@@ -609,13 +609,13 @@
             // rv_main
             // 
             this.rv_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.VW_StatuionBindingSource;
-            this.rv_main.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource7.Name = "DataSet1";
+            reportDataSource7.Value = this.VW_StatuionBindingSource;
+            this.rv_main.LocalReport.DataSources.Add(reportDataSource7);
             this.rv_main.LocalReport.ReportEmbeddedResource = "Eulei.Map.Report2.rdlc";
             this.rv_main.Location = new System.Drawing.Point(3, 3);
             this.rv_main.Name = "rv_main";
-            this.rv_main.Size = new System.Drawing.Size(827, 548);
+            this.rv_main.Size = new System.Drawing.Size(790, 548);
             this.rv_main.TabIndex = 0;
             // 
             // tsc_main

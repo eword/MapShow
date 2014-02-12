@@ -215,7 +215,7 @@ namespace DBTask
             List<VW_Statuion> _lists = new List<VW_Statuion>();
             using (VW_baseStationTableAdapter _myTA = new VW_baseStationTableAdapter())
             {
-                foreach (var item in _myTA.GetData().AsQueryable().Where(sql, _params).Skip(skip).Take(pageSize).OrderBy(m => m.StationImageName).OrderBy(m=>m.AreaOrder))
+                foreach (var item in _myTA.GetData().AsQueryable().Where(sql, _params).OrderBy(m => m.AreaOrder).OrderBy(m=>m.OrganisationOrder).OrderBy(m => m.StationImageName).Skip(skip).Take(pageSize))
                 {
                     VW_Statuion _listItem = new VW_Statuion();
                     _listItem.ID = item.StationID;

@@ -42,10 +42,21 @@ namespace TaskInterface
         /// 纬度
         /// </summary>
         public double Maplat { get; set; }
+        double _zoom = 1;
         /// <summary>
         /// 地图缩放倍率
         /// </summary>
-        public double MapZoom { set; get; }
+        public double MapZoom {
+            set
+            {
+                if (value != null)
+                    this._zoom = value;
+            }
+            get
+            {
+                return _zoom;
+            }
+        }
         /// <summary>
         /// 排序号
         /// </summary>

@@ -48,8 +48,14 @@ namespace Eulei.Map
         {
             bool _return = true;
             string _str = string.Empty;
+            if (!(double.Parse(this.lb_mapZoom.Text) > 0))
+            {
+                this.lb_mapZoom.Text = "1";
+            }
             if (string.IsNullOrEmpty(this.tb_name.Text))
                 _str += "请输入机构名称\r\n";
+            if (string.IsNullOrEmpty(this.tb_centerName.Text))
+                _str += "请输入主要办公点名称\r\n";
             if (string.IsNullOrEmpty(this.lb_mapZoom.Text))
                 _str += "请输入经纬度及缩放率\r\n";
             if (string.IsNullOrEmpty(this.tb_order.Text))
@@ -82,7 +88,7 @@ namespace Eulei.Map
             catch (Exception ex)
             {
                 Log.FileOperation.WriteErrorLog(ex.Message);
-                MessageBox.Show("保存失败，详情请查看日志！");
+                MessageBox.Show("保存失败，详情请查看日志！@"+ex.Message);
             }
         }
 
@@ -93,7 +99,19 @@ namespace Eulei.Map
 
         private void bt_getPoint_Click(object sender, EventArgs e)
         {
-            GetPoint _gp = new GetPoint();
+            GetPoint _gp;
+            if ((this._organisation.Maplon * this._organisation.Maplat).Equals(0))
+            {
+                 _gp = new GetPoint(null);
+            }
+            else
+            {
+                GetPoint.MapPosition _mp = new GetPoint.MapPosition();
+                _mp.X = this._organisation.Maplon;
+                _mp.Y = this._organisation.Maplat;
+                _mp.Zoom = this._organisation.MapZoom;
+                _gp = new GetPoint(_mp);
+            }
             _gp.GetPointCloed += new Code.GetPointCloedEventHandler((sender1, e1) =>
             {
                 this.lb_lon.Text = e1.Lon.ToString();

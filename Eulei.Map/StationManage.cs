@@ -11,11 +11,11 @@ using Eulei.Map.Code;
 namespace Eulei.Map
 {
     public partial class StationManage : Form
-    {     
+    {
         #region field
         private FormStatus _status;
         private static StationManage _Init;
-        private Station _station;  
+        private Station _station;
         List<KeyValuePair<string, string>> _imageNames = new List<KeyValuePair<string, string>>();
         Task _task;
         #endregion
@@ -61,6 +61,10 @@ namespace Eulei.Map
         /// <returns>true:通过验证；false：未通过</returns>
         private bool InputValidation()
         {
+            if (!(double.Parse(this.lb_zoom.Text) > 0))
+            {
+                this.lb_zoom.Text = "1";
+            }
             bool _return = true;
             string _str = string.Empty;
             if (string.IsNullOrEmpty(this.tb_num.Text))
@@ -86,7 +90,20 @@ namespace Eulei.Map
         #region event
         private void bt_getPoint_Click(object sender, EventArgs e)
         {
-            GetPoint _gp = new GetPoint();
+            GetPoint _gp;
+            if ((this._station.lon * this._station.lat).Equals(0))
+            {
+                _gp = new GetPoint(null);
+            }
+            else
+            {
+                GetPoint.MapPosition _mp = new GetPoint.MapPosition();
+                _mp.X = this._station.lon;
+                _mp.Y = this._station.lat;
+                _mp.Zoom = this._station.Zoom;
+                _gp = new GetPoint(_mp);
+            }
+
             _gp.GetPointCloed += new Code.GetPointCloedEventHandler((sender1, e1) =>
             {
                 this.lb_lon.Text = e1.Lon.ToString();
@@ -102,15 +119,23 @@ namespace Eulei.Map
             {
                 return;
             }
-            if (this._status.Equals(FormStatus.Add))
+            try
             {
-                Task.Init().TaskStation.AddStation(this._station);
+                if (this._status.Equals(FormStatus.Add))
+                {
+                    Task.Init().TaskStation.AddStation(this._station);
+                }
+                else if (this._status.Equals(FormStatus.Edit))
+                {
+                    Task.Init().TaskStation.EditStation(this._station);
+                }
+                this.DialogResult = DialogResult.OK;
             }
-            else if (this._status.Equals(FormStatus.Edit))
+            catch (Exception ex)
             {
-                Task.Init().TaskStation.EditStation(this._station);
+                Log.FileOperation.WriteErrorLog(ex.Message);
+                MessageBox.Show("保存失败，详情请查看日志！@" + ex.Message);
             }
-            this.DialogResult = DialogResult.OK;
         }
 
         private void bt_cancel_Click(object sender, EventArgs e)
