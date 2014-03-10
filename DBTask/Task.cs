@@ -95,6 +95,15 @@ namespace DBTask
                     _listItem.AreaInfoPostalCode = item.AreaPostalCode;
                 if (!item.IsAreaOrderNull())
                     _listItem.AreaInfoOrder = item.AreaOrder;
+
+
+                if (!item.IsStationInfoEmployeesCountNull())
+                    _listItem.StationInfoEmployeesCount = item.StationInfoEmployeesCount;
+                if (!item.IsStationInfoCarsCountNull())
+                    _listItem.StationInfoCarsCount = item.StationInfoCarsCount;
+                if (!item.IsStationInfoBusinessVolumeNull())
+                    _listItem.StationInfoBusinessVolume = item.StationInfoBusinessVolume;
+
             }
             return _listItem;
         }
@@ -181,6 +190,13 @@ namespace DBTask
                         _listItem.AreaInfoOrder = item.AreaOrder;
 
 
+                    if (!item.IsStationInfoEmployeesCountNull())
+                        _listItem.StationInfoEmployeesCount = item.StationInfoEmployeesCount;
+                    if (!item.IsStationInfoCarsCountNull())
+                        _listItem.StationInfoCarsCount = item.StationInfoCarsCount;
+                    if (!item.IsStationInfoBusinessVolumeNull())
+                        _listItem.StationInfoBusinessVolume = item.StationInfoBusinessVolume;
+
                     _lists.Add(_listItem);
                 }
             }
@@ -215,7 +231,7 @@ namespace DBTask
             List<VW_Statuion> _lists = new List<VW_Statuion>();
             using (VW_baseStationTableAdapter _myTA = new VW_baseStationTableAdapter())
             {
-                foreach (var item in _myTA.GetData().AsQueryable().Where(sql, _params).OrderBy(m => m.AreaOrder).OrderBy(m=>m.OrganisationOrder).OrderBy(m => m.StationImageName).Skip(skip).Take(pageSize))
+                foreach (var item in _myTA.GetData().AsQueryable().Where(sql, _params).OrderBy(m => m.AreaOrder).OrderBy(m => m.OrganisationOrder).OrderBy(m => m.StationImageName).Skip(skip).Take(pageSize))
                 {
                     VW_Statuion _listItem = new VW_Statuion();
                     _listItem.ID = item.StationID;
@@ -288,6 +304,12 @@ namespace DBTask
                     if (!item.IsAreaOrderNull())
                         _listItem.AreaInfoOrder = item.AreaOrder;
 
+                    if (!item.IsStationInfoEmployeesCountNull())
+                        _listItem.StationInfoEmployeesCount = item.StationInfoEmployeesCount;
+                    if (!item.IsStationInfoCarsCountNull())
+                        _listItem.StationInfoCarsCount = item.StationInfoCarsCount;
+                    if (!item.IsStationInfoBusinessVolumeNull())
+                        _listItem.StationInfoBusinessVolume = item.StationInfoBusinessVolume;
 
 
                     _lists.Add(_listItem);
@@ -295,6 +317,7 @@ namespace DBTask
             }
             return _lists;
         }
+
         /// <summary>
         /// 获取站点信息列表
         /// </summary>
@@ -469,7 +492,7 @@ namespace DBTask
                         , station.AreaID
                         , station.OrganisationID
                         , station.ImageName
-                        ,station.Zoom.ToString()
+                        , station.Zoom.ToString()
                         );
                 }
             }
@@ -732,15 +755,15 @@ namespace DBTask
                     _listItem.Name = item.AreaName;
                     _listItem.EasyCode = item.AreaEasyCode;
                     if (!item.IsAreaCenterXNull())
-                    _listItem.lon = double.Parse(item.AreaCenterX);
+                        _listItem.lon = double.Parse(item.AreaCenterX);
                     if (!item.IsAreaCenterYNull())
-                    _listItem.lat = double.Parse(item.AreaCenterY);
+                        _listItem.lat = double.Parse(item.AreaCenterY);
                     if (!item.IsAreaZoomNull())
-                    _listItem.Zoom = double.Parse(item.AreaZoom);
+                        _listItem.Zoom = double.Parse(item.AreaZoom);
                     if (!item.IsAreaPostalCodeNull())
-                    _listItem.PostalCode = item.AreaPostalCode;
+                        _listItem.PostalCode = item.AreaPostalCode;
                     if (!item.IsAreaOrderNull())
-                    _listItem.Order = item.AreaOrder;
+                        _listItem.Order = item.AreaOrder;
                     _lists.Add(_listItem);
                 }
             }
@@ -768,13 +791,13 @@ namespace DBTask
                     _return.lon = double.Parse(_item.OrganisationCenterX);
                     _return.lat = double.Parse(_item.OrganisationCenterY);
                     if (!_item.IsOrganisationMapCenterXNull())
-                    _return.Maplon = double.Parse(_item.OrganisationMapCenterX);
+                        _return.Maplon = double.Parse(_item.OrganisationMapCenterX);
                     if (!_item.IsOrganisationMapCenterYNull())
-                    _return.Maplat = double.Parse(_item.OrganisationMapCenterY);
+                        _return.Maplat = double.Parse(_item.OrganisationMapCenterY);
                     if (!_item.IsOrganisationMapZoomNull())
-                    _return.MapZoom = double.Parse(_item.OrganisationMapZoom);
+                        _return.MapZoom = double.Parse(_item.OrganisationMapZoom);
                     if (!_item.IsOrganisationOrderNull())
-                    _return.Order = _item.OrganisationOrder;
+                        _return.Order = _item.OrganisationOrder;
                 }
             }
             catch (Exception ex)
@@ -801,10 +824,10 @@ namespace DBTask
                         , organisation.lon.ToString()
                         , organisation.lat.ToString()
                         , organisation.CenterName
-                        ,organisation.Maplon.ToString()
-                        ,organisation.Maplat.ToString()
-                        ,organisation.MapZoom.ToString()
-                        ,organisation.Order
+                        , organisation.Maplon.ToString()
+                        , organisation.Maplat.ToString()
+                        , organisation.MapZoom.ToString()
+                        , organisation.Order
                         );
                 }
             }
@@ -939,6 +962,13 @@ namespace DBTask
 
                     if (!item.IsStationInfoOpeningHoursEndNull())
                         _return.OpeningHoursEnd = item.StationInfoOpeningHoursEnd;
+
+                    if (!item.IsStationInfoEmployeesCountNull())
+                        _return.EmployeesCount = item.StationInfoEmployeesCount;
+                    if (!item.IsStationInfoCarsCountNull())
+                        _return.CarsCount = item.StationInfoCarsCount;
+                    if (!item.IsStationInfoBusinessVolumeNull())
+                        _return.BusinessVolume = item.StationInfoBusinessVolume;
                 }
             }
             catch (Exception ex)
@@ -969,6 +999,9 @@ namespace DBTask
                        , StationInfo.BusinessScope
                        , StationInfo.OpeningHoursBegin
                        , StationInfo.OpeningHoursEnd
+                       , StationInfo.EmployeesCount
+                       , StationInfo.CarsCount
+                       , StationInfo.BusinessVolume
                         );
                 }
             }
@@ -1004,6 +1037,10 @@ namespace DBTask
                     _item.StationInfoBusinessScope = StationInfo.BusinessScope;
                     _item.StationInfoOpeningHoursBegin = StationInfo.OpeningHoursBegin;
                     _item.StationInfoOpeningHoursEnd = StationInfo.OpeningHoursEnd;
+                    _item.StationInfoEmployeesCount = StationInfo.EmployeesCount;
+                    _item.StationInfoCarsCount = StationInfo.CarsCount;
+                    _item.StationInfoBusinessVolume = StationInfo.BusinessVolume;
+
                     _myTA.Update(_item);
                 }
             }
@@ -1072,6 +1109,15 @@ namespace DBTask
 
                     if (!item.IsStationInfoOpeningHoursEndNull())
                         _listItem.OpeningHoursEnd = item.StationInfoOpeningHoursEnd;
+
+                    if (!item.IsStationInfoEmployeesCountNull())
+                        _listItem.EmployeesCount = item.StationInfoEmployeesCount;
+                    if (!item.IsStationInfoCarsCountNull())
+                        _listItem.CarsCount = item.StationInfoCarsCount;
+                    if (!item.IsStationInfoBusinessVolumeNull())
+                        _listItem.BusinessVolume = item.StationInfoBusinessVolume;
+
+
                     _lists.Add(_listItem);
                 }
             }

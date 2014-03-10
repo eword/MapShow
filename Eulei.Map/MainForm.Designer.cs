@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.VW_StatuionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cms_listView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmi_showSatationForListView = new System.Windows.Forms.ToolStripMenuItem();
@@ -609,9 +609,9 @@
             // rv_main
             // 
             this.rv_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource7.Name = "DataSet1";
-            reportDataSource7.Value = this.VW_StatuionBindingSource;
-            this.rv_main.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.VW_StatuionBindingSource;
+            this.rv_main.LocalReport.DataSources.Add(reportDataSource1);
             this.rv_main.LocalReport.ReportEmbeddedResource = "Eulei.Map.Report2.rdlc";
             this.rv_main.Location = new System.Drawing.Point(3, 3);
             this.rv_main.Name = "rv_main";
@@ -684,7 +684,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "泉州市邮政管理局快递企业分布电子地图";
+            this.Text = "泉州市快递服务网点分布电子地图";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
             this.Load += new System.EventHandler(this.Form1_Load);

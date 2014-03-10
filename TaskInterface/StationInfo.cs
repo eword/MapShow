@@ -50,5 +50,17 @@ namespace TaskInterface
         /// 营业时间（结束）
         /// </summary>
         public string OpeningHoursEnd { get; set; }
+        /// <summary>
+        /// 从业人员数量
+        /// </summary>
+        public string EmployeesCount { get; set; }
+        /// <summary>
+        /// 车辆数量
+        /// </summary>
+        public string CarsCount { get; set; }
+        /// <summary>
+        /// 业务量收
+        /// </summary>
+        public string BusinessVolume { get; set; }
     }
 }

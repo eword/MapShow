@@ -57,6 +57,12 @@
             this.il_main = new System.Windows.Forms.ImageList(this.components);
             this.bt_editImageInfo = new System.Windows.Forms.Button();
             this.tb_del = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tb_businessVolume = new System.Windows.Forms.TextBox();
+            this.tb_carscount = new System.Windows.Forms.TextBox();
+            this.tb_employesscount = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bs_main)).BeginInit();
             this.panel1.SuspendLayout();
@@ -70,6 +76,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.tb_employesscount, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tb_carscount, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tb_businessVolume, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
@@ -82,17 +93,19 @@
             this.tableLayoutPanel1.Controls.Add(this.tb_businessModel, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.bs_postalCode, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tb_businessScope, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tb_businessScope, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(824, 199);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(824, 271);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -232,7 +245,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 114);
+            this.label7.Location = new System.Drawing.Point(3, 190);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 12);
             this.label7.TabIndex = 6;
@@ -243,15 +256,15 @@
             this.tb_businessScope.AcceptsReturn = true;
             this.tableLayoutPanel1.SetColumnSpan(this.tb_businessScope, 3);
             this.tb_businessScope.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_main, "BusinessScope", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tb_businessScope.Location = new System.Drawing.Point(74, 117);
+            this.tb_businessScope.Location = new System.Drawing.Point(74, 193);
             this.tb_businessScope.Multiline = true;
             this.tb_businessScope.Name = "tb_businessScope";
-            this.tb_businessScope.Size = new System.Drawing.Size(747, 72);
+            this.tb_businessScope.Size = new System.Drawing.Size(747, 75);
             this.tb_businessScope.TabIndex = 14;
             // 
             // bt_OK
             // 
-            this.bt_OK.Location = new System.Drawing.Point(657, 233);
+            this.bt_OK.Location = new System.Drawing.Point(657, 299);
             this.bt_OK.Name = "bt_OK";
             this.bt_OK.Size = new System.Drawing.Size(75, 23);
             this.bt_OK.TabIndex = 1;
@@ -261,7 +274,7 @@
             // 
             // bt_cancel
             // 
-            this.bt_cancel.Location = new System.Drawing.Point(748, 233);
+            this.bt_cancel.Location = new System.Drawing.Point(748, 299);
             this.bt_cancel.Name = "bt_cancel";
             this.bt_cancel.Size = new System.Drawing.Size(75, 23);
             this.bt_cancel.TabIndex = 2;
@@ -271,7 +284,7 @@
             // 
             // bt_ImageInfo
             // 
-            this.bt_ImageInfo.Location = new System.Drawing.Point(17, 233);
+            this.bt_ImageInfo.Location = new System.Drawing.Point(17, 299);
             this.bt_ImageInfo.Name = "bt_ImageInfo";
             this.bt_ImageInfo.Size = new System.Drawing.Size(97, 23);
             this.bt_ImageInfo.TabIndex = 3;
@@ -282,9 +295,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lv_man);
-            this.groupBox1.Location = new System.Drawing.Point(17, 281);
+            this.groupBox1.Location = new System.Drawing.Point(17, 334);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(800, 600);
+            this.groupBox1.Size = new System.Drawing.Size(819, 407);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "图片信息";
@@ -295,7 +308,7 @@
             this.lv_man.Location = new System.Drawing.Point(3, 17);
             this.lv_man.MultiSelect = false;
             this.lv_man.Name = "lv_man";
-            this.lv_man.Size = new System.Drawing.Size(794, 580);
+            this.lv_man.Size = new System.Drawing.Size(813, 387);
             this.lv_man.TabIndex = 0;
             this.lv_man.UseCompatibleStateImageBehavior = false;
             // 
@@ -307,7 +320,7 @@
             // 
             // bt_editImageInfo
             // 
-            this.bt_editImageInfo.Location = new System.Drawing.Point(136, 233);
+            this.bt_editImageInfo.Location = new System.Drawing.Point(136, 299);
             this.bt_editImageInfo.Name = "bt_editImageInfo";
             this.bt_editImageInfo.Size = new System.Drawing.Size(96, 23);
             this.bt_editImageInfo.TabIndex = 5;
@@ -317,7 +330,7 @@
             // 
             // tb_del
             // 
-            this.tb_del.Location = new System.Drawing.Point(251, 233);
+            this.tb_del.Location = new System.Drawing.Point(251, 299);
             this.tb_del.Name = "tb_del";
             this.tb_del.Size = new System.Drawing.Size(107, 23);
             this.tb_del.TabIndex = 6;
@@ -325,11 +338,62 @@
             this.tb_del.UseVisualStyleBackColor = true;
             this.tb_del.Click += new System.EventHandler(this.tb_del_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 114);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 12);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "业务量收：";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(404, 114);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 12);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "车辆数量：";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 152);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 12);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "从业人员：";
+            // 
+            // tb_businessVolume
+            // 
+            this.tb_businessVolume.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_main, "BusinessVolume", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tb_businessVolume.Location = new System.Drawing.Point(74, 117);
+            this.tb_businessVolume.Name = "tb_businessVolume";
+            this.tb_businessVolume.Size = new System.Drawing.Size(324, 21);
+            this.tb_businessVolume.TabIndex = 13;
+            // 
+            // tb_carscount
+            // 
+            this.tb_carscount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_main, "CarsCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tb_carscount.Location = new System.Drawing.Point(487, 117);
+            this.tb_carscount.Name = "tb_carscount";
+            this.tb_carscount.Size = new System.Drawing.Size(324, 21);
+            this.tb_carscount.TabIndex = 14;
+            // 
+            // tb_employesscount
+            // 
+            this.tb_employesscount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bs_main, "EmployeesCount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tb_employesscount.Location = new System.Drawing.Point(74, 155);
+            this.tb_employesscount.Name = "tb_employesscount";
+            this.tb_employesscount.Size = new System.Drawing.Size(324, 21);
+            this.tb_employesscount.TabIndex = 14;
+            // 
             // StationInfoManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 900);
+            this.ClientSize = new System.Drawing.Size(847, 751);
             this.Controls.Add(this.tb_del);
             this.Controls.Add(this.bt_editImageInfo);
             this.Controls.Add(this.groupBox1);
@@ -379,5 +443,11 @@
         private System.Windows.Forms.ImageList il_main;
         private System.Windows.Forms.Button bt_editImageInfo;
         private System.Windows.Forms.Button tb_del;
+        private System.Windows.Forms.TextBox tb_businessVolume;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tb_employesscount;
+        private System.Windows.Forms.TextBox tb_carscount;
     }
 }
